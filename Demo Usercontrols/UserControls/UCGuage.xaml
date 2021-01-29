@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Demo_Usercontrols.UCGuage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Usercontrols"
+             mc:Ignorable="d">
+    <Border Width="400" Height="400" CornerRadius="200" BorderThickness="2">
+        <Border.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF2E2E2E" Offset="0.993"/>
+                <GradientStop Color="#FF4F4F4F" Offset="0.961"/>
+                <GradientStop Color="#FF323131" Offset="0.836"/>
+                <GradientStop Color="#FF969696" Offset="0.807"/>
+                <GradientStop Color="#FF323232" Offset="0.784"/>
+                <GradientStop Color="#FF353535" Offset="0.098"/>
+                <GradientStop Color="#FF424242" Offset="0.482"/>
+            </RadialGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF373737" Offset="0.986"/>
+                <GradientStop Color="#FFCDB9B9" Offset="0.003"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Grid>
+
+            <Ellipse MinHeight="16"  Name="ellipse1" 
+                     Stroke="White" StrokeThickness="1" MinWidth="16" Height="315" Width="315" >
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFABABAB" Offset="0.986"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Clip>
+                    <RectangleGeometry Rect="0,0,400,180"/>
+                </Ellipse.Clip>
+            </Ellipse>
+
+            <Path Stroke="#FF626161" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Left" Height="139.5" Stretch="Fill" Width="287.6" Margin="53.9,53.9,0,0" RenderTransformOrigin="0.358,0.335">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="70,180" IsClosed="False">
+                                <ArcSegment Point="330,180" Size="6, 5" SweepDirection="Clockwise"/>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            
+            
+
+            <Border Width="150" Height="5" Background="Black" HorizontalAlignment="Left" Margin="50, 50, 0, 0">
+                <Border.RenderTransform>
+                    <RotateTransform x:Name="Needle" CenterX="150" CenterY="0" Angle="20" />
+                </Border.RenderTransform>
+            </Border>
+            <Ellipse MinHeight="16"  Name="ellipse2" Fill="#FF343434"
+                     MinWidth="16" Height="70" Width="70" Margin="0, 70, 0, 0"/>
+
+
+        </Grid>
+
+    </Border>
+
+</UserControl>

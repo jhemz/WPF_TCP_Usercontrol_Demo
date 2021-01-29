@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Demo_Usercontrols.UserControls.Digital_Screen.UCDigitalScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen"
+             mc:Ignorable="d" >
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="80">
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_8"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_7"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_6"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_5"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_4"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_3"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_2"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_1"/>
+            </Viewbox>
+        </StackPanel>
+    </Grid>
+</UserControl>

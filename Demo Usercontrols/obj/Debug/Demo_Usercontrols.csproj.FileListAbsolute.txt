@@ -1,0 +1,22 @@
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe.config
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.pdb
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\MainWindow.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigit.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\App.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\MainWindow.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigit.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\App.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols_MarkupCompile.cache
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols_MarkupCompile.lref
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.g.resources
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.Properties.Resources.resources
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.GenerateResource.cache
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.CoreCompileInputs.cache
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.exe
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
