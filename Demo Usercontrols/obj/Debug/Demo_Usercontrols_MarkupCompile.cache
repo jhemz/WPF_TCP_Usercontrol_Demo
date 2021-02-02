@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\App.xaml
-41529457956
+15-1872968591
 
-8-697019397
+9-1297074349
 13-1505183044
-MainWindow.xaml;UserControls\Digital Screen\UCDigit.xaml;UserControls\Digital Screen\UCDigitalScreen.xaml;UserControls\UCGuage.xaml;
+MainWindow.xaml;Styles\Cyber\GreenLightButton.xaml;Styles\Cyber\OrangeLightButton.xaml;Styles\Cyber\RedLightButton.xaml;Styles\Cyber\SwitchButton.xaml;Styles\Cyber\SwitchButton2.xaml;Styles\Realism\GreenLightButton.xaml;Styles\Realism\OrangeLightButton.xaml;Styles\Realism\RedLightButton.xaml;Styles\Realism\SwitchButton.xaml;Styles\Realism\SwitchButton2.xaml;UserControls\Digital Screen\UCDigit.xaml;UserControls\Digital Screen\UCDigitalScreen.xaml;UserControls\ShipsLayout\Display.xaml;UserControls\UCGuage.xaml;
 
 False
 

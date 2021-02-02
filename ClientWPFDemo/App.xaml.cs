@@ -9,6 +9,7 @@ using System.Windows;
 
 namespace ClientWPFDemo
 {
+    //https://codescratcher.com/wpf/custom-slider-control-in-wpf/
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

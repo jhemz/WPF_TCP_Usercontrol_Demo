@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Demo_Usercontrols.UserControls.ShipsLayout.Display"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.ShipsLayout"
+             mc:Ignorable="d" >
+    <Grid>
+        <StackPanel Orientation="Horizontal" 
+                    >
+
+            <Polygon Points="
+                 0,10
+                 0,0
+                 12,0
+                 12,10
+                 "   x:Name="Piece_1"  >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon  Points="
+                 0,10
+                 0,0
+                 2,0.1
+                 4,0.75
+                 8,2
+                 10,3
+                 13,5
+                 10,7
+                 8,8
+                 4,9.25
+                 2,9.9
+                 "     >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </StackPanel>
+    </Grid>
+</UserControl>

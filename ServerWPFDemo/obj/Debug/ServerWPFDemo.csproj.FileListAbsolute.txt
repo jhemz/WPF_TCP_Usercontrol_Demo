@@ -2,8 +2,10 @@ C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFD
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.pdb
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Demo_Usercontrols.exe
+C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Newtonsoft.Json.dll
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Demo_Usercontrols.pdb
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Demo_Usercontrols.exe.config
+C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Newtonsoft.Json.xml
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csprojAssemblyReference.cache
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\MainWindow.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\App.g.cs
@@ -18,5 +20,3 @@ C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFD
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csproj.CopyComplete
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.pdb
-C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Newtonsoft.Json.dll
-C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Newtonsoft.Json.xml

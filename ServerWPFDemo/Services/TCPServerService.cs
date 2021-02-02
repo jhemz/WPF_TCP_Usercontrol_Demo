@@ -26,6 +26,7 @@ namespace ServerWPFDemo.Services
 
             var listeningThread = new Thread(async () =>
             {
+
                 while (true)
                 {
                     server.Start();
@@ -44,38 +45,52 @@ namespace ServerWPFDemo.Services
                     //socket.ReceiveTimeout = 30000;
 
                     byte[] b = new byte[10000];
-
-                    //initial read
-                    int k = socket.Receive(b);
-
-                    while (true)
+                    try
                     {
-                        string data = Encoding.Default.GetString(b, 0, k);
-                        Console.Write(data + Environment.NewLine);
+                        //initial read
+                        int k = socket.Receive(b);
 
-                        string[] models = Regex.Split(data, "&");
-
-                        foreach(string item in models.Where(x => x.Length > 0).ToList())
+                        while (true)
                         {
-                            modelMain model = JsonConvert.DeserializeObject<modelMain>(item);
-                            Application.Current.Dispatcher.Invoke(() =>
+                            string data = Encoding.Default.GetString(b, 0, k);
+                            Console.Write(data + Environment.NewLine);
+
+                            string[] models = Regex.Split(data, "&");
+
+                            foreach (string item in models.Where(x => x.Length > 0).ToList())
                             {
-                                App currentApp = Application.Current as App;
-                                ((vmMain)currentApp.MainWindow.DataContext).Model = model;
-                            });
+                                modelMain model = JsonConvert.DeserializeObject<modelMain>(item);
+                                Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    App currentApp = Application.Current as App;
+                                    ((vmMain)currentApp.MainWindow.DataContext).Model = model;
+                                });
+                            }
+
+                            //when we have read a packet, respond
+                            byte[] responseMessageBytes = Encoding.Default.GetBytes("Hey there!");
+                            socket.Send(responseMessageBytes);
+
+                            //re-read while data is available
+                            k = socket.Receive(b);
                         }
 
-                        //when we have read a packet, respond
-                        byte[] responseMessageBytes = Encoding.Default.GetBytes("Hey there!");
-                        socket.Send(responseMessageBytes);
-
-                        //re-read while data is available
-                        k = socket.Receive(b);
+                        socket.Close();
+                        Console.Write("Server listener socket closed.." + Environment.NewLine);
                     }
-
-                    socket.Close();
-                    Console.Write("Server listener socket closed.." + Environment.NewLine);
+                    catch
+                    {
+                        //disconneced
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+                            App currentApp = Application.Current as App;
+                            ((vmMain)currentApp.MainWindow.DataContext).Model = new modelMain() { Connected = false };
+                        });
+                    }
                 }
+
+
+
             });
             listeningThread.Start();
 

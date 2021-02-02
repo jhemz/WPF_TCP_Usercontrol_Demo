@@ -22,7 +22,7 @@
                             <GradientStop Color="#FF767373" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
-                    <digital_screen:UCDigitalScreen DisplayValue="12345" VerticalAlignment="Center"/>
+                    <digital_screen:UCDigitalScreen DisplayValue="client" VerticalAlignment="Center"/>
                 </Border>
 
                 <StackPanel Orientation="Horizontal">
@@ -40,6 +40,7 @@
             Style="{StaticResource SwitchButton2}"/>
                     <ToggleButton IsChecked="{Binding Button6}" Content="This is a Green button" Margin="5"
             Style="{StaticResource GreenLightButton}"/>
+
                 </StackPanel>
             </StackPanel>
 

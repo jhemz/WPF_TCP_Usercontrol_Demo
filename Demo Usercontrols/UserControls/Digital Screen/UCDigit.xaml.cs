@@ -31,7 +31,7 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
         {
             UCDigit digit = d as UCDigit;
 
-            switch (e.NewValue.ToString())
+            switch (e.NewValue.ToString().ToLower())
             {
                 case "":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -143,7 +143,45 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_7.Visibility = Visibility.Collapsed;
                     break;
 
-                case "E":
+               
+
+                case "a":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "b":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "c":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "d":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "e":
                     digit.Piece_1.Visibility = Visibility.Visible;
                     digit.Piece_2.Visibility = Visibility.Collapsed;
                     digit.Piece_3.Visibility = Visibility.Visible;
@@ -152,8 +190,117 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
                     break;
+                case "f":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "g":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "h":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "i":
+                    digit.Piece_1.Visibility = Visibility.Collapsed;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "j":
+                    digit.Piece_1.Visibility = Visibility.Collapsed;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "k":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "l":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "m":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "n":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
 
-                case "R":
+                case "o":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "p":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "q":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+
+                case "r":
                     digit.Piece_1.Visibility = Visibility.Visible;
                     digit.Piece_2.Visibility = Visibility.Collapsed;
                     digit.Piece_3.Visibility = Visibility.Visible;
@@ -161,6 +308,78 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "s":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "t":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "u":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "v":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "w":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Visible;
+                    break;
+                case "x":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "y":
+                    digit.Piece_1.Visibility = Visibility.Visible;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Visible;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    break;
+                case "z":
+                    digit.Piece_1.Visibility = Visibility.Collapsed;
+                    digit.Piece_2.Visibility = Visibility.Visible;
+                    digit.Piece_3.Visibility = Visibility.Visible;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Visible;
+                    digit.Piece_6.Visibility = Visibility.Visible;
+                    digit.Piece_7.Visibility = Visibility.Visible;
                     break;
 
             }
