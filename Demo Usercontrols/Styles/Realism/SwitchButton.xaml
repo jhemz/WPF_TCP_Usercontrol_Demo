@@ -129,6 +129,12 @@
 
                     </Viewbox>
                     <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Checked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-typewriter-soft-click-1125.wav" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Unchecked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-typewriter-soft-click-1125.wav" />
+                        </EventTrigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="button" Property="Visibility" Value ="Hidden"/>
                             <Setter TargetName="button2" Property="Visibility" Value ="Visible"/>

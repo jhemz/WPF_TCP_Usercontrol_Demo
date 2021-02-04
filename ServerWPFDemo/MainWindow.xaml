@@ -40,11 +40,12 @@
                     </Border.BorderBrush>
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
-                            <ToggleButton  IsChecked="{Binding Button1}" Content="This is an orange button" Margin="5"
-            Style="{StaticResource OrangeLightButton}"/>
                             <ToggleButton IsChecked="{Binding Connected}" Content="Client is Connected" Margin="5"
             Style="{StaticResource RedLightButton}"/>
-                            <ToggleButton IsChecked="{Binding Button3}" Content="This is a Green button" Margin="5"
+                            <ToggleButton  IsChecked="{Binding IncreaseTemp}" Content="Increase Temperature" Margin="5"
+            Style="{StaticResource OrangeLightButton}"/>
+                           
+                            <ToggleButton IsChecked="{Binding DecreaseTemp}" Content="Decrease Temperature" Margin="5"
             Style="{StaticResource GreenLightButton}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">

@@ -1,0 +1,234 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FlashRedLightButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Height" Value="250"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Viewbox>
+                        <Border Height="27" Width="20" >
+                            <Grid>
+                                <Border
+                                            Background="#FF3F3131"
+                                            Height="20" BorderThickness="1"
+                                            VerticalAlignment="Top"
+                                            CornerRadius="3">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF717171" Offset="1"/>
+                                            <GradientStop Color="#FFF3F3F3"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <Grid VerticalAlignment="Top"  Height="6" Margin="1, 1, 1, 0">
+                                        <Ellipse Width="1" Height="1" 
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"
+                                                 Stroke="#FF4C4C4C" StrokeThickness="0.2">
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush 
+                                                          GradientOrigin="0.5,0.5" 
+                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFE8E7E7" Offset="0" />
+                                                        <GradientStop Color="#FF6C6C6C" Offset="0.9" />
+                                                        <GradientStop Color="#FF060606" Offset="1" />
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                            <Ellipse.Effect>
+                                                <DropShadowEffect BlurRadius="0.2" ShadowDepth="0.25" Opacity="1" Direction="300" Color="#FF636363" />
+                                            </Ellipse.Effect>
+                                        </Ellipse>
+                                        <TextBlock TextAlignment="Center" FontSize="2" MaxWidth="17" MaxHeight="5"  TextWrapping="Wrap"
+                                           Text="{TemplateBinding Content}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="SimSun">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect
+                                                  ShadowDepth="0.26"
+                                                  Direction="190"
+                                                  Opacity="1"
+                                                 BlurRadius="5" Color="#FF020202"/>
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <Ellipse Width="1" Height="1" 
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Right"
+                                                 Stroke="#FF4C4C4C" StrokeThickness="0.2">
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush 
+                                                          GradientOrigin="0.5,0.5" 
+                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFE8E7E7" Offset="0" />
+                                                        <GradientStop Color="#FF6C6C6C" Offset="0.9" />
+                                                        <GradientStop Color="#FF060606" Offset="1" />
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                            <Ellipse.Effect>
+                                                <DropShadowEffect BlurRadius="0.2" ShadowDepth="0.25" Opacity="1" Direction="300" Color="#FF636363" />
+                                            </Ellipse.Effect>
+                                        </Ellipse>
+                                    </Grid>
+
+                                </Border>
+                                <Border  x:Name="Border" CornerRadius="10" VerticalAlignment="Bottom"
+                                    Background="#FFFFFFFF"
+                                    Width="20" Height="20">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0.5" Direction="0" Opacity="1" />
+                                    </Border.Effect>
+                                    <Grid x:Name="Ellipse">
+                                        <Ellipse
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center" Width="20" Height="20">
+                                            <Ellipse.Fill>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FF6B4B40" Offset="0.994"/>
+                                                    <GradientStop Color="#FFBFB2AD"/>
+                                                </LinearGradientBrush>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                      
+                                        <Ellipse Width="18.5" Height="18.5"   x:Name="ellipse"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center" Fill="#FF513636"
+                                                 Stroke="Gray" StrokeThickness="0.2">
+                                            <Ellipse.Effect>
+                                                <BlurEffect x:Name="glow" Radius="0"/>
+                                            </Ellipse.Effect>
+
+                                        </Ellipse>
+                                        <Ellipse Width="18.5" Height="18.5"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                 Stroke="Gray" StrokeThickness="0.2">
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush 
+                                                          GradientOrigin="0.5,0.5" 
+                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#00FF9900" Offset="0" />
+                                                        <GradientStop Color="#00FF9900" Offset="0.8" />
+                                                        <GradientStop Color="#FF6F2121" Offset="0.9" />
+                                                        <GradientStop Color="#FF402C0E" Offset="1" />
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+
+                                        </Ellipse>
+                                        <Ellipse Width="18.5" Height="18.5"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                 Stroke="Gray" StrokeThickness="0.2">
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush 
+                                                          GradientOrigin="0.5,0.5" 
+                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#196C522C" Offset="0.1"/>
+                                                        <GradientStop Color="#00A9A8A5" Offset="0.15"/>
+                                                        <GradientStop Color="#336C522C" Offset="0.5" />
+                                                        <GradientStop Color="#00A37C48" Offset="0.7" />
+                                                        <GradientStop Color="#7FBA986A" Offset="0.75" />
+                                                        <GradientStop Color="#7F6B6154" Offset="0.75" />
+                                                        <GradientStop Color="#00402C0E" Offset="1" />
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+
+                                        </Ellipse>
+
+                                        <Path Stroke="White" StrokeThickness="0.3" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                            <Path.Data>
+                                                <PathGeometry>
+                                                    <PathGeometry.Figures>
+                                                        <PathFigure StartPoint="14,15" IsClosed="False">
+                                                            <ArcSegment Point="14,5" Size="180 30"/>
+                                                        </PathFigure>
+                                                    </PathGeometry.Figures>
+                                                </PathGeometry>
+                                            </Path.Data>
+                                            <Path.Effect>
+                                                <BlurEffect Radius="1">
+
+                                                </BlurEffect>
+                                            </Path.Effect>
+                                        </Path>
+
+
+                                    </Grid>
+                                </Border>
+
+                            </Grid>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="0.2" ShadowDepth="0.4" Opacity="1" Direction="300" Color="#FF7A7A7A" />
+                            </Border.Effect>
+                        </Border>
+
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                       
+                        <EventTrigger RoutedEvent="Checked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse"  Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                      Duration="0:0:2"
+                                                      FillBehavior="HoldEnd"
+                                                      RepeatBehavior="Forever">
+                                        <ColorAnimationUsingKeyFrames.KeyFrames>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red"/>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:1" Value="#FF513636"/>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:2" Value="Red"/>
+                                        </ColorAnimationUsingKeyFrames.KeyFrames>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            AutoReverse="True"
+                                            RepeatBehavior="Forever"
+                                        Storyboard.TargetName="glow"
+                                        Storyboard.TargetProperty="Radius"
+                                        Duration="0:0:2">
+                                        <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
+                                        <LinearDoubleKeyFrame Value="8" KeyTime="0:0:1" />
+                                        <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                      Duration="0:0:2"
+                                                      FillBehavior="HoldEnd"
+                                                      RepeatBehavior="Forever">
+                                        <ColorAnimationUsingKeyFrames.KeyFrames>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:0" Value="#FF513636"/>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:1" Value="#FF513636"/>
+                                            <DiscreteColorKeyFrame KeyTime="0:0:2" Value="#FF513636"/>
+                                        </ColorAnimationUsingKeyFrames.KeyFrames>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            AutoReverse="True"
+                                            RepeatBehavior="Forever"
+                                        Storyboard.TargetName="glow"
+                                        Storyboard.TargetProperty="Radius"
+                                        Duration="0:0:2">
+                                        <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
+                                        <LinearDoubleKeyFrame Value="0" KeyTime="0:0:1" />
+                                        <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        <!--<Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="button" Property="Fill" Value ="Red"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="button" Property="Fill" Value ="#FF513636"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

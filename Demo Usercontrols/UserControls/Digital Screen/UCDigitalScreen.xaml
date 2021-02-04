@@ -8,6 +8,15 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="80">
             <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_11"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_10"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <local:UCDigit DisplayDigit="" x:Name="Digit_9"/>
+            </Viewbox>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
                 <local:UCDigit DisplayDigit="" x:Name="Digit_8"/>
             </Viewbox>
             <Viewbox StretchDirection="Both" Stretch="Uniform">

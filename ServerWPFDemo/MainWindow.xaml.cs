@@ -1,4 +1,5 @@
-﻿using ServerWPFDemo.Services;
+﻿using ServerWPFDemo.Modelling;
+using ServerWPFDemo.Services;
 using ServerWPFDemo.ViewModels;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,6 +19,14 @@ namespace ServerWPFDemo
 
 
             StartServerAsync();
+
+            InitalizeShipModel();
+        }
+
+        private void InitalizeShipModel()
+        {
+            App currentApp = Application.Current as App;
+            currentApp.ShipModel = new ShipModel();
         }
 
         private async Task StartServerAsync()

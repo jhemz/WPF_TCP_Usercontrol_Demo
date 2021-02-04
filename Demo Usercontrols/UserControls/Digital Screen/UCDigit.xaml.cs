@@ -41,6 +41,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "0":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -50,6 +52,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "1":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -59,6 +63,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "2":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -68,6 +74,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "3":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -77,6 +85,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "4":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -86,6 +96,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "5":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -95,6 +107,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "6":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -104,6 +118,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "7":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -113,6 +129,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "8":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -122,6 +140,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "9":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -131,6 +151,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
 
                 case "-":
@@ -141,6 +163,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
 
                
@@ -153,6 +177,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "b":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -162,6 +188,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "c":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -171,6 +199,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "d":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -180,6 +210,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "e":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -189,6 +221,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "f":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -198,6 +232,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "g":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -207,6 +243,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "h":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -216,6 +254,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "i":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -225,6 +265,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "j":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -234,6 +276,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "k":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -243,6 +287,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "l":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -252,6 +298,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "m":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -261,6 +309,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "n":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -270,6 +320,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
 
                 case "o":
@@ -280,6 +332,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "p":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -289,6 +343,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "q":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -298,6 +354,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
 
                 case "r":
@@ -308,6 +366,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "s":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -317,6 +377,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "t":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -326,6 +388,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "u":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -335,6 +399,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "v":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -344,6 +410,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "w":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -353,6 +421,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Collapsed;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "x":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -362,6 +432,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "y":
                     digit.Piece_1.Visibility = Visibility.Visible;
@@ -371,6 +443,8 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Collapsed;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
                 case "z":
                     digit.Piece_1.Visibility = Visibility.Collapsed;
@@ -380,6 +454,30 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                     digit.Piece_5.Visibility = Visibility.Visible;
                     digit.Piece_6.Visibility = Visibility.Visible;
                     digit.Piece_7.Visibility = Visibility.Visible;
+                    digit.Point_1.Visibility = Visibility.Collapsed;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
+                    break;
+                case ":":
+                    digit.Piece_1.Visibility = Visibility.Collapsed;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Visible;
+                    digit.Point_2.Visibility = Visibility.Visible;
+                    break;
+                case ".":
+                    digit.Piece_1.Visibility = Visibility.Collapsed;
+                    digit.Piece_2.Visibility = Visibility.Collapsed;
+                    digit.Piece_3.Visibility = Visibility.Collapsed;
+                    digit.Piece_4.Visibility = Visibility.Collapsed;
+                    digit.Piece_5.Visibility = Visibility.Collapsed;
+                    digit.Piece_6.Visibility = Visibility.Collapsed;
+                    digit.Piece_7.Visibility = Visibility.Collapsed;
+                    digit.Point_1.Visibility = Visibility.Visible;
+                    digit.Point_2.Visibility = Visibility.Collapsed;
                     break;
 
             }

@@ -58,8 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Modelling\PressureAlertModel.cs" />
+    <Compile Include="Modelling\TemperatureAlertModel.cs" />
+    <Compile Include="Modelling\PressureModel.cs" />
     <Compile Include="Models\modelMain.cs" />
+    <Compile Include="Modelling\IModeller.cs" />
+    <Compile Include="Modelling\ShipModel.cs" />
     <Compile Include="Services\TCPServerService.cs" />
+    <Compile Include="Modelling\TemperatureModel.cs" />
     <Compile Include="ViewModels\vmBase.cs" />
     <Compile Include="ViewModels\vmMain.cs" />
     <Page Include="MainWindow.xaml">

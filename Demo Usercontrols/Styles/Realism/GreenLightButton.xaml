@@ -172,6 +172,12 @@
 
                     </Viewbox>
                     <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Checked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Unchecked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
+                        </EventTrigger>
                         <!--<EventTrigger RoutedEvent="Checked">
                                 <BeginStoryboard>
                                     <Storyboard>

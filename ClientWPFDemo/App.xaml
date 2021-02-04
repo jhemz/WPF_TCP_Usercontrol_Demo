@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/OrangeLightButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/RedLightButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/FlashRedLightButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/GreenLightButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton2.xaml" />

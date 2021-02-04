@@ -52,9 +52,12 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
             _digits.Add(display.Digit_6);
             _digits.Add(display.Digit_7);
             _digits.Add(display.Digit_8);
+            _digits.Add(display.Digit_9);
+            _digits.Add(display.Digit_10);
+            _digits.Add(display.Digit_11);
 
 
-            if (displayString.Length <= 8)
+            if (displayString.Length <= _digits.Count)
             {
                 for (int i = 0; i < _digits.Count; i++)
                 {

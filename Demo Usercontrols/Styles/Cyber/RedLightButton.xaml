@@ -18,7 +18,7 @@
                                     <Grid VerticalAlignment="Top"  Height="6" Margin="1, 0, 1, 0">
 
                                         <TextBlock TextAlignment="Center" FontSize="2" MaxWidth="17" MaxHeight="5"  TextWrapping="Wrap"
-                                           Text="{TemplateBinding Content}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Berlin Sans FB Demi" FontWeight="Normal">
+                                           Text="{TemplateBinding Content}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="OCR A Extended" FontWeight="Normal">
 
                                         </TextBlock>
 

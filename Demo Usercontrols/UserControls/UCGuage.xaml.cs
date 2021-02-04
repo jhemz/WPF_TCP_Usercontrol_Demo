@@ -29,6 +29,34 @@ namespace Demo_Usercontrols
             (this.Content as FrameworkElement).DataContext = this;
         }
 
+        public static readonly DependencyProperty TitleProperty =
+        DependencyProperty.Register("Title", typeof(string), typeof(UCGuage), new
+         PropertyMetadata("Title", new PropertyChangedCallback(OnTitleChanged)));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+        private static void OnTitleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+           
+        }
+
+        public static readonly DependencyProperty UnitsProperty =
+        DependencyProperty.Register("Units", typeof(string), typeof(UCGuage), new
+         PropertyMetadata("Units", new PropertyChangedCallback(OnUnitsChanged)));
+
+        public string Units
+        {
+            get { return (string)GetValue(UnitsProperty); }
+            set { SetValue(UnitsProperty, value); }
+        }
+        private static void OnUnitsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
         public static readonly DependencyProperty ValueProperty =
         DependencyProperty.Register("Value", typeof(int), typeof(UCGuage), new
            PropertyMetadata(0, new PropertyChangedCallback(OnValueChanged)));

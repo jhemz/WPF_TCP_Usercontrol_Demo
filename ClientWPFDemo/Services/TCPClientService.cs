@@ -1,6 +1,8 @@
-﻿using ClientWPFDemo.ViewModels;
+﻿using ClientWPFDemo.Models;
+using ClientWPFDemo.ViewModels;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -64,18 +66,31 @@ namespace ClientWPFDemo.Services
         {
             try
             {
+                Queue queueToPassToServer = new Queue();
                 string json = "";
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     App currentApp = Application.Current as App;
                     vmMain vm = (vmMain)currentApp.MainWindow.DataContext;
-                    json = JsonConvert.SerializeObject(vm.Model);
+
+                    //remove items from the main queue, and pass to a tempory queue to pass over to the server
+                    
+                    while(vm.UpdateQueue.Count > 0)
+                    {
+                        var queueItem = vm.UpdateQueue.Dequeue();
+                        queueToPassToServer.Enqueue(queueItem);
+                    }
+
+                    json = JsonConvert.SerializeObject(queueToPassToServer.ToArray());
                 });
 
+                //add a separator, incase more than 1 queue ends up in the buffer, so we know where one ends
                 string separator = "&";
 
-
-                Message(json + separator);
+                
+                    Message(json + separator);
+                
+                
             }
             catch(Exception ex)
             {
@@ -99,8 +114,27 @@ namespace ClientWPFDemo.Services
 
                 //read reply
                 int k = stream.Read(b, 0, 10000); //code will hang here waiting for a reply, we need a reply from the server to continue, so we know whats going on
-
                 string data = Encoding.Default.GetString(b, 0, k);
+                KeyValuePair<string, object>[][] queueArray = JsonConvert.DeserializeObject<KeyValuePair<string, object>[][]>(data);
+                Queue queue = new Queue();
+                foreach (var queueArrayItem in queueArray)
+                {
+                    queue.Enqueue(queueArrayItem[0]);
+                }
+                Application.Current.Dispatcher.Invoke(() =>
+               {
+                   App currentApp = Application.Current as App;
+                   modelMain model = ((vmMain)currentApp.MainWindow.DataContext).Model;
+                   while (queue.Count > 0)
+                   {
+                       KeyValuePair<string, object> queueValue = (KeyValuePair<string, object>)queue.Dequeue();
+                       model.GetType().GetProperty(queueValue.Key).SetValue(model, queueValue.Value);
+                   }
+
+                   //update ui
+                 ((vmMain)currentApp.MainWindow.DataContext).Model = model;
+               });
+
             }
         }
 

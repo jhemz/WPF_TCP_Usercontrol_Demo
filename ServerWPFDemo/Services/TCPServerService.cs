@@ -2,6 +2,7 @@
 using ServerWPFDemo.Models;
 using ServerWPFDemo.ViewModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -55,20 +56,30 @@ namespace ServerWPFDemo.Services
                             string data = Encoding.Default.GetString(b, 0, k);
                             Console.Write(data + Environment.NewLine);
 
-                            string[] models = Regex.Split(data, "&");
+                            string[] queues = Regex.Split(data, "&");
 
-                            foreach (string item in models.Where(x => x.Length > 0).ToList())
+                            KeyValuePair<string, object>[] queueArray = null;
+                            Queue queue = new Queue();
+
+                            //process the queue that was sent and update
+                            foreach (string item in queues.Where(x => x.Length > 0 && x != "[]").ToList())
                             {
-                                modelMain model = JsonConvert.DeserializeObject<modelMain>(item);
-                                Application.Current.Dispatcher.Invoke(() =>
+                                queueArray = JsonConvert.DeserializeObject<KeyValuePair<string, object>[]>(item);
+                                foreach(var queueArrayItem in queueArray)
                                 {
-                                    App currentApp = Application.Current as App;
-                                    ((vmMain)currentApp.MainWindow.DataContext).Model = model;
-                                });
+                                    queue.Enqueue(queueArrayItem);
+                                }
                             }
 
-                            //when we have read a packet, respond
-                            byte[] responseMessageBytes = Encoding.Default.GetBytes("Hey there!");
+                            Queue returnQueue = null;
+                            await Application.Current.Dispatcher.Invoke(async () =>
+                            {
+                                App currentApp = Application.Current as App;
+                                returnQueue = await currentApp.ShipModel.Process(queue);
+                            });
+
+                            //when we have read in a model, respond with the mofified model
+                            byte[] responseMessageBytes = Encoding.Default.GetBytes(JsonConvert.SerializeObject(returnQueue.ToArray()));
                             socket.Send(responseMessageBytes);
 
                             //re-read while data is available
@@ -78,7 +89,7 @@ namespace ServerWPFDemo.Services
                         socket.Close();
                         Console.Write("Server listener socket closed.." + Environment.NewLine);
                     }
-                    catch
+                    catch(Exception ex)
                     {
                         //disconneced
                         Application.Current.Dispatcher.Invoke(() =>

@@ -172,23 +172,13 @@
 
                     </Viewbox>
                     <ControlTemplate.Triggers>
-                        <!--<EventTrigger RoutedEvent="Checked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames
-                                            AutoReverse="True"
-                                            RepeatBehavior="Forever"
-                                        Storyboard.TargetName="glow"
-                                        Storyboard.TargetProperty="Radius"
-                                        Duration="0:0:2">
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0.0" />
-                                            <LinearDoubleKeyFrame Value="8" KeyTime="0:0:1" />
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="Unchecked">
+                        <EventTrigger RoutedEvent="Checked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Unchecked">
+                            <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
+                        </EventTrigger>
+                        <!--<EventTrigger RoutedEvent="Unchecked">
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames
@@ -205,6 +195,7 @@
                             </EventTrigger>-->
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="button" Property="Fill" Value ="#FFFF9608"/>
+                            
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="button" Property="Fill" Value ="#FF664C25"/>

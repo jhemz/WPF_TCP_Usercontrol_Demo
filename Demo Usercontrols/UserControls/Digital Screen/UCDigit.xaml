@@ -5,62 +5,147 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" >
     <Grid Height="20" Width="10">
-        <Polygon Points="1,10 2.5,9 2.5,2.1 1,1" x:Name="Piece_1" >
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="9,10 7.5,9 7.5,2.1 9,1"   x:Name="Piece_2" >
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="1,19 2.5,17.9 2.5,11 1,10"   x:Name="Piece_3">
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="9,19 7.5,17.9 7.5,11 9,10"   x:Name="Piece_4">
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6"   x:Name="Piece_5">
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1"   x:Name="Piece_6">
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
-        <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18"   x:Name="Piece_7">
-            <Polygon.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF890F0F" Offset="1"/>
-                    <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
-                </RadialGradientBrush>
-            </Polygon.Fill>
-        </Polygon>
+
+        <Ellipse Height="2" Width="2" Margin="0, 13, 0, 0" Fill="#197C0F0F"/>
+        <Grid x:Name="Point_1">
+            <Ellipse  Fill="Red" Height="2" Width="2" Margin="0, 13, 0, 0">
+                <Ellipse.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse Height="2" Width="2" Margin="0, 13, 0, 0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+
+        <Ellipse Height="2" Width="2" Margin="0, 5, 0, 0" Fill="#197C0F0F"/>
+        <Grid x:Name="Point_2">
+            <Ellipse  Fill="Red" Height="2" Width="2" Margin="0, 5, 0, 0">
+                <Ellipse.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse Height="2" Width="2" Margin="0, 5, 0, 0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+        <Grid x:Name="Piece_1">
+            <Polygon Points="1,10 2.5,9 2.5,2.1 1,1" Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="1,10 2.5,9 2.5,2.1 1,1"  >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid x:Name="Piece_2">
+            <Polygon Points="9,10 7.5,9 7.5,2.1 9,1" Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="9,10 7.5,9 7.5,2.1 9,1">
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+
+            </Polygon>
+        </Grid>
+        <Grid x:Name="Piece_3">
+            <Polygon Points="1,19 2.5,17.9 2.5,11 1,10" Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="1,19 2.5,17.9 2.5,11 1,10"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid   x:Name="Piece_4">
+            <Polygon Points="9,19 7.5,17.9 7.5,11 9,10" Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="9,19 7.5,17.9 7.5,11 9,10" >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid  x:Name="Piece_5">
+            <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6" Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6"  >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid x:Name="Piece_6">
+            <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1"  Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid x:Name="Piece_7">
+            <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18"  Fill="Red" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF890F0F" Offset="1"/>
+                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+      
 
         <Polygon Points="1,10 2.5,9 2.5,2.1 1,1" Fill="#337C0F0F" />
         <Polygon Points="9,10 7.5,9 7.5,2.1 9,1" Fill="#337C0F0F" />
