@@ -24,7 +24,7 @@
                 </Border.Background>
             </Border>
             <!--End of Gauge weathered Background-->
-            
+
             <!--Scale Labels-->
             <TextBlock Text="{Binding MinValue}" TextWrapping="Wrap"  TextAlignment="Left" HorizontalAlignment="Left"
                            Margin="75, 175, 0, 0"
@@ -49,7 +49,7 @@
                 </TextBlock.Foreground>
             </TextBlock>
             <!--End of Scale Labels-->
-            
+
             <!--Gauge decorative labels-->
             <StackPanel Orientation="Vertical" Margin="0, 0, 0, 70" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                 <TextBlock Text="{Binding Title}" TextWrapping="Wrap"  TextAlignment="Center" 
@@ -114,7 +114,7 @@
                 </usercontrols:Arc.RenderTransform>
             </usercontrols:Arc>
             <!--End of Gauge Scale-->
-            
+
             <!--Needle-->
             <Grid Margin="0, 50, 0, 0" Height="350" Width="400">
                 <Ellipse MinHeight="16"  Name="ellipse2" Fill="Black"
@@ -146,7 +146,7 @@
                 </Grid.RenderTransform>
             </Grid>
             <!--End of Needle-->
-            
+
             <!--Inside Shadow-->
             <Border Width="400" Height="400" CornerRadius="200" >
                 <Border.Background>
@@ -162,9 +162,9 @@
                 </Border.Effect>
             </Border>
             <!--End of  Inside Shadow-->
-            
+
             <!--Plastic Surround-->
-            <Border Width="400" Height="400" CornerRadius="200" BorderThickness="3">
+            <Border x:Name="Surround" Width="400" Height="400" CornerRadius="200" BorderThickness="3">
                 <Border.Background>
                     <RadialGradientBrush>
                         <GradientStop Color="#FF2E2E2E" Offset="0.993"/>
@@ -186,7 +186,7 @@
                 </Border.Effect>
             </Border>
             <!--End of Plastic Surround-->
-            
+
             <!--Reflection-->
             <Border Background="Transparent" CornerRadius="300" Width="310" Height="310" ClipToBounds="True">
                 <Border.Clip>
@@ -204,74 +204,168 @@
                 </Image>
             </Border>
             <!--End of Reflection-->
-            
+
             <!--Screws-->
-            <Border CornerRadius="8" Width="16" Height="16" Margin="0, -365, 0, 0">
-                <Border.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FF383838" Offset="0.997"/>
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FF595959" Offset="0.604"/>
-                        <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
-                    </RadialGradientBrush>
-                </Border.Background>
-                <Grid>
-                    <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Grid.RenderTransform>
-                        <RotateTransform Angle="20" CenterX="8" CenterY="8"/>
-                    </Grid.RenderTransform>
-                </Grid>
-               
-                
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="2"/>
-                </Border.Effect>
-            </Border>
-            <Border CornerRadius="8" Width="16" Height="16" Margin="-330, 170, 0, 0">
-                <Border.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FF383838" Offset="0.997"/>
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FF595959" Offset="0.604"/>
-                        <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
-                    </RadialGradientBrush>
-                </Border.Background>
-                <Grid>
-                    <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Grid.RenderTransform>
-                        <RotateTransform Angle="10" CenterX="8" CenterY="8"/>
-                    </Grid.RenderTransform>
-                </Grid>
+
+            <Grid x:Name="ScrewsRound">
+                <Border CornerRadius="8" Width="16" Height="16" Margin="0, -365, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="20" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
 
 
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="2"/>
-                </Border.Effect>
-            </Border>
-            <Border CornerRadius="8" Width="16" Height="16" Margin="330, 170, 0, 0">
-                <Border.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FF383838" Offset="0.997"/>
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FF595959" Offset="0.604"/>
-                        <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
-                    </RadialGradientBrush>
-                </Border.Background>
-                <Grid>
-                    <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Grid.RenderTransform>
-                        <RotateTransform Angle="5" CenterX="8" CenterY="8"/>
-                    </Grid.RenderTransform>
-                </Grid>
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="8" Width="16" Height="16" Margin="-330, 170, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="10" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
 
 
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="2"/>
-                </Border.Effect>
-            </Border>
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="8" Width="16" Height="16" Margin="330, 170, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="5" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
+
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+            </Grid>
+            <Grid x:Name="ScrewsSquare" Visibility="Hidden">
+                <Border CornerRadius="8" Width="16" Height="16" Margin="350, -365, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="20" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
+
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="8" Width="16" Height="16" Margin="-350, -365, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="20" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
+
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="8" Width="16" Height="16" Margin="-350, 365, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="10" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
+
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="8" Width="16" Height="16" Margin="350, 365, 0, 0">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF383838" Offset="0.997"/>
+                            <GradientStop Color="White"/>
+                            <GradientStop Color="#FF595959" Offset="0.604"/>
+                            <GradientStop Color="#FFA2A2A2" Offset="0.261"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border Background="#FF4F4F4F" Width="10" Height="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Background="#FF4F4F4F" Width="2" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="5" CenterX="8" CenterY="8"/>
+                        </Grid.RenderTransform>
+                    </Grid>
+
+
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="2"/>
+                    </Border.Effect>
+                </Border>
+            </Grid>
+
             <!--End of Screws-->
         </Grid>
 

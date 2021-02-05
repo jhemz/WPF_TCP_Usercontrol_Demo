@@ -4,13 +4,14 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace ClientWPFDemo.Services
 {
@@ -19,8 +20,25 @@ namespace ClientWPFDemo.Services
         private TcpClient client;
         private NetworkStream stream;
         private bool connected;
-        private Timer timer;
+        private DispatcherTimer timer;
         private int port = 100;
+
+        private int time = int.Parse(DateTime.Now.ToString("ss"));
+        private int frameRate = 0;
+        private int currentFrameRate = 0;
+
+        private BackgroundWorker backgroundWorker;
+
+        public TCPClientService()
+        {
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += new DoWorkEventHandler(Sync);
+        }
+
+       
 
         public void Disconnect()
         {
@@ -54,15 +72,19 @@ namespace ClientWPFDemo.Services
 
         public void Start()
         {
-            // Create a timer with a 0.1 second interval.
-            timer = new Timer(100);
-            // Hook up the Elapsed event for the timer. 
-            timer.Elapsed += SendUpdate;
-            timer.AutoReset = true;
-            timer.Enabled = true;
+            timer.Start();
         }
 
-        private void SendUpdate(object sender, ElapsedEventArgs e)
+        private void TimerTick(object sender, EventArgs e)
+        {
+            if (backgroundWorker.IsBusy != true)
+            {
+                // Start the asynchronous operation.
+                backgroundWorker.RunWorkerAsync();
+            }
+        }
+
+        private void Sync(object sender, DoWorkEventArgs e)
         {
             try
             {
@@ -74,8 +96,8 @@ namespace ClientWPFDemo.Services
                     vmMain vm = (vmMain)currentApp.MainWindow.DataContext;
 
                     //remove items from the main queue, and pass to a tempory queue to pass over to the server
-                    
-                    while(vm.UpdateQueue.Count > 0)
+
+                    while (vm.UpdateQueue.Count > 0)
                     {
                         var queueItem = vm.UpdateQueue.Dequeue();
                         queueToPassToServer.Enqueue(queueItem);
@@ -87,22 +109,35 @@ namespace ClientWPFDemo.Services
                 //add a separator, incase more than 1 queue ends up in the buffer, so we know where one ends
                 string separator = "&";
 
-                
-                    Message(json + separator);
-                
-                
+
+                Message(json + separator);
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Disconnect();
             }
-           
+
         }
+       
 
         private void Message(string message)
         {
             if (client != null)
             {
+                //calculate framerate
+                if (int.Parse(DateTime.Now.ToString("ss")) != time) //if we are the next second
+                {
+                    frameRate = currentFrameRate;
+                    currentFrameRate = 1;
+                }
+                else
+                {
+                    currentFrameRate += 1; //else add another frame to the current second
+                }
+                time = int.Parse(DateTime.Now.ToString("ss"));
+
                 //convert string message to byte array
                 byte[] messageBytes = Encoding.Default.GetBytes(message);
 
@@ -115,11 +150,11 @@ namespace ClientWPFDemo.Services
                 //read reply
                 int k = stream.Read(b, 0, 10000); //code will hang here waiting for a reply, we need a reply from the server to continue, so we know whats going on
                 string data = Encoding.Default.GetString(b, 0, k);
-                KeyValuePair<string, object>[][] queueArray = JsonConvert.DeserializeObject<KeyValuePair<string, object>[][]>(data);
+                KeyValuePair<string, object>[] queueArray = JsonConvert.DeserializeObject<KeyValuePair<string, object>[]>(data);
                 Queue queue = new Queue();
                 foreach (var queueArrayItem in queueArray)
                 {
-                    queue.Enqueue(queueArrayItem[0]);
+                    queue.Enqueue(queueArrayItem);
                 }
                 Application.Current.Dispatcher.Invoke(() =>
                {
@@ -130,10 +165,11 @@ namespace ClientWPFDemo.Services
                        KeyValuePair<string, object> queueValue = (KeyValuePair<string, object>)queue.Dequeue();
                        model.GetType().GetProperty(queueValue.Key).SetValue(model, queueValue.Value);
                    }
-
+                   model.FrameRate = frameRate;
                    //update ui
                  ((vmMain)currentApp.MainWindow.DataContext).Model = model;
                });
+              
 
             }
         }

@@ -46,6 +46,8 @@ namespace ClientWPFDemo.ViewModels
             {
                 model = value;
                 OnPropertyChanged();
+                OnPropertyChanged("FrameRate");
+                OnPropertyChanged("CommandDisplay");
                 OnPropertyChanged("Temperature");
                 OnPropertyChanged("Connected");
                 OnPropertyChanged("IncreaseTemp");
@@ -59,7 +61,20 @@ namespace ClientWPFDemo.ViewModels
                 OnPropertyChanged("Button6");
             }
         }
-
+        
+        
+        public int FrameRate
+        {
+            get
+            {
+                return Model.FrameRate;
+            }
+            set
+            {
+                Model.FrameRate = value;
+                OnPropertyChanged();
+            }
+        }
         public string time = "";
         public string Time
         {
@@ -74,6 +89,20 @@ namespace ClientWPFDemo.ViewModels
             }
         }
 
+       
+        public string CommandDisplay
+        {
+            get
+            {
+                return Model.CommandDisplay;
+            }
+            set
+            {
+                Model.CommandDisplay = value;
+                OnPropertyChanged();
+            }
+        }
+
         public double Temperature
         {
             get
@@ -83,7 +112,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Temperature = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("Temperature", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Temperature", value));
                 OnPropertyChanged();
             }
         }
@@ -97,7 +126,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.MaxTemperature = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("MaxTemperature", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("MaxTemperature", value));
                 OnPropertyChanged();
             }
         }
@@ -111,7 +140,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.MinTemperature = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("MinTemperature", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("MinTemperature", value));
                 OnPropertyChanged();
             }
         }
@@ -125,7 +154,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.DangerThresholdTemperature = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("DangerThresholdTemperature", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("DangerThresholdTemperature", value));
                 OnPropertyChanged();
             }
         }
@@ -152,7 +181,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Pressure = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("Pressure", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Pressure", value));
                 OnPropertyChanged();
             }
         }
@@ -166,7 +195,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.MaxPressure = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("MaxPressure", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("MaxPressure", value));
                 OnPropertyChanged();
             }
         }
@@ -180,7 +209,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.MinPressure = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("MinPressure", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("MinPressure", value));
                 OnPropertyChanged();
             }
         }
@@ -194,7 +223,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.DangerThresholdPressure = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, double>("DangerThresholdPressure", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("DangerThresholdPressure", value));
                 OnPropertyChanged();
             }
         }
@@ -221,7 +250,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Connected = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("Connected", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Connected", value));
                 OnPropertyChanged();
             }
         }
@@ -235,7 +264,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.IncreaseTemp = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("IncreaseTemp", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("IncreaseTemp", value));
                 if (DecreaseTemp == value)
                 {
                     DecreaseTemp = !value;
@@ -253,7 +282,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.DecreaseTemp = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("DecreaseTemp", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("DecreaseTemp", value));
                 if (IncreaseTemp == value)
                 {
                     IncreaseTemp = !value;
@@ -271,7 +300,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Button3 = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("Button3", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Button3", value));
                 OnPropertyChanged();
             }
         }
@@ -285,7 +314,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Button4 = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("Button4", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Button4", value));
                 OnPropertyChanged();
             }
         }
@@ -299,7 +328,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Button5 = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("Button5", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Button5", value));
                 OnPropertyChanged();
             }
         }
@@ -313,7 +342,7 @@ namespace ClientWPFDemo.ViewModels
             set
             {
                 Model.Button6 = value;
-                UpdateQueue.Enqueue(new KeyValuePair<string, bool>("Button6", value));
+                UpdateQueue.Enqueue(new KeyValuePair<string, object>("Button6", value));
                 OnPropertyChanged();
             }
         }

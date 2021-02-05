@@ -20,6 +20,7 @@ namespace ServerWPFDemo.ViewModels
             set
             {
                 model = value;
+                OnPropertyChanged("CommandDisplay");
                 OnPropertyChanged("Temperature");
                 OnPropertyChanged("Connected");
                 OnPropertyChanged("IncreaseTemp");
@@ -33,6 +34,20 @@ namespace ServerWPFDemo.ViewModels
                 OnPropertyChanged("Button6");
             }
         }
+
+        public string CommandDisplay
+        {
+            get
+            {
+                return Model.CommandDisplay;
+            }
+            set
+            {
+                Model.CommandDisplay = value;
+                OnPropertyChanged();
+            }
+        }
+
         public double Temperature
         {
             get

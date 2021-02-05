@@ -41,45 +41,45 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
         {
             UCDigitalScreen display = d as UCDigitalScreen;
 
-            string displayString = e.NewValue.ToString();
-
-            List<UCDigit> _digits; _digits = new List<UCDigit>();
-            _digits.Add(display.Digit_1);
-            _digits.Add(display.Digit_2);
-            _digits.Add(display.Digit_3);
-            _digits.Add(display.Digit_4);
-            _digits.Add(display.Digit_5);
-            _digits.Add(display.Digit_6);
-            _digits.Add(display.Digit_7);
-            _digits.Add(display.Digit_8);
-            _digits.Add(display.Digit_9);
-            _digits.Add(display.Digit_10);
-            _digits.Add(display.Digit_11);
-
-
-            if (displayString.Length <= _digits.Count)
+            if (e.NewValue != null)
             {
-                for (int i = 0; i < _digits.Count; i++)
-                {
+                string displayString = e.NewValue.ToString();
 
-                    _digits[i].DisplayDigit = "";
-                }
+                List<UCDigit> _digits; _digits = new List<UCDigit>();
+                _digits.Add(display.Digit_1);
+                _digits.Add(display.Digit_2);
+                _digits.Add(display.Digit_3);
+                _digits.Add(display.Digit_4);
+                _digits.Add(display.Digit_5);
+                _digits.Add(display.Digit_6);
+                _digits.Add(display.Digit_7);
+                _digits.Add(display.Digit_8);
+                _digits.Add(display.Digit_9);
+                _digits.Add(display.Digit_10);
+                _digits.Add(display.Digit_11);
 
-                for (int i = 0; i < displayString.Length; i++)
+
+                if (displayString.Length <= _digits.Count)
                 {
-                    string value = displayString.Substring(i, 1);
-                    _digits[displayString.Length - 1 - i].DisplayDigit = value;
+                    for (int i = 0; i < _digits.Count; i++)
+                    {
+
+                        _digits[i].DisplayDigit = "";
+                    }
+
+                    for (int i = 0; i < displayString.Length; i++)
+                    {
+                        string value = displayString.Substring(i, 1);
+                        _digits[displayString.Length - 1 - i].DisplayDigit = value;
+                    }
                 }
-            }
-            else
-            {
-                _digits[0].DisplayDigit = "R";
-                _digits[1].DisplayDigit = "R";
-                _digits[2].DisplayDigit = "E";
+                else
+                {
+                    _digits[0].DisplayDigit = "R";
+                    _digits[1].DisplayDigit = "R";
+                    _digits[2].DisplayDigit = "E";
+                }
             }
         }
-
-
-
     }
 }

@@ -18,7 +18,7 @@ namespace ServerWPFDemo.Modelling
             {
                 model.DangerTemperatureAlert = false;
             }
-            queue.Enqueue(new KeyValuePair<string, bool>("DangerTemperatureAlert", model.DangerTemperatureAlert));
+            queue.Enqueue(new KeyValuePair<string, object>("DangerTemperatureAlert", model.DangerTemperatureAlert));
 
 
             return queue;

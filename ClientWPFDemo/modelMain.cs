@@ -8,6 +8,10 @@ namespace ClientWPFDemo.Models
 {
     public class modelMain
     {
+        public string CommandDisplay { get; set; }
+
+        public int FrameRate { get; set; }
+
         public double Temperature { get; set; }
         public double MaxTemperature { get; set; }
         public double MinTemperature { get; set; }

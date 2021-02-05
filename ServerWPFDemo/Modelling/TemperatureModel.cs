@@ -20,7 +20,7 @@ namespace ServerWPFDemo.Modelling
                 {
                     model.Temperature += 1;
                 }
-                queue.Enqueue(new KeyValuePair<string, double>("Temperature", model.Temperature));
+                queue.Enqueue(new KeyValuePair<string, object>("Temperature", model.Temperature));
             }
             else if (model.DecreaseTemp)
             {
@@ -28,7 +28,7 @@ namespace ServerWPFDemo.Modelling
                 {
                     model.Temperature -= 1;
                 }
-                queue.Enqueue(new KeyValuePair<string, double>("Temperature", model.Temperature));
+                queue.Enqueue(new KeyValuePair<string, object>("Temperature", model.Temperature));
             }
             return queue;
         }

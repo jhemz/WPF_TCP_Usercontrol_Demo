@@ -65,17 +65,17 @@ namespace ServerWPFDemo.Services
                             foreach (string item in queues.Where(x => x.Length > 0 && x != "[]").ToList())
                             {
                                 queueArray = JsonConvert.DeserializeObject<KeyValuePair<string, object>[]>(item);
-                                foreach(var queueArrayItem in queueArray)
+                                foreach (var queueArrayItem in queueArray)
                                 {
                                     queue.Enqueue(queueArrayItem);
                                 }
                             }
 
                             Queue returnQueue = null;
-                            await Application.Current.Dispatcher.Invoke(async () =>
+                            Application.Current.Dispatcher.Invoke(() =>
                             {
                                 App currentApp = Application.Current as App;
-                                returnQueue = await currentApp.ShipModel.Process(queue);
+                                returnQueue = currentApp.ShipModel.Process(queue);
                             });
 
                             //when we have read in a model, respond with the mofified model
@@ -89,7 +89,7 @@ namespace ServerWPFDemo.Services
                         socket.Close();
                         Console.Write("Server listener socket closed.." + Environment.NewLine);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         //disconneced
                         Application.Current.Dispatcher.Invoke(() =>

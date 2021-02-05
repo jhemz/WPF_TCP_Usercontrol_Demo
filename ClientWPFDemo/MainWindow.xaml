@@ -11,6 +11,11 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+
+        <Grid Background="Black"  VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Label Content="{Binding FrameRate}" Foreground="White"/>
+        </Grid>
+        
         <StackPanel Orientation="Horizontal">
 
 
@@ -31,7 +36,7 @@
                             <GradientStop Color="#FF767373" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.BorderBrush>
-                    <digital_screen:UCDigitalScreen DisplayValue="{Binding Time}" VerticalAlignment="Center"/>
+                    <digital_screen:UCDigitalScreen DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
                 </Border>
 
                 <StackPanel Orientation="Horizontal">
@@ -55,13 +60,13 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
+                <demo_usercontrols:UCGuage Type="Round" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
                 <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerTemperatureAlert}" Content="Temperature Warning" Margin="5, 50, 5, 5"
             Style="{StaticResource FlashRedLightButton}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage Title="PRESSURE" Units="Pa" MaxValue="{Binding MaxPressure}" MinValue="{Binding MinPressure}" Value="{Binding Pressure}"/>
+                <demo_usercontrols:UCGuage Type="Square"  Title="PRESSURE" Units="Pa" MaxValue="{Binding MaxPressure}" MinValue="{Binding MinPressure}" Value="{Binding Pressure}"/>
                 <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerPressureAlert}" Content="Pressure Warning" Margin="5, 50, 5, 5"
             Style="{StaticResource FlashRedLightButton}"/>
             </StackPanel>

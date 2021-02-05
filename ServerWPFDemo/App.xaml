@@ -6,11 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Cyber/OrangeLightButton.xaml" />
-                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Cyber/RedLightButton.xaml" />
-                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Cyber/GreenLightButton.xaml" />
-                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Cyber/SwitchButton.xaml" />
-                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Cyber/SwitchButton2.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/OrangeLightButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/RedLightButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/GreenLightButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton2.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 
 namespace Demo_Usercontrols
 {
+    public enum GaugeType { Round, Square }
+
     /// <summary>
     /// Interaction logic for UCGuage.xaml
     /// </summary>
@@ -27,6 +29,34 @@ namespace Demo_Usercontrols
             InitializeComponent();
 
             (this.Content as FrameworkElement).DataContext = this;
+        }
+
+        public static readonly DependencyProperty TypeProperty =
+       DependencyProperty.Register("Type", typeof(GaugeType), typeof(UCGuage), new
+        PropertyMetadata(GaugeType.Round, new PropertyChangedCallback(OnTypeChanged)));
+
+        public GaugeType Type
+        {
+            get { return (GaugeType)GetValue(TypeProperty); }
+            set { SetValue(TypeProperty, value); }
+        }
+        private static void OnTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UCGuage gauge = d as UCGuage;
+            GaugeType type = (GaugeType)e.NewValue;
+            switch (type)
+            {
+                case GaugeType.Round:
+                    gauge.Surround.CornerRadius = new CornerRadius(200);
+                    gauge.ScrewsRound.Visibility = Visibility.Visible;
+                    gauge.ScrewsSquare.Visibility = Visibility.Hidden;
+                    break;
+                case GaugeType.Square:
+                    gauge.Surround.CornerRadius = new CornerRadius(20);
+                    gauge.ScrewsRound.Visibility = Visibility.Hidden;
+                    gauge.ScrewsSquare.Visibility = Visibility.Visible;
+                    break;
+            }
         }
 
         public static readonly DependencyProperty TitleProperty =
@@ -105,12 +135,5 @@ namespace Demo_Usercontrols
             get { return (int)GetValue(MaxValueProperty); }
             set { SetValue(MaxValueProperty, value); }
         }
-
-
-
-
-      
-
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ServerWPFDemo.Models;
 using ServerWPFDemo.ViewModels;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,46 +21,65 @@ namespace ServerWPFDemo.Modelling
             modelClasses.Add(new PressureAlertModel());
         }
 
-        public async Task<Queue> Process(Queue queue)
+        public Queue Process(Queue queue)
         {
             //initilaize the return object
-            Queue returnQueue = new Queue();
+            Queue returnQueue;
 
-            //dispatch as we need ui items and we are in a thread
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                App currentApp = Application.Current as App;
+            //initilaize the updateQueue object
+            Queue updateQueue;
 
-                //update model based on queue
-                modelMain model = ((vmMain)currentApp.MainWindow.DataContext).Model;
+            App currentApp = Application.Current as App;
+            modelMain model = ((vmMain)currentApp.MainWindow.DataContext).Model;
 
-                while (queue.Count > 0)
-                {
-                    KeyValuePair<string, object> queueValue = (KeyValuePair<string, object>)queue.Dequeue();
-                    model.GetType().GetProperty(queueValue.Key).SetValue(model, queueValue.Value);
-                }
+            //UPDATE LOCAL MODEL  - based on whats in the queue
+            UpdateModel(queue, model, out model, out queue);
 
-                //*****
-                //this may get slow, and is technically running on the ui thread, so not great to do here
-                //*****
 
-                //calculations to modify model
-                foreach (IModeller modeller in modelClasses)
-                {
-                    Queue temperatureQueue = modeller.Process(model);
-                    foreach (var item in temperatureQueue)
-                    {
-                        returnQueue.Enqueue(temperatureQueue);
-                    }
-                }
+            //CALCULATE CHANGES TO MODEL
+            CalculateChanges((List<IModeller>)modelClasses, model, out updateQueue);
 
-                //update ui
-                 ((vmMain)currentApp.MainWindow.DataContext).Model = model;
 
-            });
+            //RE-UPDATE LOCAL MODEL
+            UpdateModel(updateQueue, model, out model, out returnQueue);
+
+
+            //check for any commands issued by server to send to client, and add them to return queue
+            returnQueue.Enqueue(new KeyValuePair<string, object>("CommandDisplay", DateTime.Now.ToString("HH:mm:ss")));
+
+            //UPDATE LOCAL UI - pass the refreshed model to the viewmodel for the view
+            ((vmMain)currentApp.MainWindow.DataContext).Model = model;
+
 
             //return any changes back to tcp service to return to client
             return returnQueue;
+        }
+
+        private void UpdateModel(Queue queue, modelMain model, out modelMain returnModel, out Queue returnQueue)
+        {
+            returnQueue = new Queue();
+            returnModel = model;
+            while (queue.Count > 0)
+            {
+                KeyValuePair<string, object> queueValue = (KeyValuePair<string, object>)queue.Dequeue();
+                returnModel.GetType().GetProperty(queueValue.Key).SetValue(returnModel, queueValue.Value);
+                returnQueue.Enqueue(queueValue);
+            }
+        }
+
+        private void CalculateChanges(List<IModeller> modelClasses, modelMain model, out Queue returnQueue)
+        {
+            returnQueue = new Queue();
+
+            foreach (IModeller modeller in modelClasses)
+            {
+                Queue processedQueue = modeller.Process(model);
+                while (processedQueue.Count > 0)
+                {
+                    var queueValue = processedQueue.Dequeue();
+                    returnQueue.Enqueue(queueValue);
+                }
+            }
         }
     }
 }

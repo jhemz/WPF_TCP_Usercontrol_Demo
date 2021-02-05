@@ -23,7 +23,7 @@ namespace ServerWPFDemo.Modelling
             {
                 model.DangerPressureAlert = false;
             }
-            queue.Enqueue(new KeyValuePair<string, bool>("DangerPressureAlert", model.DangerPressureAlert));
+            queue.Enqueue(new KeyValuePair<string, object>("DangerPressureAlert", model.DangerPressureAlert));
 
 
             return queue;
