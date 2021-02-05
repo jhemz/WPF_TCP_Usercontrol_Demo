@@ -60,13 +60,22 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage Type="Round" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
+                <demo_usercontrols:UCGuage 
+                    CrackIsVisible="{Binding TemperatureGaugeCracked}"
+                    ScaleType="Scale1" DialBackground="Weathered"  Type="Round" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
                 <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerTemperatureAlert}" Content="Temperature Warning" Margin="5, 50, 5, 5"
             Style="{StaticResource FlashRedLightButton}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage Type="Square"  Title="PRESSURE" Units="Pa" MaxValue="{Binding MaxPressure}" MinValue="{Binding MinPressure}" Value="{Binding Pressure}"/>
+                <demo_usercontrols:UCGuage 
+                    CrackIsVisible="{Binding PressureGaugeCracked}"
+                    Zone5="Red" Zone4="Red" Zone3="Orange" Zone2="Green" Zone1="Green" 
+                    DialBackground="Clean" Type="Square"  
+                    Title="PRESSURE" Units="Pa"
+                    MaxValue="{Binding MaxPressure}"
+                    MinValue="{Binding MinPressure}"
+                    Value="{Binding Pressure}"/>
                 <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerPressureAlert}" Content="Pressure Warning" Margin="5, 50, 5, 5"
             Style="{StaticResource FlashRedLightButton}"/>
             </StackPanel>

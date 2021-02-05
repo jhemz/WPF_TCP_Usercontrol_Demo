@@ -21,7 +21,6 @@ namespace ClientWPFDemo.ViewModels
             MinPressure = 0;
             MaxPressure = 300;
             DangerThresholdPressure = 130;
-
             //timer = new DispatcherTimer();
             //timer.Tick += new EventHandler(UpdateTime);
             //timer.Interval = new TimeSpan(0, 0, 1);
@@ -61,8 +60,35 @@ namespace ClientWPFDemo.ViewModels
                 OnPropertyChanged("Button6");
             }
         }
-        
-        
+
+        public bool temperatureGaugeCracked = false;
+        public bool TemperatureGaugeCracked
+        {
+            get
+            {
+                return temperatureGaugeCracked;
+            }
+            set
+            {
+                temperatureGaugeCracked = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool pressureGaugeCracked = false;
+        public bool PressureGaugeCracked
+        {
+            get
+            {
+                return pressureGaugeCracked;
+            }
+            set
+            {
+                pressureGaugeCracked = value;
+                OnPropertyChanged();
+            }
+        }
+
         public int FrameRate
         {
             get
@@ -113,6 +139,10 @@ namespace ClientWPFDemo.ViewModels
             {
                 Model.Temperature = value;
                 UpdateQueue.Enqueue(new KeyValuePair<string, object>("Temperature", value));
+                if (value == MaxTemperature)
+                {
+                    TemperatureGaugeCracked = true;
+                }
                 OnPropertyChanged();
             }
         }
@@ -182,6 +212,10 @@ namespace ClientWPFDemo.ViewModels
             {
                 Model.Pressure = value;
                 UpdateQueue.Enqueue(new KeyValuePair<string, object>("Pressure", value));
+                if (value == MaxPressure)
+                {
+                    PressureGaugeCracked  = true;
+                }
                 OnPropertyChanged();
             }
         }

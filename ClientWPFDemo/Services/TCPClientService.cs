@@ -1,4 +1,5 @@
-﻿using ClientWPFDemo.Models;
+﻿using ClientWPFDemo.EventHandlers;
+using ClientWPFDemo.Models;
 using ClientWPFDemo.ViewModels;
 using Newtonsoft.Json;
 using System;
@@ -28,6 +29,8 @@ namespace ClientWPFDemo.Services
         private int currentFrameRate = 0;
 
         private BackgroundWorker backgroundWorker;
+
+        public event UpdateModelHandler UpdateModelEvent;
 
         public TCPClientService()
         {
@@ -156,21 +159,15 @@ namespace ClientWPFDemo.Services
                 {
                     queue.Enqueue(queueArrayItem);
                 }
+
                 Application.Current.Dispatcher.Invoke(() =>
                {
-                   App currentApp = Application.Current as App;
-                   modelMain model = ((vmMain)currentApp.MainWindow.DataContext).Model;
-                   while (queue.Count > 0)
+                   UpdateModelEvent e1 = new UpdateModelEvent(queue, frameRate);
+                   if (UpdateModelEvent != null)
                    {
-                       KeyValuePair<string, object> queueValue = (KeyValuePair<string, object>)queue.Dequeue();
-                       model.GetType().GetProperty(queueValue.Key).SetValue(model, queueValue.Value);
+                       UpdateModelEvent(this, e1);
                    }
-                   model.FrameRate = frameRate;
-                   //update ui
-                 ((vmMain)currentApp.MainWindow.DataContext).Model = model;
                });
-              
-
             }
         }
 

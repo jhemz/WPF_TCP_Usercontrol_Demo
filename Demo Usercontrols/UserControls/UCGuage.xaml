@@ -8,7 +8,7 @@
 
         <Grid Visibility="Visible">
             <!--Gauge weathered Background-->
-            <Border CornerRadius="200, 200, 200, 200" MinHeight="16"  Name="ellipse1" BorderThickness="5" MinWidth="16" Height="315" Width="315" >
+            <Border CornerRadius="200, 200, 200, 200" MinHeight="16"  x:Name="background1" BorderThickness="5" MinWidth="16" Height="315" Width="315" >
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -19,6 +19,21 @@
                     <RadialGradientBrush>
                         <GradientStop Color="#FFF3F3F3" Offset="0.519"/>
                         <GradientStop Color="#FFB7A976" Offset="0.978"/>
+                        <GradientStop Color="White"/>
+                    </RadialGradientBrush>
+                </Border.Background>
+            </Border>
+            <Border Visibility="Hidden" CornerRadius="200, 200, 200, 200" MinHeight="16"  x:Name="background2" BorderThickness="5" MinWidth="16" Height="315" Width="315" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF767676" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFF3F3F3" Offset="0.519"/>
+                        <GradientStop Color="#FF828180" Offset="0.978"/>
                         <GradientStop Color="White"/>
                     </RadialGradientBrush>
                 </Border.Background>
@@ -76,31 +91,88 @@
             <!--End of Gauge decorative labels-->
 
             <!--Gauge Scale-->
-            <usercontrols:Arc Center="200, 200" 
+            <Grid >
+              
+                <Grid>
+                   
+                    <usercontrols:Arc Center="200, 200"  x:Name="zone1"
+                              StrokeThickness="7"
+                             Stroke="Transparent" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="4.32" 
+                             EndAngle="10" 
+                             Radius="147">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="-29.5"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+
+
+                    <usercontrols:Arc Center="200, 200"  x:Name="zone2"
+                              StrokeThickness="7"
+                             Stroke="Transparent" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="4.32" 
+                             EndAngle="10" 
+                             Radius="147">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="5"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200"  x:Name="zone3"
+                              StrokeThickness="7"
+                             Stroke="Transparent" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="4.32" 
+                             EndAngle="10" 
+                             Radius="147">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="39"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200"  x:Name="zone4"
+                              StrokeThickness="7"
+                             Stroke="Transparent" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="4.32" 
+                             EndAngle="10" 
+                             Radius="147">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="73.5"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200" x:Name="zone5"
+                              StrokeThickness="7"
+                             Stroke="Red" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="4.32" 
+                             EndAngle="10" 
+                             Radius="147">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="108"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                </Grid >
+
+                <Grid x:Name="Scale1" Visibility="Hidden">
+                    <usercontrols:Arc Center="200, 200" 
                               StrokeThickness="3"
                              Stroke="Black" 
                              SnapsToDevicePixels="True"
                              StartAngle="5" 
                              EndAngle="2" 
                              Radius="142">
-                <usercontrols:Arc.RenderTransform>
-                    <RotateTransform CenterX="200" CenterY="200"
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
                                      Angle="69"/>
-                </usercontrols:Arc.RenderTransform>
-            </usercontrols:Arc>
-            <usercontrols:Arc Center="200, 200" 
-                              StrokeThickness="7"
-                             Stroke="Red" 
-                             SnapsToDevicePixels="True"
-                             StartAngle="4.5" 
-                             EndAngle="10" 
-                             Radius="147">
-                <usercontrols:Arc.RenderTransform>
-                    <RotateTransform CenterX="200" CenterY="200"
-                                     Angle="97"/>
-                </usercontrols:Arc.RenderTransform>
-            </usercontrols:Arc>
-            <usercontrols:Arc Center="200, 200" 
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200" 
                               StrokeThickness="15"
                              Stroke="Black" 
                              StrokeDashArray="0.2 1"
@@ -108,20 +180,87 @@
                              StartAngle="5" 
                              EndAngle="2" 
                              Radius="135">
-                <usercontrols:Arc.RenderTransform>
-                    <RotateTransform CenterX="200" CenterY="200"
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
                                      Angle="69"/>
-                </usercontrols:Arc.RenderTransform>
-            </usercontrols:Arc>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                </Grid >
+
+                <Grid x:Name="Scale2">
+                    <usercontrols:Arc Center="200, 200" 
+                              StrokeThickness="2"
+                             Stroke="Black" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="5" 
+                             EndAngle="2" 
+                             Radius="142">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="69"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200" 
+                              StrokeThickness="2"
+                             Stroke="Black" 
+                             SnapsToDevicePixels="True"
+                             StartAngle="5" 
+                             EndAngle="2" 
+                             Radius="128">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="69"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200" 
+                              StrokeThickness="15"
+                             Stroke="Black" 
+                             StrokeDashArray="0.3 5.04"
+                             SnapsToDevicePixels="True"
+                             StartAngle="5" 
+                             EndAngle="2" 
+                             Radius="135">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="69"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                    <usercontrols:Arc Center="200, 200" 
+                              StrokeThickness="15"
+                             Stroke="#FF313131" 
+                             StrokeDashArray="0.05 0.62"
+                             SnapsToDevicePixels="True"
+                             StartAngle="5" 
+                             EndAngle="2" 
+                             Radius="135">
+                        <usercontrols:Arc.RenderTransform>
+                            <RotateTransform CenterX="200" CenterY="200"
+                                     Angle="69"/>
+                        </usercontrols:Arc.RenderTransform>
+                    </usercontrols:Arc>
+                </Grid>
+               
+                
+            </Grid>
             <!--End of Gauge Scale-->
 
             <!--Needle-->
             <Grid Margin="0, 50, 0, 0" Height="350" Width="400">
-                <Ellipse MinHeight="16"  Name="ellipse2" Fill="Black"
-                     MinWidth="16" Height="45" Width="45" />
+                <Ellipse MinHeight="16"  Name="ellipse2"
+                     MinWidth="16" Height="45" Width="45">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="#FF5C5C5C"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Effect>
+                        <DropShadowEffect ShadowDepth="5"/>
+                    </Ellipse.Effect>
+                </Ellipse>
 
 
-                <Polygon HorizontalAlignment="Center" VerticalAlignment="Center" Margin="80, 0, 0, 0" Points="
+                <Polygon HorizontalAlignment="Center" VerticalAlignment="Center" Margin="80, 4.5, 0, 0" Points="
                          -80,7
                          -140,5
                          -80,3
@@ -141,9 +280,22 @@
                         <DropShadowEffect ShadowDepth="5"/>
                     </Polygon.Effect>
                 </Polygon>
+                <Ellipse Width="6" Height="6">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF40390E" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.168"/>
+                            <GradientStop Color="#FF7F6E1E" Offset="0.71"/>
+
+                            <GradientStop Color="#FED0C9C6" Offset="0.277"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+
                 <Grid.RenderTransform>
                     <RotateTransform x:Name="Needle" CenterX="200" CenterY="175" Angle="20" />
                 </Grid.RenderTransform>
+
             </Grid>
             <!--End of Needle-->
 
@@ -205,6 +357,15 @@
             </Border>
             <!--End of Reflection-->
 
+            <Border x:Name="Crack" Visibility="Hidden" Background="Transparent" CornerRadius="300" Width="310" Height="310" ClipToBounds="True">
+                <Border.Clip>
+                    <EllipseGeometry RadiusX="155" RadiusY="155" Center="152.5, 155"/>
+                </Border.Clip>
+                <Image Source="crack.png"/>
+
+
+            </Border>
+            
             <!--Screws-->
 
             <Grid x:Name="ScrewsRound">

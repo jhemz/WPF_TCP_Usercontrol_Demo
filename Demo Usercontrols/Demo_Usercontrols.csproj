@@ -189,5 +189,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\crack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\cracked-Glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\crack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
