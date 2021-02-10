@@ -61,6 +61,21 @@ namespace ClientWPFDemo.ViewModels
             }
         }
 
+        public int roationalSwitchValue = 0;
+        public int RoationalSwitchValue
+        {
+            get
+            {
+                return roationalSwitchValue;
+            }
+            set
+            {
+                roationalSwitchValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        
         public bool temperatureGaugeCracked = false;
         public bool TemperatureGaugeCracked
         {

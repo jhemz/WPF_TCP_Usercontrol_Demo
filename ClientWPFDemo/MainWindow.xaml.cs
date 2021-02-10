@@ -57,5 +57,15 @@ namespace ClientWPFDemo
             App currentApp = Application.Current as App;
             currentApp.TCPClient.Disconnect();
         }
+
+        private void UCGuage_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UCGuage_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

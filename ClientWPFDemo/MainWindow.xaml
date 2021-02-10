@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols"
-        Height="873.524" Width="1461.652"  Title="CLIENT">
+        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols"
+        Height="855" Width="1520"  Title="CLIENT" WindowState="Maximized" >
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,71 +15,98 @@
         <Grid Background="Black"  VerticalAlignment="Top" HorizontalAlignment="Left">
             <Label Content="{Binding FrameRate}" Foreground="White"/>
         </Grid>
-        
-        <StackPanel Orientation="Horizontal">
+
+        <Viewbox Width="1500">
+            <StackPanel Orientation="Horizontal">
 
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
-                <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
-                    <Border.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF373737" Offset="0.012"/>
-                            <GradientStop Color="#FF767373" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.BorderBrush>
-                    <digital_screen:UCDigitalScreen DisplayValue="client" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
-                    <Border.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF373737" Offset="0.012"/>
-                            <GradientStop Color="#FF767373" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.BorderBrush>
-                    <digital_screen:UCDigitalScreen DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
-                </Border>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.012"/>
+                                <GradientStop Color="#FF767373" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <digital_screen:UCDigitalScreen DisplayValue="client" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.012"/>
+                                <GradientStop Color="#FF767373" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <digital_screen:UCDigitalScreen DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
+                    </Border>
 
-                <StackPanel Orientation="Horizontal">
-                    <ToggleButton IsChecked="{Binding Connected}" Content="CONNECTED TO SERVER" Margin="5" Name="BtnConnect" Checked="BtnConnect_Checked" Unchecked="BtnConnect_Unchecked"
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton IsChecked="{Binding Connected}" Content="CONNECTED TO SERVER" Margin="5" Name="BtnConnect" Checked="BtnConnect_Checked" Unchecked="BtnConnect_Unchecked"
             Style="{StaticResource RedLightButton}"/>
-                    <ToggleButton  IsChecked="{Binding IncreaseTemp}" Content="Increase Temperature" Margin="5"
+                        <ToggleButton  IsChecked="{Binding IncreaseTemp}" Content="Increase Temperature" Margin="5"
             Style="{StaticResource OrangeLightButton}"/>
 
-                    <ToggleButton IsChecked="{Binding DecreaseTemp}" Content="Decrease Temperature" Margin="5"
+                        <ToggleButton IsChecked="{Binding DecreaseTemp}" Content="Decrease Temperature" Margin="5"
             Style="{StaticResource GreenLightButton}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <ToggleButton IsChecked="{Binding Button4}"  Content="This is switch button" Margin="5"
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton IsChecked="{Binding Button4}"  Content="This is switch button" Margin="5"
             Style="{StaticResource SwitchButton}"/>
-                    <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
+                        <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
             Style="{StaticResource SwitchButton2}"/>
-                    <ToggleButton IsChecked="{Binding Button6}" Content="This is a Green button" Margin="5"
-            Style="{StaticResource GreenLightButton}"/>
-
+                      
+                    </StackPanel>
+                  
                 </StackPanel>
-            </StackPanel>
 
-            <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage 
+                <StackPanel Orientation="Vertical" Margin="5">
+                  
+                    <demo_usercontrols:UCGuage 
                     CrackIsVisible="{Binding TemperatureGaugeCracked}"
-                    ScaleType="Scale1" DialBackground="Weathered"  Type="Round" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
-                <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerTemperatureAlert}" Content="Temperature Warning" Margin="5, 50, 5, 5"
-            Style="{StaticResource FlashRedLightButton}"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical" Margin="5">
-                <demo_usercontrols:UCGuage 
+                    ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}" Loaded="UCGuage_Loaded_1"/>
+                    <demo_usercontrols:UCGuage Margin="0, 20, 0, 0"
                     CrackIsVisible="{Binding PressureGaugeCracked}"
                     Zone5="Red" Zone4="Red" Zone3="Orange" Zone2="Green" Zone1="Green" 
                     DialBackground="Clean" Type="Square"  
                     Title="PRESSURE" Units="Pa"
                     MaxValue="{Binding MaxPressure}"
                     MinValue="{Binding MinPressure}"
-                    Value="{Binding Pressure}"/>
-                <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerPressureAlert}" Content="Pressure Warning" Margin="5, 50, 5, 5"
-            Style="{StaticResource FlashRedLightButton}"/>
-            </StackPanel>
+                    Value="{Binding Pressure}" Loaded="UCGuage_Loaded"/>
+                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF373737" Offset="0.012"/>
+                                <GradientStop Color="#FF767373" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <digital_screen:UCDigitalScreen DisplayValue="{Binding RoationalSwitchValue}" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
 
-        </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <ToggleButton IsHitTestVisible="False" IsChecked="{Binding DangerTemperatureAlert}" Content="Temperature Warning" Margin="5, 50, 5, 5"
+            Style="{StaticResource FlashRedLightButton}"/>
+                    <ToggleButton IsHitTestVisible="False" 
+                                  IsChecked="{Binding DangerPressureAlert}" 
+                                  Content="Pressure Warning" Margin="5, 50, 5, 5"
+            Style="{StaticResource FlashRedLightButton}"/>
+                    <usercontrols:UCRotationalSwitch Margin="0, 20, 0, 0" PointerColor="Green" Label1="1" Label2="2"  Label3="3"  Label4="4"  Label5="5" MinAngle="0" MaxAngle="180"/>
+                    <usercontrols:UCRotationalSwitch Margin="0, 20, 0, 0" PointerColor="Red" Label1="1" Label2="2"  Label3="3"  Label4="4"  Label5="5" MinAngle="0" MaxAngle="180"/>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <voicecomms:UCVoiceComms Margin="20"/>
+                    <StackPanel Orientation="Horizontal">
+                        <usercontrols:UCRotationalSwitch Value="{Binding RoationalSwitchValue}" Label1="Off" Label2="On" MinAngle="0" MaxAngle="45"/>
+
+                        <usercontrols:UCRotationalSwitch Margin="0, 20, 0, 0" PointerColor="Blue" Label1="1" Label2="2"  Label3="3"  Label4="4"  Label5="5" MinAngle="0" MaxAngle="180"/>
+
+                    </StackPanel>
+                </StackPanel>
+               
+
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Window>

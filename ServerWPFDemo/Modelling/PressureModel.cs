@@ -14,7 +14,7 @@ namespace ServerWPFDemo.Modelling
         public Queue Process(modelMain model)
         {
             Queue queue = new Queue();
-            queue.Enqueue(new KeyValuePair<string, object>("Pressure", model.Temperature / 1.5));
+            queue.Enqueue(new KeyValuePair<string, object>("Pressure", model.Temperature));
             return queue;
         }
     }

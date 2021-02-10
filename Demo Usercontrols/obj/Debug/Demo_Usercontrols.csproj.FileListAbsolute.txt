@@ -1,6 +1,7 @@
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe.config
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.pdb
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\OrangeLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\SwitchButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\GreenLightButton.baml
@@ -16,6 +17,8 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserCo
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\ShipsLayout\Display.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCRotationalSwitch.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\VoiceComms\UCVoiceComms.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\App.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols_MarkupCompile.cache
@@ -29,10 +32,11 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserCo
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\ShipsLayout\Display.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCRotationalSwitch.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\VoiceComms\UCVoiceComms.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.g.resources
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.Properties.Resources.resources
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.GenerateResource.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.CoreCompileInputs.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.exe
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
-C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache

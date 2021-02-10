@@ -88,77 +88,83 @@
                                                 </LinearGradientBrush>
                                             </Ellipse.Fill>
                                         </Ellipse>
-                                        <Ellipse Width="18.5" Height="18.5"   
-                                                VerticalAlignment="Center"
-                                                HorizontalAlignment="Center" Fill="#FF00B67E"
-                                                 Stroke="Gray" StrokeThickness="0.2">
-                                            <Ellipse.Effect>
-                                                <BlurEffect x:Name="glow" Radius="0"/>
-                                            </Ellipse.Effect>
-                                        </Ellipse>
                                         <Ellipse Width="18.5" Height="18.5"   x:Name="button"
                                                 VerticalAlignment="Center"
-                                                HorizontalAlignment="Center" Fill="{TemplateBinding Background}"
+                                                HorizontalAlignment="Center"
                                                  Stroke="Gray" StrokeThickness="0.2">
-
-
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#FF192E18" Offset="0.988"/>
+                                                    <GradientStop Color="#FF97E462" Offset="0.098"/>
+                                                    <GradientStop Color="#FF2FA435" Offset="0.412"/>
+                                                    <GradientStop Color="#FF296E1A" Offset="0.784"/>
+                                                    <GradientStop Color="#FF7EE88D" Offset="0.141"/>
+                                                    <GradientStop Color="#FFAFDCAF" Offset="0.016"/>
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
                                         </Ellipse>
-                                        <Ellipse Width="18.5" Height="18.5"
+                                        <Ellipse Visibility="Visible" Width="18.5" Height="18.5"   x:Name="button2"
                                                 VerticalAlignment="Center"
                                                 HorizontalAlignment="Center"
                                                  Stroke="Gray" StrokeThickness="0.2">
                                             <Ellipse.Fill>
-                                                <RadialGradientBrush 
-                                                          GradientOrigin="0.5,0.5" 
-                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-                                                    <RadialGradientBrush.GradientStops>
-                                                        <GradientStop Color="#00FF9900" Offset="0" />
-                                                        <GradientStop Color="#00FF9900" Offset="0.8" />
-                                                        <GradientStop Color="#FF325A4E" Offset="0.9" />
-                                                        <GradientStop Color="#FF402C0E" Offset="1" />
-                                                    </RadialGradientBrush.GradientStops>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#FF192E18" Offset="0.988"/>
+                                                    <GradientStop Color="#FF27642B" Offset="0"/>
+                                                    <GradientStop Color="#FF295D1E" Offset="0.631"/>
                                                 </RadialGradientBrush>
                                             </Ellipse.Fill>
 
+
                                         </Ellipse>
-                                        <Ellipse Width="18.5" Height="18.5"
+                                        <Ellipse Visibility="Visible" Width="18.5" Height="18.5"  
                                                 VerticalAlignment="Center"
                                                 HorizontalAlignment="Center"
                                                  Stroke="Gray" StrokeThickness="0.2">
                                             <Ellipse.Fill>
-                                                <RadialGradientBrush 
-                                                          GradientOrigin="0.5,0.5" 
-                                                          Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
-                                                    <RadialGradientBrush.GradientStops>
-                                                        <GradientStop Color="#196C522C" Offset="0.1"/>
-                                                        <GradientStop Color="#00A9A8A5" Offset="0.15"/>
-                                                        <GradientStop Color="#336C522C" Offset="0.5" />
-                                                        <GradientStop Color="#00A37C48" Offset="0.7" />
-                                                        <GradientStop Color="#7FBA986A" Offset="0.75" />
-                                                        <GradientStop Color="#7F6B6154" Offset="0.75" />
-                                                        <GradientStop Color="#00402C0E" Offset="1" />
-                                                    </RadialGradientBrush.GradientStops>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#003A2222" Offset="0.1"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.161"/>
+                                                    <GradientStop Color="#003A2222" Offset="0.2"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.243"/>
+                                                    <GradientStop Color="#003A2222" Offset="0.286"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.329"/>
+                                                    <GradientStop Color="#003A2222" Offset="0.38"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.431"/>
+                                                    <GradientStop Color="#003A2222" Offset="0.478"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.514"/>
+                                                    <GradientStop Color="#00FF0505" Offset="0.549"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.588"/>
+                                                    <GradientStop Color="#00321717" Offset="0.651"/>
+                                                    <GradientStop Color="#663A2222" Offset="0.686"/>
+                                                    <GradientStop Color="#00321717" Offset="0.741"/>
                                                 </RadialGradientBrush>
                                             </Ellipse.Fill>
 
+
                                         </Ellipse>
-
-                                        <Path Stroke="White" StrokeThickness="0.3" VerticalAlignment="Top" HorizontalAlignment="Left">
-                                            <Path.Data>
-                                                <PathGeometry>
-                                                    <PathGeometry.Figures>
-                                                        <PathFigure StartPoint="14,15" IsClosed="False">
-                                                            <ArcSegment Point="14,5" Size="180 30"/>
-                                                        </PathFigure>
-                                                    </PathGeometry.Figures>
-                                                </PathGeometry>
-                                            </Path.Data>
-                                            <Path.Effect>
-                                                <BlurEffect Radius="1">
-
-                                                </BlurEffect>
-                                            </Path.Effect>
-                                        </Path>
+                                        <Border Visibility="Visible" Width="18.5" Height="18.5" CornerRadius="9">
+                                            <Border.Background>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#00292929" Offset="1"/>
+                                                    <GradientStop Color="#FFB9B9B9" Offset="0.811"/>
+                                                    <GradientStop Color="#FFDDDDDD" Offset="0.626"/>
+                                                    <GradientStop Color="#00666363"/>
+                                                    <GradientStop Color="#00777676" Offset="0.579"/>
+                                                    <GradientStop Color="#00514F4F" Offset="0.852"/>
+                                                </RadialGradientBrush>
+                                            </Border.Background>
+                                            <Border.OpacityMask>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                    <GradientStop Offset="0.566"/>
+                                                    <GradientStop Color="#E6FFFFFF" Offset="0.899"/>
+                                                </LinearGradientBrush>
+                                            </Border.OpacityMask>
+                                            <Border.RenderTransform>
+                                                <RotateTransform CenterX="9" CenterY="9" Angle="150"/>
+                                            </Border.RenderTransform>
+                                        </Border>
 
 
                                     </Grid>
@@ -210,10 +216,10 @@
                                 </BeginStoryboard>
                             </EventTrigger>-->
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="button" Property="Fill" Value ="#FF00B67E"/>
+                            <Setter TargetName="button2" Property="Visibility" Value ="Hidden"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter TargetName="button" Property="Fill" Value ="#FF325A4E"/>
+                            <Setter TargetName="button2" Property="Visibility" Value ="Visible"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
