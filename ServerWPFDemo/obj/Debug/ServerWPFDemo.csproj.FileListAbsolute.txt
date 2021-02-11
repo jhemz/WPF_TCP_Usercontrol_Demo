@@ -1,4 +1,3 @@
-C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.exe.config
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.pdb
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\Demo_Usercontrols.exe
@@ -17,6 +16,7 @@ C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFD
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.Properties.Resources.resources
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csproj.GenerateResource.cache
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csproj.CoreCompileInputs.cache
-C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csproj.CopyComplete
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.pdb
+C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\bin\Debug\ServerWPFDemo.exe.config
+C:\Users\James\source\repos\Demo Usercontrols\ServerWPFDemo\obj\Debug\ServerWPFDemo.csproj.CopyComplete

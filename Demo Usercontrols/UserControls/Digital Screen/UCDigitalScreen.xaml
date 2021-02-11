@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen"
              mc:Ignorable="d" >
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="80">
+        <StackPanel x:Name="Screen" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="80">
             <Viewbox StretchDirection="Both" Stretch="Uniform">
                 <local:UCDigit DisplayDigit="" x:Name="Digit_11"/>
             </Viewbox>

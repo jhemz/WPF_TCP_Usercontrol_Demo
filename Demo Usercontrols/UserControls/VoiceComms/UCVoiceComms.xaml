@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms"
+             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls"
              mc:Ignorable="d"  Width="500" Height="700">
 
     <Grid>
@@ -195,8 +195,10 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Margin="0, 15, 0, 0" HorizontalAlignment="Center">
-                        <ToggleButton Content="OPEN" Style="{StaticResource GreenLightButton}" Margin="5"/>
-                        <ToggleButton Content="CLOSE" Style="{StaticResource RedLightButton}" Margin="5"/>
+                        <usercontrols:UCRotationalSwitch PointerColor="White" Label1="Off" Label2="On" MinAngle="0" MaxAngle="45"/>
+                        <!--<usercontrols:UCRotationalSwitch PointerColor="Blue" Label1="Off" Label2="On" MinAngle="0" MaxAngle="45"/>-->
+                        <Button  Content="TALK" Style="{StaticResource PushButton}"/>
+                        <!--<ToggleButton Content="CLOSE" Style="{StaticResource RedLightButton}" Margin="5"/>-->
                     </StackPanel>
 
 

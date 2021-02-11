@@ -15,6 +15,6 @@ namespace ClientWPFDemo
     /// </summary>
     public partial class App : Application
     {
-        public TCPClientService TCPClient;
+     
     }
 }

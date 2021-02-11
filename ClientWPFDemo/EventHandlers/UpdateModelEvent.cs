@@ -7,13 +7,11 @@ namespace ClientWPFDemo.EventHandlers
 
     public class UpdateModelEvent : EventArgs
     {
-        public UpdateModelEvent(Queue updateQueue, int frameRate)
+        public UpdateModelEvent(Queue updateQueue)
         {
             UpdateQueue = updateQueue;
-            FrameRate = frameRate;
         }
         public Queue UpdateQueue;
-        public int FrameRate;
     }
    
 }

@@ -28,7 +28,7 @@
                                 <GradientStop Color="#FF767373" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen DisplayValue="client" VerticalAlignment="Center"/>
+                        <digital_screen:UCDigitalScreen Digits="6" DisplayValue="client" VerticalAlignment="Center"/>
                     </Border>
                     <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
                         <Border.BorderBrush>
@@ -37,7 +37,7 @@
                                 <GradientStop Color="#FF767373" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
+                        <digital_screen:UCDigitalScreen Digits="8" DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
                     </Border>
 
                     <StackPanel Orientation="Horizontal">
@@ -63,7 +63,7 @@
                   
                     <demo_usercontrols:UCGuage 
                     CrackIsVisible="{Binding TemperatureGaugeCracked}"
-                    ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}" Loaded="UCGuage_Loaded_1"/>
+                    ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
                     <demo_usercontrols:UCGuage Margin="0, 20, 0, 0"
                     CrackIsVisible="{Binding PressureGaugeCracked}"
                     Zone5="Red" Zone4="Red" Zone3="Orange" Zone2="Green" Zone1="Green" 
@@ -71,7 +71,7 @@
                     Title="PRESSURE" Units="Pa"
                     MaxValue="{Binding MaxPressure}"
                     MinValue="{Binding MinPressure}"
-                    Value="{Binding Pressure}" Loaded="UCGuage_Loaded"/>
+                    Value="{Binding Pressure}" />
                     <Border BorderThickness="5" Height="110" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
                         <Border.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -79,7 +79,7 @@
                                 <GradientStop Color="#FF767373" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen DisplayValue="{Binding RoationalSwitchValue}" VerticalAlignment="Center"/>
+                        <digital_screen:UCDigitalScreen Digits="2"  DisplayValue="{Binding RoationalSwitchValue}" VerticalAlignment="Center"/>
                     </Border>
                 </StackPanel>
 

@@ -1,5 +1,6 @@
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe.config
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.pdb
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Demo_Usercontrols.exe
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Newtonsoft.Json.dll
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Demo_Usercontrols.pdb
@@ -19,4 +20,3 @@ C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFD
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.csproj.CopyComplete
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.pdb
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.pdb

@@ -24,10 +24,6 @@ namespace ClientWPFDemo.Services
         private DispatcherTimer timer;
         private int port = 100;
 
-        private int time = int.Parse(DateTime.Now.ToString("ss"));
-        private int frameRate = 0;
-        private int currentFrameRate = 0;
-
         private BackgroundWorker backgroundWorker;
 
         public event UpdateModelHandler UpdateModelEvent;
@@ -129,18 +125,6 @@ namespace ClientWPFDemo.Services
         {
             if (client != null)
             {
-                //calculate framerate
-                if (int.Parse(DateTime.Now.ToString("ss")) != time) //if we are the next second
-                {
-                    frameRate = currentFrameRate;
-                    currentFrameRate = 1;
-                }
-                else
-                {
-                    currentFrameRate += 1; //else add another frame to the current second
-                }
-                time = int.Parse(DateTime.Now.ToString("ss"));
-
                 //convert string message to byte array
                 byte[] messageBytes = Encoding.Default.GetBytes(message);
 
@@ -162,7 +146,7 @@ namespace ClientWPFDemo.Services
 
                 Application.Current.Dispatcher.Invoke(() =>
                {
-                   UpdateModelEvent e1 = new UpdateModelEvent(queue, frameRate);
+                   UpdateModelEvent e1 = new UpdateModelEvent(queue);
                    if (UpdateModelEvent != null)
                    {
                        UpdateModelEvent(this, e1);

@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/GreenLightButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/SwitchButton2.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/PushButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

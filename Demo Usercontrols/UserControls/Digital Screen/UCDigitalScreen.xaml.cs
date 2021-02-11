@@ -27,13 +27,33 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
             InitializeComponent();
         }
 
-        public string DisplayValue
+        public int Digits
         {
-            get { return (string)GetValue(DisplayValueDep); }
-            set { SetValue(DisplayValueDep, value); }
+            get { return (int)GetValue(DigitsProperty); }
+            set { SetValue(DigitsProperty, value); }
         }
 
-        public static readonly DependencyProperty DisplayValueDep =
+        public static readonly DependencyProperty DigitsProperty =
+            DependencyProperty.Register("Digits", typeof(int), typeof(UCDigitalScreen),
+               new PropertyMetadata(11, new PropertyChangedCallback(DigitsChanged)));
+
+        private static void DigitsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UCDigitalScreen display = d as UCDigitalScreen;
+            display.Screen.Children.Clear();
+            for (int i = 1; i <= (int)display.Digits; i++)
+            {
+                display.Screen.Children.Add(new Viewbox() { StretchDirection = StretchDirection.Both, Stretch = Stretch.Uniform, Child = new UCDigit() { Name = "Digit_" + i } });
+            }
+        }
+
+        public string DisplayValue
+        {
+            get { return (string)GetValue(DisplayValueProperty); }
+            set { SetValue(DisplayValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty DisplayValueProperty =
             DependencyProperty.Register("DisplayValue", typeof(string), typeof(UCDigitalScreen),
                new PropertyMetadata("", new PropertyChangedCallback(DisplayValueChanged)));
 
@@ -43,21 +63,22 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
 
             if (e.NewValue != null)
             {
+                //if(display.Screen.Children.Count == 0)
+                //{
+                //    for (int i = 1; i <= (int)display.Digits; i++)
+                //    {
+                //        display.Screen.Children.Add(new Viewbox() { StretchDirection = StretchDirection.Both, Stretch = Stretch.Uniform, Child = new UCDigit() { Name = "Digit_" + i } });
+                //    }
+                //}
+
                 string displayString = e.NewValue.ToString();
 
                 List<UCDigit> _digits; _digits = new List<UCDigit>();
-                _digits.Add(display.Digit_1);
-                _digits.Add(display.Digit_2);
-                _digits.Add(display.Digit_3);
-                _digits.Add(display.Digit_4);
-                _digits.Add(display.Digit_5);
-                _digits.Add(display.Digit_6);
-                _digits.Add(display.Digit_7);
-                _digits.Add(display.Digit_8);
-                _digits.Add(display.Digit_9);
-                _digits.Add(display.Digit_10);
-                _digits.Add(display.Digit_11);
 
+                foreach (Viewbox digitContainer in display.Screen.Children)
+                {
+                    _digits.Add((UCDigit)digitContainer.Child);
+                }
 
                 if (displayString.Length <= _digits.Count)
                 {
@@ -67,10 +88,12 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                         _digits[i].DisplayDigit = "";
                     }
 
-                    for (int i = 0; i < displayString.Length; i++)
+                    int spacer = display.Digits - displayString.Length;
+
+                    for (int i = displayString.Length - 1; i >= 0; i--)
                     {
                         string value = displayString.Substring(i, 1);
-                        _digits[displayString.Length - 1 - i].DisplayDigit = value;
+                        _digits[i + spacer].DisplayDigit = value;
                     }
                 }
                 else
