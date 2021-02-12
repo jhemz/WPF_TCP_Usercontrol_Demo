@@ -59,7 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EventHandlers\UpdateModelEvent.cs" />
+    <Compile Include="Managers\DependencyManager.cs" />
     <Compile Include="modelMain.cs" />
+    <Compile Include="Services\IMessageCore.cs" />
     <Compile Include="Services\TCPClientService.cs" />
     <Compile Include="ViewModels\vmBase.cs" />
     <Compile Include="ViewModels\vmMain.cs" />
