@@ -6,40 +6,161 @@
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen"
              mc:Ignorable="d" >
     <Grid>
-        <StackPanel x:Name="Screen" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="80">
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_11"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_10"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_9"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_8"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_7"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_6"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_5"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_4"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_3"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_2"/>
-            </Viewbox>
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <local:UCDigit DisplayDigit="" x:Name="Digit_1"/>
-            </Viewbox>
-        </StackPanel>
+        <Border BorderThickness="4"
+                            HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF373737" Offset="1"/>
+                    <GradientStop Color="#FF767373"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.334"/>
+                    <GradientStop Color="#FF383636" Offset="0.017"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid  ClipToBounds="True">
+                <!--Reflection-->
+                <Border Background="Transparent" Height="180">
+
+                    <Image Source="../Bridge_of_the_RV_Sikuliaq.jpg">
+                        <Image.OpacityMask>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#7F000000" Offset="0.003" />
+                                <GradientStop Color="#33000000" Offset="0.51" />
+                                <GradientStop Color="#34000000" Offset="0.924" />
+                            </LinearGradientBrush>
+                        </Image.OpacityMask>
+                    </Image>
+                </Border>
+                <!--End of Reflection-->
+                <Grid HorizontalAlignment="Right" Margin="12">
+                    <Ellipse
+                                Width="25" Height="25" 
+                                     >
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF3F4040" Offset="1"/>
+                                <GradientStop Color="#FFB9DACA"/>
+                                <GradientStop Color="#FF768B80" Offset="0.762"/>
+                                <GradientStop Color="#FFA3A3A3" Offset="0.368"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                        <Ellipse.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="1"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <Border Width="24" Height="3">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#FF342D2D" Offset="0.518"/>
+                                <GradientStop Color="#FF494949" Offset="1"/>
+                                <GradientStop Color="#FF454545" Offset="0.006"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.RenderTransform>
+                            <RotateTransform Angle="5" CenterX="12" CenterY="1.5"/>
+                        </Border.RenderTransform>
+                    </Border>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Margin="12">
+                    <Ellipse
+                                Width="25" Height="25" 
+                                     >
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF3F4040" Offset="1"/>
+                                <GradientStop Color="#FFB9DACA"/>
+                                <GradientStop Color="#FF768B80" Offset="0.762"/>
+                                <GradientStop Color="#FFA3A3A3" Offset="0.368"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                        <Ellipse.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="1"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <Border Width="24" Height="3">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#FF342D2D" Offset="0.518"/>
+                                <GradientStop Color="#FF494949" Offset="1"/>
+                                <GradientStop Color="#FF454545" Offset="0.006"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.RenderTransform>
+                            <RotateTransform Angle="45" CenterX="12" CenterY="1.5"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                </Grid>
+                <Label x:Name="DisplayLabel" Content="Display Label" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="24" FontFamily="Lucida Console" FontWeight="Bold">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7A7373" Offset="0.008"/>
+                            <GradientStop Color="#FFE0DCDC" Offset="0.992"/>
+                            <GradientStop Color="#FFE2E2E2" Offset="0.436"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                    <Label.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="0" Color="#FF898989"/>
+                    </Label.Effect>
+                </Label>
+               
+                <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="55, 30, 55, 40" CornerRadius="2">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF373737" Offset="0.012"/>
+                            <GradientStop Color="#FF767373" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+
+
+
+                    <StackPanel x:Name="Screen" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="80">
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_11"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_10"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_9"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_8"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_7"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_6"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_5"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_4"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_3"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_2"/>
+                        </Viewbox>
+                        <Viewbox StretchDirection="Both" Stretch="Uniform">
+                            <local:UCDigit DisplayDigit="" x:Name="Digit_1"/>
+                        </Viewbox>
+                    </StackPanel>
+
+
+                </Border>
+
+            </Grid>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5"/>
+            </Border.Effect>
+        </Border>
+
     </Grid>
 </UserControl>

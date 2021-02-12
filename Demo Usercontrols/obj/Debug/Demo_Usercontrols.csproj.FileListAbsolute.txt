@@ -3,6 +3,7 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_U
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\bin\Debug\Demo_Usercontrols.pdb
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\OrangeLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\SwitchButton.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\PushButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\GreenLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\OrangeLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\FlashRedLightButton.baml
@@ -27,6 +28,8 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\MainWi
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\GreenLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\RedLightButton.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Cyber\SwitchButton2.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\GraphStyle.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\TreeViewItem.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Arc.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\ShipsLayout\Display.baml
@@ -39,6 +42,7 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_U
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.CoreCompileInputs.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.exe
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
+<<<<<<< HEAD
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\PushButton.baml
 C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe.config
@@ -84,3 +88,5 @@ C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug
 C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.CoreCompileInputs.cache
 C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.exe
 C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
+=======
+>>>>>>> main
