@@ -21,24 +21,50 @@
 
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
-                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
-                        <Border.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF373737" Offset="0.012"/>
-                                <GradientStop Color="#FF767373" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen Digits="6" DisplayValue="client" VerticalAlignment="Center"/>
-                    </Border>
-                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
-                        <Border.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF373737" Offset="0.012"/>
-                                <GradientStop Color="#FF767373" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen Digits="8" DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
-                    </Border>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="10">
+                            <Border  Background="#FF2C2C2C" Height="6" Width="70" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border  Background="#FF2C2C2C" Height="6" Width="70" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border  Background="#FF2C2C2C" Height="6" Width="70" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </StackPanel>
+                        <TextBlock Text="CLIENT" HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="60">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        <StackPanel Margin="10">
+                            <Border  Background="#FF2C2C2C" Height="6" Width="270" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border  Background="#FF2C2C2C" Height="6" Width="270" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                            <Border  Background="#FF2C2C2C" Height="6" Width="270" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <digital_screen:UCDigitalScreen Label="Server Time" Digits="8" DisplayValue="{Binding CommandDisplay}" VerticalAlignment="Center"/>
 
                     <StackPanel Orientation="Horizontal">
                         <ToggleButton IsChecked="{Binding Connected}" Content="CONNECTED TO SERVER" Margin="5" Name="BtnConnect" Checked="BtnConnect_Checked" Unchecked="BtnConnect_Unchecked"
@@ -50,17 +76,30 @@
             Style="{StaticResource GreenLightButton}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <ToggleButton IsChecked="{Binding Button4}"  Content="This is switch button" Margin="5"
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ToggleButton IsChecked="{Binding Button4}"  Content="This is switch button" Margin="5"
             Style="{StaticResource SwitchButton}"/>
-                        <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
+                                <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
             Style="{StaticResource SwitchButton2}"/>
-                      
+                            </StackPanel>
+                            <Path Stroke="#FF2C2C2C" StrokeThickness="3">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 75,0 L 75,50 L 300,50 L 300, 0"/>
+                                </Path.Data>
+                                <Path.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Path.Effect>
+                            </Path>
+                        </StackPanel>
+
+
                     </StackPanel>
-                  
+
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="5">
-                  
+
                     <demo_usercontrols:UCGuage 
                     CrackIsVisible="{Binding TemperatureGaugeCracked}"
                     ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
@@ -72,15 +111,8 @@
                     MaxValue="{Binding MaxPressure}"
                     MinValue="{Binding MinPressure}"
                     Value="{Binding Pressure}" />
-                    <Border BorderThickness="5" Height="110" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF141414" Margin="15, 15, 15, 15" CornerRadius="2">
-                        <Border.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF373737" Offset="0.012"/>
-                                <GradientStop Color="#FF767373" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Border.BorderBrush>
-                        <digital_screen:UCDigitalScreen Digits="2"  DisplayValue="{Binding RoationalSwitchValue}" VerticalAlignment="Center"/>
-                    </Border>
+                    <digital_screen:UCDigitalScreen Label="On/Off" Digits="2"  DisplayValue="{Binding RoationalSwitchValue}" VerticalAlignment="Center"/>
+
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="5">
@@ -104,7 +136,7 @@
 
                     </StackPanel>
                 </StackPanel>
-               
+
 
             </StackPanel>
         </Viewbox>

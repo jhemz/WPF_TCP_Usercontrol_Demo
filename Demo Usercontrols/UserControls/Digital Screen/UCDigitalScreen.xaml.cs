@@ -47,6 +47,26 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
             }
         }
 
+        public string Label
+        {
+            get { return (string)GetValue(LabelProperty); }
+            set { SetValue(LabelProperty, value); }
+        }
+
+        public static readonly DependencyProperty LabelProperty =
+            DependencyProperty.Register("Label", typeof(string), typeof(UCDigitalScreen),
+               new PropertyMetadata("", new PropertyChangedCallback(LabelChanged)));
+
+        private static void LabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UCDigitalScreen display = d as UCDigitalScreen;
+
+            if (e.NewValue != null)
+            {
+                display.DisplayLabel.Content = e.NewValue;
+            }
+        }
+
         public string DisplayValue
         {
             get { return (string)GetValue(DisplayValueProperty); }
