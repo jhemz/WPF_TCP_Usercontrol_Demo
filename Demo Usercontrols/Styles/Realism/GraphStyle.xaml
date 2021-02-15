@@ -6,107 +6,129 @@
     <local:HorzLineConv x:Key="horzLineConv"/>
     <local:VertLineConv x:Key="vertLineConv"/>
 
-  <Style TargetType="TreeViewItem" x:Key="GraphStyle">
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="TreeViewItem">
-          <Grid> <!-- Main Grid-->
-            <Grid.RowDefinitions>
-              <RowDefinition Height="Auto"/>
-              <!-- Horizontal line-->
-              <RowDefinition Height="Auto"/>
-              <!--The top row contains the item's content.-->
-              <RowDefinition Height="Auto" />
-              <!-- Item presenter(children) -->
-            </Grid.RowDefinitions>
+    <Style TargetType="TreeViewItem" x:Key="GraphStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TreeViewItem">
+                    <Grid>
+                        <!-- Main Grid-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!-- Horizontal line-->
+                            <RowDefinition Height="Auto"/>
+                            <!--The top row contains the item's content.-->
+                            <RowDefinition Height="Auto" />
+                            <!-- Item presenter(children) -->
+                        </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0"> <!-- Horizontal line grid -->
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="0">
+                            <!-- Horizontal line grid -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-              <!-- Horizontal line to the left -->
-              <Rectangle  Grid.Column="0" HorizontalAlignment="Stretch"
-                          Stroke="Black" SnapsToDevicePixels="true">
-                <Rectangle.Height>
-                  <Binding  Mode="OneWay"
+                            <!-- Horizontal line to the left -->
+                            <Border  Grid.Column="0" HorizontalAlignment="Stretch"
+                          Background="#FF2C2C2C" SnapsToDevicePixels="true">
+                                <Border.Height>
+                                    <Binding  Mode="OneWay"
                             Converter="{StaticResource horzLineConv}"
                             ConverterParameter="left" 
                             RelativeSource="{RelativeSource
                                 AncestorLevel=1,
                                 AncestorType={x:Type TreeViewItem}}"/>
-                </Rectangle.Height>
-              </Rectangle>
+                                </Border.Height>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
 
-              <!-- Horizontal line to the right -->
-              <Rectangle Grid.Column="1" HorizontalAlignment="Stretch" 
-                         Stroke="Black"
+                            <!-- Horizontal line to the right -->
+                            <Border Grid.Column="1" HorizontalAlignment="Stretch" 
+                         Background="#FF2C2C2C"
                          SnapsToDevicePixels="true">
-                <Rectangle.Height>
-                  <Binding Mode="OneWay" 
+                                <Border.Height>
+                                    <Binding Mode="OneWay" 
                     Converter="{StaticResource horzLineConv}" 
                     ConverterParameter="right" 
                     RelativeSource="{RelativeSource 
                       AncestorLevel=1, 
                       AncestorType={x:Type TreeViewItem}}"/>
-                </Rectangle.Height>
-              </Rectangle>
-            </Grid> <!-- End of Horizontal line grid -->
+                                </Border.Height>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                        <!-- End of Horizontal line grid -->
 
-            <Grid Grid.Row="1"> <!-- Header grid -->
-              <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/><!-- Vert. line above node	-->
-                  <RowDefinition Height="*"/>   <!-- Header -->
-                  <RowDefinition Height="Auto"/><!-- Vert line below node	-->
-              </Grid.RowDefinitions>
-              <!-- Vertical line above node -->
-              <Rectangle Grid.Row="0" 
-                         Height="10" Stroke="Black" SnapsToDevicePixels="true">
-                <Rectangle.Width>
-                  <Binding Mode="OneWay" 
+                        <Grid Grid.Row="1">
+                            <!-- Header grid -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <!-- Vert. line above node	-->
+                                <RowDefinition Height="*"/>
+                                <!-- Header -->
+                                <RowDefinition Height="Auto"/>
+                                <!-- Vert line below node	-->
+                            </Grid.RowDefinitions>
+                            <!-- Vertical line above node -->
+                            <Border Grid.Row="0"  Margin="0, -2, 0, 0"
+                         Height="15" Background="#FF2C2C2C"  SnapsToDevicePixels="true">
+                                <Border.Width>
+                                    <Binding Mode="OneWay" 
                     Converter="{StaticResource vertLineConv}" 
                     ConverterParameter="top" 
                     RelativeSource=
                       "{RelativeSource AncestorLevel=1, 
                                        AncestorType={x:Type TreeViewItem}}"/>
-                </Rectangle.Width>
-              </Rectangle>
+                                </Border.Width>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
 
-              <!-- Header -->
-              <ContentPresenter Grid.Row="1" ContentSource="Header" 
+                            <!-- Header -->
+                            <ContentPresenter Grid.Row="1" ContentSource="Header" 
                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-              <!-- Vertical line below node -->
-              <Rectangle Grid.Row="2"  Height="10" Stroke="Black" 
+                            <!-- Vertical line below node -->
+                            <Border Grid.Row="2"  Height="15" Margin="0, -2, 0, 0" Background="#FF2C2C2C" 
                 SnapsToDevicePixels="true">
-                <Rectangle.Width>
-                  <Binding Mode="OneWay" 
+                                <Border.Width>
+                                    <Binding Mode="OneWay" 
                     Converter="{StaticResource vertLineConv}" 
                     ConverterParameter="bottom" 
                     RelativeSource=
                       "{RelativeSource  AncestorLevel=1, 
                                         AncestorType={x:Type TreeViewItem}}"/>
-                </Rectangle.Width>
-              </Rectangle>
-            </Grid> <!-- End of Header grid -->
+                                </Border.Width>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                        <!-- End of Header grid -->
 
-            <ItemsPresenter Grid.Row="2"/> <!-- Children -->
-            
-          </Grid> <!-- End of Main grid -->
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
+                        <ItemsPresenter Grid.Row="2"/>
+                        <!-- Children -->
 
-    <Setter Property="ItemsPanel">
-      <Setter.Value>
-        <ItemsPanelTemplate>
-          <StackPanel
+                    </Grid>
+                    <!-- End of Main grid -->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel
             HorizontalAlignment="Center" 
             IsItemsHost="True" 
             Orientation="Horizontal"/>
-        </ItemsPanelTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Node Name="DOSE RATE" Width="274"  Height="50">
+	<Children>
+		<Node Name="U/D CONTROL" Width="274" Height="50"/>
+		<Node Name="AIR WARNING" Width="274" Height="50"/>
+		<Node Name="WATER WARNING" Width="274" Height="50"/>
+		<Node Name="B/D CONTROL" Width="274" Height="50"/>
+	</Children>
+</Node>
+

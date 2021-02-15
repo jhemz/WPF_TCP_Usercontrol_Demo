@@ -1,19 +1,6 @@
-<<<<<<< HEAD
-﻿C:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\GeneratedInternalTypeHelper.g.cs
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\App.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\MainWindow.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\GreenLightButton.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\RedLightButton.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\SwitchButton2.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\Arc.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\Digital Screen\UCDigitalScreen.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\ShipsLayout\Display.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\UCGuage.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\UCRotationalSwitch.xaml;;
-FC:\Users\richa\source\repos\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\VoiceComms\UCVoiceComms.xaml;;
-=======
 ﻿
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\App.xaml;;
+FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\DoseRatePanel\DoseRatePanel.xaml;;
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\MainWindow.xaml;;
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Cyber\GreenLightButton.xaml;;
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Cyber\RedLightButton.xaml;;
@@ -26,5 +13,4 @@ FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\Sh
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\UCGuage.xaml;;
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\UCRotationalSwitch.xaml;;
 FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\VoiceComms\UCVoiceComms.xaml;;
->>>>>>> main
 
