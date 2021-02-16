@@ -1,16 +1,17 @@
 ﻿
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\App.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\DoseRatePanel\DoseRatePanel.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\MainWindow.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Cyber\GreenLightButton.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Cyber\RedLightButton.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Cyber\SwitchButton2.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Realism\GraphStyle.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\Styles\Realism\TreeViewItem.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\Arc.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\Digital Screen\UCDigitalScreen.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\ShipsLayout\Display.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\UCGuage.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\UCRotationalSwitch.xaml;;
-FC:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\UserControls\VoiceComms\UCVoiceComms.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\App.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\DoseRatePanel\DoseRatePanel.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\MainWindow.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\GreenLightButton.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\RedLightButton.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Cyber\SwitchButton2.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Realism\GraphStyle.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Styles\Realism\TreeViewItem.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\Arc.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\Digital Screen\UCDigitalScreen.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\Thermometer\UCThermometer.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\ShipsLayout\Display.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\UCGuage.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\UCRotationalSwitch.xaml;;
+FC:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\UserControls\VoiceComms\UCVoiceComms.xaml;;
 
