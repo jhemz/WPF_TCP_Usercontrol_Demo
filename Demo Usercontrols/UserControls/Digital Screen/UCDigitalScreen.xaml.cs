@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Demo_Usercontrols.UserControls.Digital_Screen
 {
@@ -20,11 +10,26 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
     /// </summary>
     public partial class UCDigitalScreen : UserControl
     {
-
-
         public UCDigitalScreen()
         {
             InitializeComponent();
+        }
+
+        public DigitColour DigitColour
+        {
+            get { return (DigitColour)GetValue(DigitColourDep); }
+            set { SetValue(DigitColourDep, value); }
+        }
+
+
+        public static readonly DependencyProperty DigitColourDep =
+            DependencyProperty.Register("DigitColour", typeof(DigitColour), typeof(UCDigitalScreen),
+                new PropertyMetadata(DigitColour.Red, new PropertyChangedCallback(DigitColourChanged)));
+
+        private static void DigitColourChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UCDigit digit = d as UCDigit;
+            
         }
 
         public int Digits
@@ -35,7 +40,7 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
 
         public static readonly DependencyProperty DigitsProperty =
             DependencyProperty.Register("Digits", typeof(int), typeof(UCDigitalScreen),
-               new PropertyMetadata(11, new PropertyChangedCallback(DigitsChanged)));
+               new PropertyMetadata(0, new PropertyChangedCallback(DigitsChanged)));
 
         private static void DigitsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -43,10 +48,29 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
             display.Screen.Children.Clear();
             for (int i = 1; i <= (int)display.Digits; i++)
             {
-                display.Screen.Children.Add(new Viewbox() { StretchDirection = StretchDirection.Both, Stretch = Stretch.Uniform, Child = new UCDigit() { Name = "Digit_" + i } });
+                display.Screen.Children.Add(new Viewbox() { StretchDirection = StretchDirection.Both, Stretch = Stretch.Uniform, Child = new UCDigit() {DisplayDigit="0", Colour = display.DigitColour, Name = "Digit_" + i } });
             }
+            UpdateDisplay(display.DisplayValue, display);
         }
 
+        public bool IsOn
+        {
+            get { return (bool)GetValue(IsOnProperty); }
+            set { SetValue(IsOnProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsOnProperty =
+            DependencyProperty.Register("IsOn", typeof(bool), typeof(UCDigitalScreen),
+               new PropertyMetadata(true, new PropertyChangedCallback(IsOnChanged)));
+
+        private static void IsOnChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UCDigitalScreen display = d as UCDigitalScreen;
+            UpdateDisplay(display.DisplayValue, display);
+        }
+
+            
+      
         public string Label
         {
             get { return (string)GetValue(LabelProperty); }
@@ -77,37 +101,42 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
             DependencyProperty.Register("DisplayValue", typeof(string), typeof(UCDigitalScreen),
                new PropertyMetadata("", new PropertyChangedCallback(DisplayValueChanged)));
 
+      
+
         private static void DisplayValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             UCDigitalScreen display = d as UCDigitalScreen;
 
             if (e.NewValue != null)
             {
-                //if(display.Screen.Children.Count == 0)
-                //{
-                //    for (int i = 1; i <= (int)display.Digits; i++)
-                //    {
-                //        display.Screen.Children.Add(new Viewbox() { StretchDirection = StretchDirection.Both, Stretch = Stretch.Uniform, Child = new UCDigit() { Name = "Digit_" + i } });
-                //    }
-                //}
-
-                string displayString = e.NewValue.ToString();
-
-                List<UCDigit> _digits; _digits = new List<UCDigit>();
-
-                foreach (Viewbox digitContainer in display.Screen.Children)
+                if(display.Digits > 0)
                 {
-                    _digits.Add((UCDigit)digitContainer.Child);
+                    UpdateDisplay(e.NewValue.ToString(), display);
+                }
+            }
+        }
+
+        private static void UpdateDisplay(string displayString, UCDigitalScreen display)
+        {
+          
+
+            List<UCDigit> _digits; _digits = new List<UCDigit>();
+
+            foreach (Viewbox digitContainer in display.Screen.Children)
+            {
+                _digits.Add((UCDigit)digitContainer.Child);
+            }
+
+            if (displayString.Length <= _digits.Count)
+            {
+                for (int i = 0; i < _digits.Count; i++)
+                {
+
+                    _digits[i].DisplayDigit = "";
                 }
 
-                if (displayString.Length <= _digits.Count)
+                if (display.IsOn)
                 {
-                    for (int i = 0; i < _digits.Count; i++)
-                    {
-
-                        _digits[i].DisplayDigit = "";
-                    }
-
                     int spacer = display.Digits - displayString.Length;
 
                     for (int i = displayString.Length - 1; i >= 0; i--)
@@ -116,13 +145,14 @@ namespace Demo_Usercontrols.UserControls.Digital_Screen
                         _digits[i + spacer].DisplayDigit = value;
                     }
                 }
-                else
-                {
-                    _digits[0].DisplayDigit = "R";
-                    _digits[1].DisplayDigit = "R";
-                    _digits[2].DisplayDigit = "E";
-                }
+            }
+            else
+            {
+                _digits[0].DisplayDigit = "R";
+                _digits[1].DisplayDigit = "R";
+                _digits[2].DisplayDigit = "E";
             }
         }
     }
 }
+

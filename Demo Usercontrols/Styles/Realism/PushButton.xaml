@@ -6,138 +6,111 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox>
+                        <Border  x:Name="Border" CornerRadius="10" VerticalAlignment="Bottom"
+                                    Background="#FF252525"
+                                    Width="20" Height="20">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0.5" Direction="0" Opacity="1" />
+                            </Border.Effect>
+                            <Grid x:Name="Ellipse">
 
-                    <Grid Height="200" Width="200" >
-                        <Border Background="#FF4F4A4A" Width="175" Height="175" Margin="1, 1, 0, 0" CornerRadius="4">
 
-                        </Border>
-                        <Viewbox  x:Name="Button" Stretch="Uniform" StretchDirection="Both" Height="170"  Width="170" >
-                            <Grid Background="Black" Width="170" Height="170">
-                                <Grid>
-                                    <Polygon HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0" Points="
-                                     0,0
-                                     0,170
-                                     170,0
-                                     "  
-                                     x:Name="Piece_1"  >
-                                        <Polygon.Fill>
-                                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                                <GradientStop Color="#FFD0D0AE"/>
-                                                <GradientStop Color="#FF7F7F5B" Offset="0.997"/>
-                                            </LinearGradientBrush>
-                                        </Polygon.Fill>
-
-                                    </Polygon>
-                                    <Polygon  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0" Points="
-                                     
-                                     0,170
-                                     170,170
-                                     170,0
-                                     "  
-                                     x:Name="Piece_2"  >
-                                        <Polygon.Fill>
-                                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                                <GradientStop Color="#FF656640" Offset="0.003"/>
-                                                <GradientStop Color="#FF403C23" Offset="0.997"/>
-                                            </LinearGradientBrush>
-                                        </Polygon.Fill>
-
-                                    </Polygon>
-                                </Grid>
-                                <Border BorderThickness="2" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                                    <Border.Background>
-                                        <RadialGradientBrush>
-                                            <GradientStop Color="White"/>
-                                            <GradientStop Color="#FF6E7371" Offset="1"/>
-                                            <GradientStop Color="#FFD0D5CA" Offset="0.353"/>
-                                        </RadialGradientBrush>
-                                    </Border.Background>
-
-                                </Border>
-                                <Border BorderThickness="2" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Border.BorderBrush>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF4B4747" Offset="0.997"/>
-                                            <GradientStop Color="White"/>
-                                        </LinearGradientBrush>
-                                    </Border.BorderBrush>
-                                    <Border.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                                            <GradientStop Color="#9AF9FFCF" Offset="0.962"/>
-                                            <GradientStop Color="#99EEF4BE" Offset="0.212"/>
-                                        </LinearGradientBrush>
-                                    </Border.Background>
-                                    <TextBlock TextAlignment="Center" FontSize="30"   TextWrapping="Wrap"
-                                           Text="{TemplateBinding Content}" Foreground="#FF111111" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="SimSun">
-                                        <TextBlock.Effect>
-                                            <DropShadowEffect
+                                <Viewbox Visibility="Visible" x:Name="Button" Stretch="Uniform" StretchDirection="Both" Height="18.5"  Width="18.5" >
+                                    <Grid>
+                                        <Border CornerRadius="9" Width="18.5" Height="18.5"  x:Name="button"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                >
+                                            <Border.Background>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#FF341212" Offset="1"/>
+                                                    <GradientStop Color="#FFE22222" Offset="0.634"/>
+                                                    <GradientStop Color="#FFB61A1A" Offset="0.872"/>
+                                                    <GradientStop Color="#FFD03737" Offset="0.075"/>
+                                                </RadialGradientBrush>
+                                            </Border.Background>
+                                            <TextBlock TextAlignment="Center" FontSize="6"    TextWrapping="Wrap"
+                                           Text="{TemplateBinding Content}" Foreground="#FF282828" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="SimSun">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect
                                                   ShadowDepth="0"
                                                   Direction="190"
                                                   Opacity="1"
-                                                 BlurRadius="5" Color="#FF020202"/>
-                                        </TextBlock.Effect>
-                                    </TextBlock>
-                                </Border>
-                                <Grid.Effect>
-                                    <DropShadowEffect BlurRadius="5" ShadowDepth="5" Opacity="1" Direction="300" Color="#FF777777" />
-                                </Grid.Effect>
+                                                 BlurRadius="1.5" Color="#FF282222"/>
+                                                </TextBlock.Effect>
+                                            </TextBlock>
+
+                                        </Border>
+
+
+                                        <Border Visibility="Visible" Width="18.5" Height="18.5" CornerRadius="9">
+                                            <Border.Background>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="#00292929" Offset="1"/>
+                                                    <GradientStop Color="#FFB9B9B9" Offset="0.811"/>
+                                                    <GradientStop Color="#FFDDDDDD" Offset="0.788"/>
+                                                    <GradientStop Color="#00666363"/>
+                                                    <GradientStop Color="#00777676" Offset="0.725"/>
+                                                    <GradientStop Color="#00514F4F" Offset="0.852"/>
+                                                </RadialGradientBrush>
+                                            </Border.Background>
+                                            <Border.OpacityMask>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                    <GradientStop Offset="0.566"/>
+                                                    <GradientStop Color="#E6FFFFFF" Offset="0.899"/>
+                                                </LinearGradientBrush>
+                                            </Border.OpacityMask>
+                                            <Border.RenderTransform>
+                                                <RotateTransform CenterX="9" CenterY="9" Angle="150"/>
+                                            </Border.RenderTransform>
+                                        </Border>
+                                    </Grid>
+                                </Viewbox>
+
+                                <Ellipse
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center" Width="20" Height="20">
+                                    <Ellipse.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF6B4B40" Offset="0.994"/>
+                                            <GradientStop Color="#FFBFB2AD"/>
+                                        </LinearGradientBrush>
+                                    </Ellipse.Fill>
+                                    <Ellipse.OpacityMask>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="White" Offset="1"/>
+                                            <GradientStop Color="#E6FFFFFF" Offset="0.91"/>
+                                            <GradientStop Offset="0.88"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.OpacityMask>
+                                </Ellipse>
+                               
                             </Grid>
-                        </Viewbox>
-                       
+                        </Border>
 
-                    </Grid>
-
-
+                    </Viewbox>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="Button.IsPressed" Value="True">
-                            <Setter TargetName="Button" Property="Width" Value ="160"/>
-                            <Setter TargetName="Button" Property="Height" Value ="160"/>
-                        </Trigger>
-                        <Trigger Property="Button.IsPressed" Value="False">
-                            <Setter TargetName="Button" Property="Width" Value ="170"/>
-                            <Setter TargetName="Button" Property="Height" Value ="170"/>
-                        </Trigger>
-                        <!--<EventTrigger RoutedEvent="MouseDown">
+                        <!--<EventTrigger RoutedEvent="Checked">
                             <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
                         </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseDown">
+                        <EventTrigger RoutedEvent="Unchecked">
                             <SoundPlayerAction Source="/Demo_Usercontrols;component/Styles/SoundEffects/mixkit-hard-click-1118.wav" />
                         </EventTrigger>-->
-                        <!--<EventTrigger RoutedEvent="Checked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames
-                                            AutoReverse="True"
-                                            RepeatBehavior="Forever"
-                                        Storyboard.TargetName="glow"
-                                        Storyboard.TargetProperty="Radius"
-                                        Duration="0:0:2">
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0.0" />
-                                            <LinearDoubleKeyFrame Value="8" KeyTime="0:0:1" />
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="Unchecked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames
-                                            AutoReverse="True"
-                                            RepeatBehavior="Forever"
-                                        Storyboard.TargetName="glow"
-                                        Storyboard.TargetProperty="Radius"
-                                        Duration="0:0:2">
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0.0" />
-                                            <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>-->
-                     
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter TargetName="Button" Property="Width" Value ="17"/>
+                            <Setter TargetName="Button" Property="Height" Value ="17"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="False">
+                            <Setter TargetName="Button" Property="Width" Value ="18.5"/>
+                            <Setter TargetName="Button" Property="Height" Value ="18.5"/>
+                        </Trigger>
+
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
+               
             </Setter.Value>
         </Setter>
     </Style>

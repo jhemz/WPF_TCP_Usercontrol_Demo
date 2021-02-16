@@ -197,7 +197,7 @@
                     <StackPanel Orientation="Horizontal"  Margin="0, 15, 0, 0" HorizontalAlignment="Center">
                         <usercontrols:UCRotationalSwitch PointerColor="White" Label1="Off" Label2="On" MinAngle="0" MaxAngle="45"/>
                         <!--<usercontrols:UCRotationalSwitch PointerColor="Blue" Label1="Off" Label2="On" MinAngle="0" MaxAngle="45"/>-->
-                        <Button  Content="TALK" Style="{StaticResource PushButton}"/>
+                        <Button  Content="TALK" Style="{StaticResource PushButton}" Foreground="#FF232323"/>
                         <!--<ToggleButton Content="CLOSE" Style="{StaticResource RedLightButton}" Margin="5"/>-->
                     </StackPanel>
 

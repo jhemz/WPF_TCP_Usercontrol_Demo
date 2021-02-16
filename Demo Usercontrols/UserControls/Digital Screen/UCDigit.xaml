@@ -8,7 +8,7 @@
 
         <Ellipse Height="2" Width="2" Margin="0, 13, 0, 0" Fill="#197C0F0F"/>
         <Grid x:Name="Point_1">
-            <Ellipse  Fill="Red" Height="2" Width="2" Margin="0, 13, 0, 0">
+            <Ellipse  Fill="{Binding Fill, ElementName=color1}" Height="2" Width="2" Margin="0, 13, 0, 0">
                 <Ellipse.Effect>
                     <BlurEffect  Radius="10"/>
                 </Ellipse.Effect>
@@ -16,8 +16,8 @@
             <Ellipse Height="2" Width="2" Margin="0, 13, 0, 0">
                 <Ellipse.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
@@ -25,7 +25,7 @@
 
         <Ellipse Height="2" Width="2" Margin="0, 5, 0, 0" Fill="#197C0F0F"/>
         <Grid x:Name="Point_2">
-            <Ellipse  Fill="Red" Height="2" Width="2" Margin="0, 5, 0, 0">
+            <Ellipse  Fill="{Binding Fill, ElementName=color1}" Height="2" Width="2" Margin="0, 5, 0, 0">
                 <Ellipse.Effect>
                     <BlurEffect  Radius="10"/>
                 </Ellipse.Effect>
@@ -33,127 +33,319 @@
             <Ellipse Height="2" Width="2" Margin="0, 5, 0, 0">
                 <Ellipse.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Ellipse.Fill>
             </Ellipse>
         </Grid>
+        
         <Grid x:Name="Piece_1">
-            <Polygon Points="1,10 2.5,9 2.5,2.1 1,1" Fill="Red" >
+            <Polygon x:Name="color1" Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="#FFFF0000" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="1,10 2.5,9 2.5,2.1 1,1"  >
+            <Polygon x:Name="piece_1_Polygon" Points="
+                     1,9.1 
+                     1.7, 9.8
+                     2.4,9.1 
+                     2.4,2.1
+                     1.3,1
+                     1,1.2"  >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop x:Name="color2" Color="#FF890F0F" Offset="1"/>
+                        <GradientStop x:Name="color3" Color="#FFDD3E3E" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
         </Grid>
         <Grid x:Name="Piece_2">
-            <Polygon Points="9,10 7.5,9 7.5,2.1 9,1" Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="9,10 7.5,9 7.5,2.1 9,1">
+            <Polygon x:Name="piece_2_Polygon" Points="{Binding Points, ElementName=piece_1_Polygon}">
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
 
             </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX="-1"/>
+            </Grid.LayoutTransform>
         </Grid>
         <Grid x:Name="Piece_3">
-            <Polygon Points="1,19 2.5,17.9 2.5,11 1,10" Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="1,19 2.5,17.9 2.5,11 1,10"   >
+            <Polygon x:Name="piece_3_Polygon" Points="{Binding Points, ElementName=piece_1_Polygon}"   >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
+
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX="1" ScaleY="-1"/>
+            </Grid.LayoutTransform>
         </Grid>
         <Grid   x:Name="Piece_4">
-            <Polygon Points="9,19 7.5,17.9 7.5,11 9,10" Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="9,19 7.5,17.9 7.5,11 9,10" >
+            <Polygon x:Name="piece_4_Polygon" Points="{Binding Points, ElementName=piece_1_Polygon}" >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+            </Grid.LayoutTransform>
         </Grid>
         <Grid  x:Name="Piece_5">
-            <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6" Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_5_Polygon}" Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6"  >
+            <Polygon x:Name="piece_5_Polygon" Points="
+                     2.8,2 
+                     6.9,2 
+                     8,0.9
+                     7.8,0.6
+                     2,0.6
+                     1.7,0.9"  >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
         </Grid>
         <Grid x:Name="Piece_6">
-            <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1"  Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_6_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1"   >
+            <Polygon x:Name="piece_6_Polygon" Points="
+                     2.7,9.1
+                     1.9,10
+                     2.8,10.9 
+                     
+                    
+                     
+                     6.7,10.9 
+                     7.7,10 
+                     6.7,9.1
+                     
+                   
+                     "   >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
         </Grid>
         <Grid x:Name="Piece_7">
-            <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18"  Fill="Red" >
+            <Polygon Points="{Binding Points, ElementName=piece_5_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
                 <Polygon.Effect>
                     <BlurEffect  Radius="10"/>
                 </Polygon.Effect>
             </Polygon>
-            <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18"   >
+            <Polygon x:Name="piece_7_Polygon" Points="{Binding Points, ElementName=piece_5_Polygon}"   >
                 <Polygon.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF890F0F" Offset="1"/>
-                        <GradientStop Color="#FFDD3E3E" Offset="0.006"/>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Grid.LayoutTransform>
+        </Grid>
+        <Grid x:Name="Piece_8">
+            <Polygon Points="{Binding Points, ElementName=piece_8_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="piece_8_Polygon" Points="
+                      5.4,8.3 
+                      4.8,8.8 
+                      4.2,8.3
+                     
+                      4.2,2.6
+                      4.8,2.1
+                      5.4,2.6"      >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
                     </RadialGradientBrush>
                 </Polygon.Fill>
             </Polygon>
         </Grid>
-      
+        <Grid x:Name="Piece_9">
+            <Polygon Points="{Binding Points, ElementName=piece_8_Polygon}" Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon Points="{Binding Points, ElementName=piece_8_Polygon}"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Grid.LayoutTransform>
+        </Grid>
+        <Grid x:Name="Piece_10" Visibility="Visible">
+            <Polygon  Points="{Binding Points, ElementName=piece_10_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="piece_10_Polygon" Points="
+                      6.4,8.8 
+                      5.8,8.8 
+                      5.8,7.5
+                      6.8,2.8
+                      7,2.8
+                      7,5"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+        </Grid>
+        <Grid x:Name="Piece_11">
+            <Polygon   Points="{Binding Points, ElementName=piece_10_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="piece_11_Polygon"  Points="{Binding Points, ElementName=piece_10_Polygon}"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX="-1"/>
+            </Grid.LayoutTransform>
+        </Grid>
+        <Grid x:Name="Piece_12">
+            <Polygon Points="{Binding Points, ElementName=piece_12_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="piece_12_Polygon" Points="{Binding Points, ElementName=piece_10_Polygon}"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+            </Grid.LayoutTransform>
+        </Grid>
+        <Grid x:Name="Piece_13">
+            <Polygon Points="{Binding Points, ElementName=piece_10_Polygon}"  Fill="{Binding Fill, ElementName=color1}" >
+                <Polygon.Effect>
+                    <BlurEffect  Radius="10"/>
+                </Polygon.Effect>
+            </Polygon>
+            <Polygon x:Name="piece_13_Polygon"  Points="{Binding Points, ElementName=piece_10_Polygon}"   >
+                <Polygon.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="{Binding Color, ElementName=color2}" Offset="1"/>
+                        <GradientStop Color="{Binding Color, ElementName=color3}" Offset="0.006"/>
+                    </RadialGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Grid.LayoutTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Grid.LayoutTransform>
+        </Grid>
 
-        <Polygon Points="1,10 2.5,9 2.5,2.1 1,1" Fill="#337C0F0F" />
-        <Polygon Points="9,10 7.5,9 7.5,2.1 9,1" Fill="#337C0F0F" />
-        <Polygon Points="1,19 2.5,17.9 2.5,11 1,10" Fill="#337C0F0F"  />
-        <Polygon Points="9,19 7.5,17.9 7.5,11 9,10" Fill="#337C0F0F"  />
-        <Polygon Points="2.8,2 7.2,2 8.8,0.6 1.1,0.6" Fill="#337C0F0F"  />
-        <Polygon Points="1.5,10 2.8,10.9 7,10.9 8.5,10 7.2,9.1 2.7,9.1" Fill="#337C0F0F"/>
-        <Polygon Points="1.1,19.4 8.7,19.4 7.2,18 2.8,18" Fill="#337C0F0F" />
+        <Polygon x:Name="color4" Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="#337C0F0F" />
+        <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color4}">
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleX=" -1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color4}">
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY=" -1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_1_Polygon}" Fill="{Binding Fill, ElementName=color4}">
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY=" -1" ScaleX="-1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_5_Polygon}" Fill="{Binding Fill, ElementName=color4}" />
+        <Polygon Points="{Binding Points, ElementName=piece_6_Polygon}" Fill="{Binding Fill, ElementName=color4}" />
+        <Polygon Points="{Binding Points, ElementName=piece_7_Polygon}" Fill="{Binding Fill, ElementName=color4}">
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY=" -1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_8_Polygon}" Fill="{Binding Fill, ElementName=color4}" />
+        <Polygon Points="{Binding Points, ElementName=piece_8_Polygon}" Fill="{Binding Fill, ElementName=color4}">
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY=" -1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_10_Polygon}" Fill="{Binding Fill, ElementName=color4}" >
+            
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_11_Polygon}" Fill="{Binding Fill, ElementName=color4}" >
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_12_Polygon}" Fill="{Binding Fill, ElementName=color4}" >
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+            </Polygon.LayoutTransform>
+        </Polygon>
+        <Polygon Points="{Binding Points, ElementName=piece_13_Polygon}" Fill="{Binding Fill, ElementName=color4}" >
+            <Polygon.LayoutTransform>
+                <ScaleTransform ScaleX="-1" />
+            </Polygon.LayoutTransform>
+        </Polygon>
 
     </Grid>
 </UserControl>
