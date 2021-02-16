@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Node Name="Digits" Width="274"  Height="50">
+	<Digit Name="0" a="0" b="0" c="0" d="0" e="0" f="0" g="0" h="0" i="0" j="0" k="0" l="0" m="0" n="0" />
+	<Digit Name="a" a="1" b="1" c="1" d="1" e="1" f="1" g="0" h="0" i="0" j="0" k="0" l="0" m="0" n="0" />
+</Node>
+

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Demo_Usercontrols" xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls"
+             xmlns:local="clr-namespace:Demo_Usercontrols"
+             xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen"
+             xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls"
              mc:Ignorable="d" >
     <UserControl.Resources>
         <ResourceDictionary>
@@ -50,10 +52,10 @@
 
       
 
-        <digital_screen:UCDigitalScreen Grid.Row="1" Grid.Column="0" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h" HorizontalAlignment="Center"/>
-        <digital_screen:UCDigitalScreen Grid.Row="1" Grid.Column="1" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h x 10" HorizontalAlignment="Center"/>
-        <digital_screen:UCDigitalScreen Grid.Row="1" Grid.Column="2" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h x 10" HorizontalAlignment="Center"/>
-        <digital_screen:UCDigitalScreen Grid.Row="1" Grid.Column="3" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h" HorizontalAlignment="Center"/>
+        <digital_screen:UCDigitalScreen DigitColour="Red" Grid.Row="1" Grid.Column="0" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h" HorizontalAlignment="Center"/>
+        <digital_screen:UCDigitalScreen DigitColour="Red"  Grid.Row="1" Grid.Column="1" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h x 10" HorizontalAlignment="Center"/>
+        <digital_screen:UCDigitalScreen DigitColour="Red"  Grid.Row="1" Grid.Column="2" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h x 10" HorizontalAlignment="Center"/>
+        <digital_screen:UCDigitalScreen DigitColour="Red"  Grid.Row="1" Grid.Column="3" Digits="3" DisplayValue="000" Margin="5" Label="cGy/h" HorizontalAlignment="Center"/>
 
         <TreeView  Grid.Row="2" Grid.Column="0"  ItemContainerStyle="{StaticResource GraphStyle}" 
                    Background="Transparent" BorderThickness="0" 

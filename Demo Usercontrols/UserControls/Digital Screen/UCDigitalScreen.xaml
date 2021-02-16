@@ -119,37 +119,37 @@
 
                     <StackPanel x:Name="Screen" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="80">
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_11"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_11"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_10"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_10"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_9"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_9"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_8"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_8"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_7"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_7"   Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_6"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_6" Colour="{Binding DigitColour}" />
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_5"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_5"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_4"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_4"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_3"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_3"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_2"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_2"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                         <Viewbox StretchDirection="Both" Stretch="Uniform">
-                            <local:UCDigit DisplayDigit="" x:Name="Digit_1"/>
+                            <local:UCDigit DisplayDigit="0" x:Name="Digit_1"  Colour="{Binding DigitColour}"/>
                         </Viewbox>
                     </StackPanel>
 

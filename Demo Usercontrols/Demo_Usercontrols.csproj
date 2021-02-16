@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\IntToBooleanConverter.cs" />
     <Compile Include="UserControls\DoseRatePanel\DoseRatePanel.xaml.cs">
       <DependentUpon>DoseRatePanel.xaml</DependentUpon>
     </Compile>
@@ -275,6 +276,15 @@
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup>
+    <Resource Include="UserControls\Digital Screen\DigitProgramming.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+=======
   <ItemGroup />
+>>>>>>> b08f184afa75a4ff51327d34d65dcb86508e5354
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
