@@ -70,6 +70,9 @@
     <Compile Include="UserControls\Digital Screen\UCDigitalScreen.xaml.cs">
       <DependentUpon>UCDigitalScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Thermometer\UCThermometer.xaml.cs">
+      <DependentUpon>UCThermometer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Thermometer\UCThermometer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\ShipsLayout\Display.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,5 +275,6 @@
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
