@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usercontrols/crack.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usercontrols/doseratepanel/nodes.xml")]
 
 

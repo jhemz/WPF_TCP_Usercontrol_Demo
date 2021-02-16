@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControls\DoseRatePanel\DoseRatePanel.xaml.cs">
+      <DependentUpon>DoseRatePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Styles\Realism\GraphStyle.xaml.cs">
       <DependentUpon>GraphStyle.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,9 @@
     </Compile>
     <Compile Include="UserControls\Digital Screen\UCDigitalScreen.xaml.cs">
       <DependentUpon>UCDigitalScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Thermometer\UCThermometer.xaml.cs">
+      <DependentUpon>UCThermometer.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
@@ -79,6 +85,18 @@
     <Compile Include="UserControls\VoiceComms\UCVoiceComms.xaml.cs">
       <DependentUpon>UCVoiceComms.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles\Realism\YellowPushButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Realism\RedWarningLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DoseRatePanel\DoseRatePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,6 +176,10 @@
     <Page Include="UserControls\Digital Screen\UCDigitalScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Thermometer\UCThermometer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\ShipsLayout\Display.xaml">
       <SubType>Designer</SubType>
@@ -244,5 +266,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\DoseRatePanel\Nodes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\DoseRatePanel\NodesAlarmFail.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
