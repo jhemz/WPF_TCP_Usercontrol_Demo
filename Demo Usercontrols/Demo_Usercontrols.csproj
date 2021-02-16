@@ -71,11 +71,11 @@
     <Compile Include="UserControls\Digital Screen\UCDigitalScreen.xaml.cs">
       <DependentUpon>UCDigitalScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Thermometer\UCThermometer.xaml.cs">
-      <DependentUpon>UCThermometer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Thermometer\UCThermometer.xaml.cs">
+      <DependentUpon>UCThermometer.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCGuage.xaml.cs">
       <DependentUpon>UCGuage.xaml</DependentUpon>
@@ -178,13 +178,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Thermometer\UCThermometer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\ShipsLayout\Display.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Thermometer\UCThermometer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\UCGuage.xaml">
       <SubType>Designer</SubType>
@@ -276,15 +276,5 @@
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <Resource Include="UserControls\Digital Screen\DigitProgramming.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-=======
-  <ItemGroup />
->>>>>>> b08f184afa75a4ff51327d34d65dcb86508e5354
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,12 +1,11 @@
 ﻿<Window x:Class="ClientWPFDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-<<<<<<< HEAD
-        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols" xmlns:local="clr-namespace:Demo_Usercontrols.Converters;assembly=Demo_Usercontrols"
-=======
-        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols"
->>>>>>> b08f184afa75a4ff51327d34d65dcb86508e5354
+        xmlns:local="clr-namespace:Demo_Usercontrols.Converters;assembly=Demo_Usercontrols"
+        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols"
+        xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols"
+        xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols"
+        xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols"
         Height="855" Width="1520"  Title="CLIENT" WindowState="Maximized" >
     <Window.Resources>
         <local:IntToBooleanConverter x:Key="IntToBooleanConverter"/>
@@ -138,8 +137,6 @@
             <TabItem Header="Dose Rate">
                 <Grid>
                     <demo_usercontrols:DoseRatePanel Height="700" Width="1100"/>
-<<<<<<< HEAD
-
                 </Grid>
 
             </TabItem>
@@ -258,10 +255,6 @@
                         </TextBlock>
                     </StackPanel>
                 </StackPanel>
-               
-                
-=======
-                </Grid>
             </TabItem>
             <TabItem Header="Page 3">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -272,7 +265,7 @@
                     </Slider>
                     <thermometer:UCThermometer HorizontalAlignment="Center" Temperature="{Binding Value, ElementName=tempSlider}" VerticalAlignment="Stretch" IsCelsius="True" MinTemperature="-30"/>
                 </StackPanel>
->>>>>>> b08f184afa75a4ff51327d34d65dcb86508e5354
+
             </TabItem>
         </TabControl>
     </Grid>

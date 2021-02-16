@@ -4,21 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\
 Demo_Usercontrols
 none
 false
 DEBUG;TRACE
-C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\App.xaml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\App.xaml
 261421626148
 
-<<<<<<< HEAD
-161334350877
-=======
-16904801998
->>>>>>> b08f184afa75a4ff51327d34d65dcb86508e5354
+17-40767762
 13-1505183044
-Styles\Realism\YellowPushButton.xaml;Styles\Realism\RedWarningLight.xaml;UserControls\DoseRatePanel\DoseRatePanel.xaml;MainWindow.xaml;Styles\Cyber\GreenLightButton.xaml;Styles\Cyber\OrangeLightButton.xaml;Styles\Cyber\RedLightButton.xaml;Styles\Cyber\SwitchButton.xaml;Styles\Cyber\SwitchButton2.xaml;Styles\Realism\GraphStyle.xaml;Styles\Realism\PushButton.xaml;Styles\Realism\GreenLightButton.xaml;Styles\Realism\OrangeLightButton.xaml;Styles\Realism\FlashRedLightButton.xaml;Styles\Realism\RedLightButton.xaml;Styles\Realism\SwitchButton.xaml;Styles\Realism\SwitchButton2.xaml;Styles\Realism\TreeViewItem.xaml;UserControls\Arc.xaml;UserControls\Digital Screen\UCDigit.xaml;UserControls\Digital Screen\UCDigitalScreen.xaml;UserControls\Thermometer\UCThermometer.xaml;UserControls\ShipsLayout\Display.xaml;UserControls\UCGuage.xaml;UserControls\UCRotationalSwitch.xaml;UserControls\VoiceComms\UCVoiceComms.xaml;
+Styles\Realism\YellowPushButton.xaml;Styles\Realism\RedWarningLight.xaml;UserControls\DoseRatePanel\DoseRatePanel.xaml;MainWindow.xaml;Styles\Cyber\GreenLightButton.xaml;Styles\Cyber\OrangeLightButton.xaml;Styles\Cyber\RedLightButton.xaml;Styles\Cyber\SwitchButton.xaml;Styles\Cyber\SwitchButton2.xaml;Styles\Realism\GraphStyle.xaml;Styles\Realism\PushButton.xaml;Styles\Realism\GreenLightButton.xaml;Styles\Realism\OrangeLightButton.xaml;Styles\Realism\FlashRedLightButton.xaml;Styles\Realism\RedLightButton.xaml;Styles\Realism\SwitchButton.xaml;Styles\Realism\SwitchButton2.xaml;Styles\Realism\TreeViewItem.xaml;UserControls\Arc.xaml;UserControls\Digital Screen\UCDigit.xaml;UserControls\Digital Screen\UCDigitalScreen.xaml;UserControls\ShipsLayout\Display.xaml;UserControls\Thermometer\UCThermometer.xaml;UserControls\UCGuage.xaml;UserControls\UCRotationalSwitch.xaml;UserControls\VoiceComms\UCVoiceComms.xaml;
 
-True
+False
 
