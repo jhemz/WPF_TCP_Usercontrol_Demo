@@ -1,7 +1,3 @@
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.csprojAssemblyReference.cache
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\App.g.cs
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.cache
-C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.lref
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe.config
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\ClientWPFDemo.pdb
@@ -10,8 +6,12 @@ C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Newtonsoft
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Demo_Usercontrols.pdb
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Demo_Usercontrols.exe.config
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.csprojAssemblyReference.cache
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\MainWindow.baml
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\MainWindow.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\App.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.cache
+C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.lref
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\App.baml
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.g.resources
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.Properties.Resources.resources

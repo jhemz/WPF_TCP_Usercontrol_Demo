@@ -1,0 +1,557 @@
+﻿<UserControl x:Class="Demo_Usercontrols.UserControls.Manometer.Manometer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.Manometer" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls"
+             mc:Ignorable="d" >
+    <Grid Height="1100" Width="400">
+        <Border Panel.ZIndex="2" Width="54"  HorizontalAlignment="Left"
+                            Margin="85, 0, 0, 168" Height="140" VerticalAlignment="Top">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF3D3939" Offset="0"/>
+                    <GradientStop Color="#FFDFDEC7" Offset="0.466"/>
+                    <GradientStop Color="#FF3D3939" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </Border.Effect>
+        </Border>
+        <Border Panel.ZIndex="2" Width="70"  HorizontalAlignment="Left"
+                            Margin="77, 130, 0, 168" Height="10" VerticalAlignment="Top">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF523F26" Offset="0"/>
+                    <GradientStop Color="#FF886A43" Offset="0.262"/>
+                    <GradientStop Color="#FF49361C" Offset="1"/>
+                    <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                    <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                    <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                    <GradientStop Color="#FF917149" Offset="0.506"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </Border.Effect>
+
+        </Border>
+        <Border  Height="1000" Width="400" VerticalAlignment="Bottom">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF574438" Offset="1"/>
+                    <GradientStop Color="#FF4B3321" Offset="0.085"/>
+                    <GradientStop Color="#FF6C4831" Offset="0.165"/>
+                    <GradientStop Color="#FE6F5C4D" Offset="0.006"/>
+                    <GradientStop Color="#FF785A47" Offset="0.909"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <Grid>
+                <!--Brass fixings-->
+                <Border Panel.ZIndex="2" Width="60"  HorizontalAlignment="Left"
+                            Margin="82, 40, 0, 168" Height="60" VerticalAlignment="Top">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FF523F26" Offset="0"/>
+                            <GradientStop Color="#FF886A43" Offset="0.262"/>
+                            <GradientStop Color="#FF49361C" Offset="1"/>
+                            <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                            <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                            <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                            <GradientStop Color="#FF917149" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                    </Border.Effect>
+
+                </Border>
+              
+                <Border Panel.ZIndex="2" Width="60"  HorizontalAlignment="Right"
+                            Margin="0, 40, 82, 168" Height="60" VerticalAlignment="Top">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FF523F26" Offset="0"/>
+                            <GradientStop Color="#FF886A43" Offset="0.262"/>
+                            <GradientStop Color="#FF49361C" Offset="1"/>
+                            <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                            <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                            <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                            <GradientStop Color="#FF917149" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                    </Border.Effect>
+
+                </Border>
+                <Border Panel.ZIndex="2" Width="70"  HorizontalAlignment="Right"
+                            Margin="0, 40, 77, 168" Height="10" VerticalAlignment="Top">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FF523F26" Offset="0"/>
+                            <GradientStop Color="#FF886A43" Offset="0.262"/>
+                            <GradientStop Color="#FF49361C" Offset="1"/>
+                            <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                            <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                            <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                            <GradientStop Color="#FF917149" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                    </Border.Effect>
+
+                </Border>
+                
+                <!--Main box-->
+                <Border Margin="0, 100, 0, 100"  BorderThickness="30">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7A5D4A"/>
+                            <GradientStop Color="#FF71533C" Offset="1"/>
+                            <GradientStop Color="#FE573B27" Offset="0.738"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+
+                    <Grid>
+                        <!--Brass Fixings-->
+                        <Border Panel.ZIndex="2" Width="60"  HorizontalAlignment="Left"
+                            Margin="52, 0, 0, 168" Height="60" VerticalAlignment="Top">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF523F26" Offset="0"/>
+                                    <GradientStop Color="#FF886A43" Offset="0.262"/>
+                                    <GradientStop Color="#FF49361C" Offset="1"/>
+                                    <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                                    <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                                    <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                                    <GradientStop Color="#FF917149" Offset="0.506"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                            </Border.Effect>
+                        </Border>
+                        <Border Panel.ZIndex="2" Width="60"  HorizontalAlignment="Right"
+                            Margin="0, 0, 52, 168" Height="60" VerticalAlignment="Top">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF523F26" Offset="0"/>
+                                    <GradientStop Color="#FF886A43" Offset="0.262"/>
+                                    <GradientStop Color="#FF49361C" Offset="1"/>
+                                    <GradientStop Color="#FF6E5433" Offset="0.808"/>
+                                    <GradientStop Color="#FFDCBC91" Offset="0.363"/>
+                                    <GradientStop Color="#FFCDAD83" Offset="0.415"/>
+                                    <GradientStop Color="#FF917149" Offset="0.506"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <!--red liquid-->
+                        <Border Width="50"  HorizontalAlignment="Left" x:Name="LeftLevel"
+                            Margin="57, 500, 0, 168">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#CCC73833" Offset="0.064"/>
+                                    <GradientStop Color="#CCC73833" Offset="0.942"/>
+                                    <GradientStop Color="#00C73833" Offset="0.982"/>
+                                    <GradientStop Color="#00CE0700"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                           
+                        </Border>
+                        <Border Width="50"  HorizontalAlignment="Right" x:Name="RightLevel"
+                            Margin="0, 110, 58, 168">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#CCC73833" Offset="0.064"/>
+                                    <GradientStop Color="#CCC73833" Offset="0.942"/>
+                                    <GradientStop Color="#00C73833" Offset="0.982"/>
+                                    <GradientStop Color="#00C73833"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Ellipse Margin="55, 450, 55, 55" Width="225" Height="225">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#CCC73833" Offset="0.851"/>
+                                    <GradientStop Offset="0.55"/>
+                                    <GradientStop Color="#CCC73833" Offset="0.582"/>
+                                    <GradientStop Offset="0.018"/>
+                                    <GradientStop Color="#CCC73833" Offset="0.973"/>
+                                    <GradientStop Color="#CCC73833" Offset="0.677"/>
+                                    <GradientStop Color="#06C73833" Offset="1"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.OpacityMask>
+                                <LinearGradientBrush EndPoint="1.504,1.5" StartPoint="1.504,0.03">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Offset="0.33"/>
+                                    <GradientStop Color="#E6FFFFFF" Offset="0.335"/>
+                                </LinearGradientBrush>
+                            </Ellipse.OpacityMask>
+                            <Ellipse.RenderTransform>
+                                <RotateTransform CenterX="112.5" CenterY="112.5" Angle="0"/>
+                            </Ellipse.RenderTransform>
+                           
+                        </Ellipse>
+
+                        <!--Glass Tube-->
+                        <Border Width="50"  HorizontalAlignment="Left"
+                            Margin="57, 0, 0, 168">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#33000000" Offset="0.28"/>
+                                    <GradientStop Offset="0.625" Color="#33000000"/>
+                                    <GradientStop Color="#66256B62" Offset="0.012"/>
+                                    <GradientStop Color="#66256B62" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="5"/>
+                            </Border.Effect>
+                        </Border>
+                        <Border Width="50"  HorizontalAlignment="Right"
+                            Margin="0, 0, 58, 168">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#33000000" Offset="0.28"/>
+                                    <GradientStop Offset="0.625" Color="#33000000"/>
+                                    <GradientStop Color="#66256B62" Offset="0.012"/>
+                                    <GradientStop Color="#66256B62" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="5"/>
+                            </Border.Effect>
+                        </Border>
+                        <Ellipse Margin="55, 450, 55, 55" Width="225" Height="225">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#33000000" Offset="0.851"/>
+                                    <GradientStop Offset="0.55"/>
+                                    <GradientStop Color="#33000000" Offset="0.56"/>
+                                    <GradientStop/>
+                                    <GradientStop Color="#66256B62" Offset="0.97"/>
+                                    <GradientStop Color="#66256B62" Offset="0.573"/>
+                                    <GradientStop Color="#33000000" Offset="0.677"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.OpacityMask>
+                                <LinearGradientBrush EndPoint="1.504,1.5" StartPoint="1.504,0.03">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Offset="0.33"/>
+                                    <GradientStop Color="#E6FFFFFF" Offset="0.335"/>
+                                </LinearGradientBrush>
+                            </Ellipse.OpacityMask>
+                            <Ellipse.RenderTransform>
+                                <RotateTransform CenterX="112.5" CenterY="112.5" Angle="0"/>
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="5"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+
+                        <!--Glass Tube Shine-->
+                        <Grid>
+                            <Border Width="50" HorizontalAlignment="Left"
+                            Margin="57, 0, 0, 168">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#00000000" Offset="0.015"/>
+                                        <GradientStop Offset="1"/>
+                                        <GradientStop Offset="0.512" Color="#7FFFFFFF"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.43"/>
+                                        <GradientStop Offset="0.634"/>
+                                        <GradientStop Color="#009D9D9D" Offset="0.363"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                            </Border>
+                            <Border Width="50"  HorizontalAlignment="Right"
+                            Margin="0, 0, 58, 167">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#00000000" Offset="0.015"/>
+                                        <GradientStop Offset="1"/>
+                                        <GradientStop Offset="0.573" Color="#7FFFFFFF"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.479"/>
+                                        <GradientStop Offset="0.607"/>
+                                        <GradientStop Color="#009D9D9D" Offset="0.372"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <Ellipse Margin="55, 450, 55, 55" Width="225" Height="225">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.814"/>
+                                        <GradientStop Offset="0.55"/>
+                                        <GradientStop Color="#00000000" Offset="0.56"/>
+                                        <GradientStop/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="0.777"/>
+                                        <GradientStop Color="#00000000" Offset="1"/>
+                                        <GradientStop Color="#34686868" Offset="0.716"/>
+                                        <GradientStop Color="#55ABABAB" Offset="0.826"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                                <Ellipse.OpacityMask>
+                                    <LinearGradientBrush EndPoint="1.504,1.5" StartPoint="1.504,0.03">
+                                        <GradientStop Color="White" Offset="1"/>
+                                        <GradientStop Offset="0.33"/>
+                                        <GradientStop Color="#E6FFFFFF" Offset="0.335"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.OpacityMask>
+                                <Ellipse.RenderTransform>
+                                    <RotateTransform CenterX="112.5" CenterY="112.5" Angle="0"/>
+                                </Ellipse.RenderTransform>
+
+                            </Ellipse>
+                            <Grid.OpacityMask>
+                                <LinearGradientBrush EndPoint="1.504,1.5" StartPoint="1.504,0.03">
+                                    <GradientStop Color="White" Offset="0.646"/>
+                                    <GradientStop/>
+                                    <GradientStop Color="#3FFFFFFF" Offset="0.555"/>
+                                </LinearGradientBrush>
+                            </Grid.OpacityMask>
+                        </Grid>
+
+                        <!--Measure stick-->
+                        <Border CornerRadius="20" Width="100" HorizontalAlignment="Center" Height="450" Margin="0, 0, 0, 130">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF5D4B40" Offset="0"/>
+                                    <GradientStop Color="#FF664937" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock Text="6" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="5" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="4" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="3" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="2" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="1" Margin="15"  HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="0" Margin="15" HorizontalAlignment="Left" TextAlignment="Right" Foreground="#FF2C2C2C"  FontFamily="SimSun" FontSize="30">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="30"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Margin="0, 13">
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                          
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Margin="0, 26">
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Margin="0, 39">
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Margin="0, 52, 0, 0">
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border  Margin="0, 31.5" Height="2" Width="10"  HorizontalAlignment="Left" Background="#FF2C2C2C">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="2"/>
+                                        </Border.Effect>
+                                    </Border>
+                                </StackPanel>
+
+
+
+                            </Grid>
+                           
+                        </Border>
+                        
+
+                    </Grid>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="10"/>
+                    </Border.Effect>
+                </Border>
+            </Grid>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="10"/>
+            </Border.Effect>
+        </Border>
+    </Grid>
+</UserControl>

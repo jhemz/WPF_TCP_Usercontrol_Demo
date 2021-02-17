@@ -71,6 +71,9 @@
     <Compile Include="UserControls\Digital Screen\UCDigitalScreen.xaml.cs">
       <DependentUpon>UCDigitalScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Manometer\Manometer.xaml.cs">
+      <DependentUpon>Manometer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Digital Screen\UCDigitalScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Manometer\Manometer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

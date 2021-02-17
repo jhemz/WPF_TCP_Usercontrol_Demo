@@ -18,7 +18,9 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\MainWi
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Arc.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigit.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Manometer\Manometer.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\ShipsLayout\Display.g.cs
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Thermometer\UCThermometer.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCRotationalSwitch.g.cs
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\VoiceComms\UCVoiceComms.g.cs
@@ -36,7 +38,9 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Styles\Realism\TreeViewItem.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Arc.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Digital Screen\UCDigitalScreen.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Manometer\Manometer.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\ShipsLayout\Display.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Thermometer\UCThermometer.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCGuage.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\UCRotationalSwitch.baml
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\VoiceComms\UCVoiceComms.baml
@@ -46,5 +50,4 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_U
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csproj.CoreCompileInputs.cache
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.exe
 C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
-C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Thermometer\UCThermometer.g.cs
-C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\UserControls\Thermometer\UCThermometer.baml
+C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache
