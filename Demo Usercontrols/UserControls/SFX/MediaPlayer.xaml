@@ -4,40 +4,90 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.SFX"
-             mc:Ignorable="d" 
-             Height="300" Width="300"
-             MinWidth="300">
+             mc:Ignorable="d">
     <UserControl.CommandBindings>
+        <!--TODO i think these need moving to a Command folder and use ICommand-->
+        <CommandBinding Command="ApplicationCommands.New" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed"/>
         <CommandBinding Command="ApplicationCommands.Open" CanExecute="Open_CanExecute" Executed="Open_Executed" />
         <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
         <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
         <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
     </UserControl.CommandBindings>
+
     <Grid MouseWheel="Grid_MouseWheel">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF606060" Offset="1"/>
+                <GradientStop Color="#FF998F8F"/>
+                <GradientStop Color="#FFDADADA" Offset="0.203"/>
+                <GradientStop Color="#FF9F9696" Offset="0.162"/>
+                <GradientStop Color="#FF999999" Offset="0.409"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="38*" />
+            <RowDefinition Height="211*"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <!--Playlist Controls-->
+        <StackPanel Grid.Column="0" Grid.Row="0" Name="PlaylistControls" Orientation="Horizontal">
+            <ToolBar Margin="5" BorderBrush="Gray" BorderThickness="1">
+                <ToolBar.Effect>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                </ToolBar.Effect>
+                <Button Content="Add" Command="ApplicationCommands.Open"></Button>
+                <Separator/>
+                <!--TODO-->
+                <Button Content="Delete"></Button>
+            </ToolBar>
+        </StackPanel>
 
-        <ToolBar>
-            <Button Command="ApplicationCommands.Open">
-               Open
+        <!--Playlist-->
+        <ListBox Margin="5" Name="lbPlaylist" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" FontSize="5" BorderBrush="Gray" BorderThickness="1" Foreground="AliceBlue">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#7F574438" Offset="1"/>
+                    <GradientStop Color="#7F4B3321" Offset="0.085"/>
+                    <GradientStop Color="#7F6C4831" Offset="0.165"/>
+                    <GradientStop Color="#7F6F5C4D" Offset="0.006"/>
+                    <GradientStop Color="#7F785A47" Offset="0.909"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+            <ListBox.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </ListBox.Effect>
+        </ListBox>
+        
+        <!--Media Controls-->
+        <ToolBar Margin="5" Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
+            <Button Command="MediaCommands.Play" Content="Play">
             </Button>
-            <Separator />
-            <Button Command="MediaCommands.Play">
-                Play
+            <Separator/>
+            <Button Command="MediaCommands.Pause" Content="Pause">
             </Button>
-            <Button Command="MediaCommands.Pause">
-                Pause
+            <Button Command="MediaCommands.Stop" Content="Stop">
             </Button>
-            <Button Command="MediaCommands.Stop">
-                Stop
-            </Button>
+            <Separator/>
+            <ToolBar.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </ToolBar.Effect>
         </ToolBar>
-
-        <MediaElement Name="mePlayer" Grid.Row="1" LoadedBehavior="Manual" Stretch="Fill" ></MediaElement>
-        <StatusBar Grid.Row="2">
+        
+        <!--Media Window-->
+        <MediaElement Margin="5" Name="mePlayer" Grid.Row="1" Grid.Column="1" LoadedBehavior="Manual" Stretch="Fill" Grid.RowSpan="2" Width="250" Height="250">
+            <MediaElement.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </MediaElement.Effect>
+        </MediaElement>
+        
+        <!--Volume Control-->
+        <StatusBar Margin="5" Grid.Row="3" Grid.Column="1">
             <StatusBar.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
@@ -50,14 +100,30 @@
                 </ItemsPanelTemplate>
             </StatusBar.ItemsPanel>
             <StatusBarItem>
-                <TextBlock Name="lblProgressStatus">00:00:00</TextBlock>
+                <TextBlock Name="lblProgressStatus">
+                    00:00:00
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="1"/>
+                    </TextBlock.Effect>
+                </TextBlock>
             </StatusBarItem>
             <StatusBarItem Grid.Column="1" HorizontalContentAlignment="Stretch">
-                <Slider Name="sliProgress" Thumb.DragStarted="sliProgress_DragStarted"  Thumb.DragCompleted="sliProgress_DragCompleted" ValueChanged="sliProgress_ValueChanged" />
+                <Slider Name="sliProgress" Thumb.DragStarted="sliProgress_DragStarted"  Thumb.DragCompleted="sliProgress_DragCompleted" ValueChanged="sliProgress_ValueChanged">
+                    <Slider.Effect>
+                        <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
+                    </Slider.Effect>
+                </Slider>
             </StatusBarItem>
             <StatusBarItem Grid.Column="2">
-                <ProgressBar Name="pbVolume" Width="50" Height="12" Maximum="1" Value="{Binding ElementName=mePlayer, Path=Volume}" />
+                <ProgressBar Name="pbVolume" Width="50" Height="12" Maximum="1" Value="{Binding ElementName=mePlayer, Path=Volume}">
+                    <ProgressBar.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+                    </ProgressBar.Effect>
+                </ProgressBar>
             </StatusBarItem>
+            <StatusBar.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="2"/>
+            </StatusBar.Effect>
         </StatusBar>
     </Grid>
 </UserControl>

@@ -54,7 +54,6 @@ C:\Users\James\source\repos\Demo Usercontrols\Demo Usercontrols\obj\Debug\Demo_U
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe.config
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\bin\Debug\Demo_Usercontrols.exe
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\bin\Debug\Demo_Usercontrols.pdb
-C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Styles\Realism\YellowPushButton.baml
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Styles\Realism\RedWarningLight.baml
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Styles\Cyber\OrangeLightButton.baml
@@ -106,3 +105,5 @@ C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\D
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.pdb
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\UserControls\SFX\MediaPlayer.g.cs
 C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\UserControls\SFX\MediaPlayer.baml
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols.csprojAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\obj\Debug\Demo_Usercontrols_Content.g.cs

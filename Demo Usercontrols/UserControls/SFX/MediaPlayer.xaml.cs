@@ -1,5 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -14,6 +18,11 @@ namespace Demo_Usercontrols.UserControls.SFX
         private bool mediaPlayerIsPlaying = false;
         private bool userIsDraggingSlider = false;
 
+        public List<string> Media { get; set; } = new List<string>();
+
+       
+
+
         public MediaPlayer()
         {
             InitializeComponent();
@@ -21,6 +30,7 @@ namespace Demo_Usercontrols.UserControls.SFX
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
+            GetMediaForPlaylist();
 
         }
 
@@ -28,6 +38,7 @@ namespace Demo_Usercontrols.UserControls.SFX
         {
             if ((mePlayer.Source != null) && (mePlayer.NaturalDuration.HasTimeSpan) && (!userIsDraggingSlider))
             {
+                // every tick, set slider values based on video length
                 sliProgress.Minimum = 0;
                 sliProgress.Maximum = mePlayer.NaturalDuration.TimeSpan.TotalSeconds;
                 sliProgress.Value = mePlayer.Position.TotalSeconds;
@@ -40,15 +51,43 @@ namespace Demo_Usercontrols.UserControls.SFX
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            // open from MyDocuments by default.
+            var myDocumentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Media files (*.mp3;*.mpg;*.mpeg;*.mkv;*.png)|*.mp3;*.mpg;*.mpeg;*.mkv;*.png|All files (*.*)|*.*";
+            openFileDialog.InitialDirectory = myDocumentsDirectory;
+            openFileDialog.Filter = "Media files (*.mp3;*.mpg;*.mpeg;*.mkv;*.png;*.mp4;*.jpeg;*.jpg)|*.mp3;*.mpg;*.mpeg;*.mkv;*.png;*.mp4;*.jpeg;*.jpg|All files (*.*)|*.*";
+            
             if (openFileDialog.ShowDialog() == true)
-                mePlayer.Source = new Uri(openFileDialog.FileName);
+            {
+                foreach (var file in openFileDialog.FileNames)
+                {
+                    // TODO files must be open from Documents folder which could cause bug if user manually changes directory at file load.
+                    // Add clause to check user hasent changed file upload directory
+                    var sourcePath = myDocumentsDirectory;
+                    var targetPath = @"C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Media\";
+                    var sourceFile = Path.Combine(sourcePath, file);
+                    var destFile =   Path.Combine(targetPath, openFileDialog.SafeFileName);
+                    File.Copy(sourceFile, destFile, true);
+                }
+                // reload playlist
+                GetMediaForPlaylist();
+            }
+
         }
 
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = (mePlayer != null) && (mePlayer.Source != null);
+            //TODO make dynamil
+            var targetPath = @"C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Media\";
+            if (lbPlaylist.SelectedItem != null)
+            {
+                var mediaSource = Path.Combine(targetPath, lbPlaylist.SelectedItem.ToString());
+                mePlayer.Source = new Uri(mediaSource);
+            }
+
+         
         }
 
         private void Play_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -99,5 +138,36 @@ namespace Demo_Usercontrols.UserControls.SFX
             mePlayer.Volume += (e.Delta > 0) ? 0.1 : -0.1;
         }
 
+        public void GetMediaForPlaylist()
+        {
+            // TODO make dynamic
+            var filePath = @"C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\Demo Usercontrols\Media\";
+
+            var directoryItems = Directory.GetFiles(filePath, "*.png").Select(Path.GetFileName);
+            lbPlaylist.ItemsSource = Directory
+                                    .EnumerateFiles(filePath)
+                                    .Where(file => file.ToLower().EndsWith("jpg") 
+                                    || file.ToLower().EndsWith("png") 
+                                    || file.ToLower().EndsWith("wav") 
+                                    || file.ToLower().EndsWith("mpg") 
+                                    || file.ToLower().EndsWith("mpeg") 
+                                    || file.ToLower().EndsWith("mp3")
+                                    || file.ToLower().EndsWith("mp4")
+                                    || file.ToLower().EndsWith("jpg")
+                                    || file.ToLower().EndsWith("jpeg")
+                                    ).Select(Path.GetFileName)
+                                    .ToList();
+
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

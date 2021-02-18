@@ -290,5 +290,11 @@
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Media\ChemicalThreatBoard.png" />
+    <Resource Include="Media\GasMask.jpg" />
+    <Content Include="Media\NavyMissileStrike540p.mp4" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
