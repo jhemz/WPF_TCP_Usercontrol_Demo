@@ -74,6 +74,9 @@
     <Compile Include="UserControls\Manometer\Manometer.xaml.cs">
       <DependentUpon>Manometer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SFX\MediaPlayer.xaml.cs">
+      <DependentUpon>MediaPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Manometer\Manometer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SFX\MediaPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

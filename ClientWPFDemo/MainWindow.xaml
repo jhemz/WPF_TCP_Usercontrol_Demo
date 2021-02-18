@@ -5,7 +5,7 @@
         xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols"
         xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols"
         xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols"
-        xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols" xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols"
+        xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols" xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols" xmlns:sfx="clr-namespace:Demo_Usercontrols.UserControls.SFX;assembly=Demo_Usercontrols"
         Height="855" Width="1520"  Title="CLIENT" WindowState="Maximized" >
     <Window.Resources>
         <local:IntToBooleanConverter x:Key="IntToBooleanConverter"/>
@@ -256,7 +256,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Page 3">
+            <TabItem Header="Temperature">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="597" Maximum="50"  Minimum="-30" Value="37" Name="tempSlider" Orientation="Vertical">
                         <Slider.Effect>
@@ -273,9 +273,15 @@
                         <Slider SmallChange="0.1" x:Name="pressure" Minimum="0" Maximum="6" VerticalAlignment="Center" Width="400" Margin="50" TickPlacement="Both"/>
                         <manometer:Manometer Value="{Binding Value, ElementName=pressure}" />
                     </StackPanel>
-                   
+
                 </Viewbox>
-                
+            </TabItem>
+            <TabItem Header="Media">
+                <Viewbox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <sfx:MediaPlayer></sfx:MediaPlayer>
+                    </StackPanel>
+                </Viewbox>
             </TabItem>
         </TabControl>
     </Grid>
