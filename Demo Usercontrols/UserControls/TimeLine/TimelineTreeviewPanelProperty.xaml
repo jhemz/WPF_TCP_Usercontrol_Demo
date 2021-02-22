@@ -11,6 +11,7 @@
                 <StackPanel Orientation="Horizontal" Height="20">
                     <TextBlock x:Name="lblHeader" Text="Property 1" FontSize="15" VerticalAlignment="Center" Foreground="White"/>
                     <CheckBox x:Name="chkBx" IsChecked="False" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtBox"/>
                 </StackPanel>
             </Border>
         </TreeViewItem.Header>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -35,13 +36,20 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                 
                 if (tle.stackSceneTimeline.Children.Count == 0)
                 {
-                    if (tle.CurrentState == true)
+                    switch (tle.CurrentStateType)
                     {
-                        tle.stackSceneTimeline.Children.Add(tle.TrueBlock());
-                    }
-                    else
-                    {
-                        tle.stackSceneTimeline.Children.Add(tle.FalseBlock());
+                        case "Boolean":
+                            if (Convert.ToBoolean(tle.CurrentState) == true)
+                            {
+                                tle.stackSceneTimeline.Children.Add(tle.TrueBlock());
+                            }
+                            else
+                            {
+                                tle.stackSceneTimeline.Children.Add(tle.FalseBlock());
+                            }
+                            break;
+                        case "Double":
+                            break;
                     }
                 }//if the stack is empty, add initial blocks
                 if (time == tle.StartTime)
@@ -67,7 +75,6 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                             if (index == lastIndex)
                             {
                                 //length = time * 50
-
                                 double endTimeOfLastBlock = totalLengthSoFar / 50;
                                 double newRight = (sceneTime * 50) - (endTimeOfLastBlock * 50);
                                 block.Width = newRight;
@@ -109,28 +116,49 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             TimelineSceneTimeline tle = d as TimelineSceneTimeline;
         }
 
-        public static readonly DependencyProperty CurrentStateProperty =
-      DependencyProperty.Register("CurrentState", typeof(bool), typeof(TimelineSceneTimeline), new
-      PropertyMetadata(false, new PropertyChangedCallback(OnCurrentStateChanged)));
+        public static readonly DependencyProperty CurrentStateTypeProperty =
+      DependencyProperty.Register("CurrentStateType", typeof(string), typeof(TimelineSceneTimeline), new
+      PropertyMetadata("Double", new PropertyChangedCallback(OnCurrentStateTypeChanged)));
 
-        public bool CurrentState
+        public string CurrentStateType
         {
-            get { return (bool)GetValue(CurrentStateProperty); }
+            get { return (string)GetValue(CurrentStateTypeProperty); }
+            set { SetValue(CurrentStateTypeProperty, value); }
+        }
+        private static void OnCurrentStateTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimelineSceneTimeline tl = d as TimelineSceneTimeline;
+        }
+
+        public static readonly DependencyProperty CurrentStateProperty =
+      DependencyProperty.Register("CurrentState", typeof(double), typeof(TimelineSceneTimeline), new
+      PropertyMetadata(0.0, new PropertyChangedCallback(OnCurrentStateChanged)));
+
+        public double CurrentState
+        {
+            get { return (double)GetValue(CurrentStateProperty); }
             set { SetValue(CurrentStateProperty, value); }
         }
         private static void OnCurrentStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TimelineSceneTimeline tl = d as TimelineSceneTimeline;
 
-
-            if ((bool)e.NewValue == true)
+            switch (tl.CurrentStateType)
             {
-                tl.stackSceneTimeline.Children.Add(tl.TrueBlock());
+                case "Boolean":
+                    if (Convert.ToBoolean((double)e.NewValue) == true)
+                    {
+                        tl.stackSceneTimeline.Children.Add(tl.TrueBlock());
+                    }
+                    else
+                    {
+                        tl.stackSceneTimeline.Children.Add(tl.FalseBlock());
+                    }
+                    break;
+                case "Double":
+                    break;
             }
-            else
-            {
-                tl.stackSceneTimeline.Children.Add(tl.FalseBlock());
-            }
+           
         }
 
         private Border TrueBlock()

@@ -9,9 +9,7 @@
         xmlns:airpressurecontrolpanel="clr-namespace:Demo_Usercontrols.UserControls.AirPressureControlPanel;assembly=Demo_Usercontrols" 
         xmlns:timeline="clr-namespace:Demo_Usercontrols.UserControls.TimeLine;assembly=Demo_Usercontrols"
         xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols"
-        xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols" 
-        
-
+        xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols" xmlns:sfx="clr-namespace:Demo_Usercontrols.UserControls.SFX;assembly=Demo_Usercontrols"
         Height="855" Width="1520"  Title="CLIENT" WindowState="Maximized" >
     <Window.Resources>
         <local:IntToBooleanConverter x:Key="IntToBooleanConverter"/>
@@ -286,6 +284,8 @@
                         <ToggleButton IsChecked="{Binding Property1}" Style="{StaticResource RedLightButton}" Content="Property 1"/>
                         <ToggleButton IsChecked="{Binding Property2}" Style="{StaticResource OrangeLightButton}" Content="Property 2"/>
                         <ToggleButton IsChecked="{Binding Property3}" Style="{StaticResource GreenLightButton}" Content="Property 3"/>
+                        <demo_usercontrols:UCGuage DialBackground="Clean" MaxValue="300" Value="{Binding Property4}" Title="Property4" />
+                        <Slider SmallChange="0.1" Value="{Binding Property4}" Minimum="0" Maximum="300" VerticalAlignment="Center" Width="400" Margin="50" TickPlacement="Both"/>
                     </StackPanel>
                     <Label x:Name="lblSceneUpdate" Content="" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <timeline:TimeLine x:Name="Timelime" Scenes="{Binding Scenes}" Duration="60" VerticalAlignment="Bottom" 
@@ -293,15 +293,15 @@
                 </Grid>
             </TabItem>
            
-            <!--</TabItem>-->
-            <!--<TabItem Header="Media">
+           
+            <TabItem Header="Media">
                 <Viewbox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <sfx:MediaPlayer></sfx:MediaPlayer>
+                        <!--<sfx:MediaPlayer></sfx:MediaPlayer>-->
                     </StackPanel>
                 </Viewbox>
 
-            </TabItem>-->
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

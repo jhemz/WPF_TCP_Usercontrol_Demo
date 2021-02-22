@@ -92,6 +92,7 @@ namespace ClientWPFDemo.ViewModels
                 Property1 = currentScene.Panels[0].Property1_DefaultValue;
                 Property2 = currentScene.Panels[0].Property2_DefaultValue;
                 Property3 = currentScene.Panels[0].Property3_DefaultValue;
+                Property4 = currentScene.Panels[0].Property4_DefaultValue;
             }
         }
 
@@ -136,6 +137,21 @@ namespace ClientWPFDemo.ViewModels
             {
                 property3 = value;
                 CurrentScene.Panels[0].Property3 = value;//this updates the working proeprty that the timeline can see that the user has changed
+                OnPropertyChanged();
+            }
+        }
+
+        private double property4;
+        public double Property4
+        {
+            get
+            {
+                return property4;
+            }
+            set
+            {
+                property4 = value;
+                CurrentScene.Panels[0].Property4 = value;//this updates the working proeprty that the timeline can see that the user has changed
                 OnPropertyChanged();
             }
         }

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Demo_Usercontrols.UserControls.TimeLine
+﻿namespace Demo_Usercontrols.UserControls.TimeLine
 {
     public class vmTimelinePanel : vmTimelineBase
     {
@@ -94,6 +86,35 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             set
             {
                 property3_DefaultValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private double property4;
+        [Property(PropertyType.Internal)]
+        public double Property4
+        {
+            get
+            {
+                return property4;
+            }
+            set
+            {
+                property4 = value;
+                OnPropertyChanged();
+            }
+        }
+        private double property4_DefaultValue;
+        [Property(PropertyType.Display, "Property4")]
+        public double Property4_DefaultValue
+        {
+            get
+            {
+                return property4_DefaultValue;
+            }
+            set
+            {
+                property4_DefaultValue = value;
                 OnPropertyChanged();
             }
         }

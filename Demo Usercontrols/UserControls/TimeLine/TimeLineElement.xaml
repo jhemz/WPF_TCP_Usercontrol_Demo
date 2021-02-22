@@ -32,11 +32,9 @@
                 </svgc:SvgViewbox>
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7A6F27" Offset="0.006"/>
-                        <GradientStop Color="#FFE2EB13" Offset="0.021"/>
-                        <GradientStop Color="#FF60571F" Offset="1"/>
-                        <GradientStop Color="#FFE2EB13" Offset="0.945"/>
-                        <GradientStop Color="#FFB6AE7D" Offset="0.512"/>
+                        <GradientStop Color="#FFD3C500" Offset="0.049"/>
+                        <GradientStop Color="#FFD3C500" Offset="1"/>
+                        <GradientStop Color="#FFFFD75D" Offset="0.476"/>
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
@@ -44,11 +42,9 @@
                 <svgc:SvgViewbox Source="/Demo_Usercontrols;component/UserControls/Timeline/arrow.svg" Width="5" />
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7A6F27" Offset="0.006"/>
-                        <GradientStop Color="#FFE2EB13" Offset="0.021"/>
-                        <GradientStop Color="#FF60571F" Offset="1"/>
-                        <GradientStop Color="#FFE2EB13" Offset="0.945"/>
-                        <GradientStop Color="#FFB6AE7D" Offset="0.512"/>
+                        <GradientStop Color="#FFD3C500" Offset="0.049"/>
+                        <GradientStop Color="#FFD3C500" Offset="1"/>
+                        <GradientStop Color="#FFFFD75D" Offset="0.476"/>
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>

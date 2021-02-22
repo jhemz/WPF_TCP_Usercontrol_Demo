@@ -165,17 +165,26 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                             var propValue = prop.GetValue(panel, null);
 
                             PropertyAttribute MyAttribute = (PropertyAttribute)Attribute.GetCustomAttribute(prop, typeof(PropertyAttribute));
-
+                           
+                            string propType = prop.PropertyType.Name;
                             if (MyAttribute.PropertyType == PropertyType.Display)
                             {
                                 //binding the ischecked property to the proeprty_defaultValue in the vm
-
                                 TimelineTreeviewPanelProperty tltpp = new TimelineTreeviewPanelProperty() { Header = MyAttribute.DisplayName };
                                 Binding tltppBinding = new Binding(propName);
                                 tltppBinding.Source = panel;
                                 tltppBinding.Mode = BindingMode.TwoWay;
-                                tltpp.chkBx.SetBinding(CheckBox.IsCheckedProperty, tltppBinding);
-
+                                switch (propType)
+                                {
+                                    case "Boolean":
+                                        tltpp.txtBox.Visibility = Visibility.Collapsed;
+                                        tltpp.chkBx.SetBinding(CheckBox.IsCheckedProperty, tltppBinding);
+                                        break;
+                                    case "Double":
+                                        tltpp.chkBx.Visibility = Visibility.Collapsed;
+                                        tltpp.txtBox.SetBinding(TextBox.TextProperty, tltppBinding);
+                                        break;
+                                }
                                 treeViewPanelItem.Items.Add(tltpp);
                             }
                         }
@@ -222,13 +231,13 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                         {
                             string propName = prop.Name;
                             var propValue = prop.GetValue(panel, null);
-
+                            string propType = prop.PropertyType.Name;
                             PropertyAttribute MyAttribute = (PropertyAttribute)Attribute.GetCustomAttribute(prop, typeof(PropertyAttribute));
 
                             if (MyAttribute.PropertyType == PropertyType.Display)
                             {
                                 //binding the ischecked property to the proeprty_defaultValue in the vm
-                                TimelineSceneTimeline tlstl = new TimelineSceneTimeline();
+                                TimelineSceneTimeline tlstl = new TimelineSceneTimeline() { CurrentStateType = propType };
 
                                 Binding tlstStartBinding = new Binding("Start");
                                 tlstStartBinding.Source = tle;
