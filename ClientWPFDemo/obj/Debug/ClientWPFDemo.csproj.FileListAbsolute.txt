@@ -36,3 +36,25 @@ C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFD
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.csproj.CopyComplete
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.exe
 C:\Users\James\source\repos\Demo Usercontrols\ClientWPFDemo\obj\Debug\ClientWPFDemo.pdb
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe.config
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\ClientWPFDemo.exe
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\ClientWPFDemo.pdb
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\Demo_Usercontrols.exe
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\Demo_Usercontrols.pdb
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\Demo_Usercontrols.exe.config
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.csprojAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\MainWindow.baml
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\MainWindow.g.cs
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\App.g.cs
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.cache
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo_MarkupCompile.lref
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\App.baml
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.g.resources
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.Properties.Resources.resources
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.csproj.GenerateResource.cache
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.csproj.CopyComplete
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.exe
+C:\Users\Chris\Documents\GitHub\WPF_TCP_Usercontrol_Demo\ClientWPFDemo\obj\Debug\ClientWPFDemo.pdb

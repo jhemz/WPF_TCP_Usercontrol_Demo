@@ -101,6 +101,9 @@
     <Compile Include="UserControls\Manometer\Manometer.xaml.cs">
       <DependentUpon>Manometer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SFX\MediaPlayer.xaml.cs">
+      <DependentUpon>MediaPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ShipsLayout\Display.xaml.cs">
       <DependentUpon>Display.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\SFX\MediaPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ShipsLayout\Display.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -378,6 +385,7 @@
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="Styles\play.svg" />
   </ItemGroup>
@@ -390,6 +398,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UserControls\TimeLine\arrow.svg" />
+=======
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Media\ChemicalThreatBoard.png" />
+    <Resource Include="Media\GasMask.jpg" />
+    <Content Include="Media\NavyMissileStrike540p.mp4" />
+>>>>>>> 885d22ccf5eb8eca331ab249761439594f05d722
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

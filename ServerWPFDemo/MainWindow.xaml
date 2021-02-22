@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerWPFDemo"
         Title="SERVER"
-        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols" xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols"
+        xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols" xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols" xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols" xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:mediaplayer="clr-namespace:Demo_Usercontrols.UserControls.SFX;assembly=Demo_Usercontrols"
         Height="855" Width="1520"   WindowState="Maximized" >
     <Grid>
         <Grid.Background>
@@ -85,6 +85,11 @@
             Style="{StaticResource SwitchButton}"/>
                                 <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
             Style="{StaticResource SwitchButton2}"/>
+                                
+                                <mediaplayer:MediaPlayer>
+                                    
+                                </mediaplayer:MediaPlayer>
+                                
                             </StackPanel>
                             <Path Stroke="#FF2C2C2C" StrokeThickness="3">
                                 <Path.Data>
