@@ -35,6 +35,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SharpVectors.Converters.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Converters.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Core, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Css, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Dom, Version=1.7.1.0, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Model, Version=1.7.1.0, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Gdi, Version=1.7.1.0, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Rendering.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Runtime.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Runtime.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -56,6 +80,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\IntToBooleanConverter.cs" />
+    <Compile Include="UserControls\AirPressureControlPanel\AirPressureControlPanel.xaml.cs">
+      <DependentUpon>AirPressureControlPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DoseRatePanel\DoseRatePanel.xaml.cs">
       <DependentUpon>DoseRatePanel.xaml</DependentUpon>
     </Compile>
@@ -80,6 +107,29 @@
     <Compile Include="UserControls\Thermometer\UCThermometer.xaml.cs">
       <DependentUpon>UCThermometer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TimeLine\PropertyAttribute.cs" />
+    <Compile Include="UserControls\TimeLine\TimeLine.xaml.cs">
+      <DependentUpon>TimeLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimeLineElement.xaml.cs">
+      <DependentUpon>TimeLineElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineSceneTimeline.xaml.cs">
+      <DependentUpon>TimelineSceneTimeline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineTreeviewScene.xaml.cs">
+      <DependentUpon>TimelineTreeviewScene.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineTreeviewPanelProperty.xaml.cs">
+      <DependentUpon>TimelineTreeviewPanelProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineTick.xaml.cs">
+      <DependentUpon>TimelineTick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\SceneUpdateEvent.cs" />
+    <Compile Include="UserControls\TimeLine\vmTimelineBase.cs" />
+    <Compile Include="UserControls\TimeLine\vmTimelinePanel.cs" />
+    <Compile Include="UserControls\TimeLine\vmTimelineScene.cs" />
     <Compile Include="UserControls\UCGuage.xaml.cs">
       <DependentUpon>UCGuage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +139,22 @@
     <Compile Include="UserControls\VoiceComms\UCVoiceComms.xaml.cs">
       <DependentUpon>UCVoiceComms.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles\Realism\BlueLightButton2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Realism\BlueLightButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Realism\CleanUIPushButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Realism\CustomScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Realism\YellowPushButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +162,10 @@
     <Page Include="Styles\Realism\RedWarningLight.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AirPressureControlPanel\AirPressureControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\DoseRatePanel\DoseRatePanel.xaml">
       <SubType>Designer</SubType>
@@ -193,6 +263,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\TimeLine\TimeLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimeLineElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineSceneTimeline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineTreeviewScene.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineTreeviewPanelProperty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineTick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCGuage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +318,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -282,6 +377,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UserControls\DoseRatePanel\NodesFail.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\play.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\playpause.svg" />
+    <Resource Include="Styles\skipnext.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skipback.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\TimeLine\arrow.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,8 +46,8 @@ namespace Demo_Usercontrols.UserControls.Manometer
 
             if (newValue <= 6)
             {
-                int heightRight = (int)((newValue / 6) * 390) + 110;
-                int heightLeft = (500 - heightRight) + 110;
+                int heightLeft = (int)((newValue / 6) * 390) + 110;
+                int heightRight = (500 - heightLeft) + 110;
 
                 m.RightLevel.Margin = new Thickness(0, heightRight, 58, 168);
                 m.LeftLevel.Margin = new Thickness(57, heightLeft, 0, 168);

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Demo_Usercontrols.UserControls.TimeLine.TimelineTick"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.TimeLine"
+             mc:Ignorable="d">
+    <Grid Width="50">
+        <TextBlock x:Name="Text" Text="0" HorizontalAlignment="Right" Margin="0, 0, -2.5, 0"/>
+        <Border Margin="0, 20, 37.5, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Border Margin="0, 20, 25, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Border Margin="0, 20, 12.5, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Border Margin="0, 20, 0, 0"  Width="1"   Background="Gray" HorizontalAlignment="Right" />
+    </Grid>
+</UserControl>

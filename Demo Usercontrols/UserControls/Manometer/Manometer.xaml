@@ -156,7 +156,7 @@
 
                         <!--red liquid-->
                         <Border Width="50"  HorizontalAlignment="Left" x:Name="LeftLevel"
-                            Margin="57, 500, 0, 168">
+                            Margin="57, 110, 0, 168">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
                                     <GradientStop Color="#CCC73833" Offset="0.064"/>
@@ -168,7 +168,7 @@
                            
                         </Border>
                         <Border Width="50"  HorizontalAlignment="Right" x:Name="RightLevel"
-                            Margin="0, 110, 58, 168">
+                            Margin="0, 500, 58, 168">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
                                     <GradientStop Color="#CCC73833" Offset="0.064"/>

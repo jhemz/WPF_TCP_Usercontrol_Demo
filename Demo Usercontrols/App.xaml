@@ -15,7 +15,10 @@
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/PushButton.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/RedWarningLight.xaml" />
                 <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/YellowPushButton.xaml" />
-                
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/BlueLightButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/BlueLightButton2.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/CleanUIPushButton.xaml" />
+                <ResourceDictionary Source="/Demo_Usercontrols;component/Styles/Realism/CustomScrollViewer.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

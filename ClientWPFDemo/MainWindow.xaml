@@ -5,7 +5,7 @@
         xmlns:digital_screen="clr-namespace:Demo_Usercontrols.UserControls.Digital_Screen;assembly=Demo_Usercontrols"
         xmlns:voicecomms="clr-namespace:Demo_Usercontrols.UserControls.VoiceComms;assembly=Demo_Usercontrols"
         xmlns:usercontrols="clr-namespace:Demo_Usercontrols.UserControls;assembly=Demo_Usercontrols"
-        xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols" xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols"
+        xmlns:demo_usercontrols="clr-namespace:Demo_Usercontrols;assembly=Demo_Usercontrols" xmlns:thermometer="clr-namespace:Demo_Usercontrols.UserControls.Thermometer;assembly=Demo_Usercontrols" xmlns:manometer="clr-namespace:Demo_Usercontrols.UserControls.Manometer;assembly=Demo_Usercontrols" xmlns:airpressurecontrolpanel="clr-namespace:Demo_Usercontrols.UserControls.AirPressureControlPanel;assembly=Demo_Usercontrols" xmlns:timeline="clr-namespace:Demo_Usercontrols.UserControls.TimeLine;assembly=Demo_Usercontrols"
         Height="855" Width="1520"  Title="CLIENT" WindowState="Maximized" >
     <Window.Resources>
         <local:IntToBooleanConverter x:Key="IntToBooleanConverter"/>
@@ -86,10 +86,9 @@
                             <StackPanel Orientation="Horizontal">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <ToggleButton IsChecked="{Binding Button4}"  Content="This is switch button" Margin="5"
-            Style="{StaticResource SwitchButton}"/>
-                                        <ToggleButton IsChecked="{Binding Button5}"   Content="This is another switch button" Margin="5"
-            Style="{StaticResource SwitchButton2}"/>
+                                        <demo_usercontrols:UCGuage 
+                    CrackIsVisible="{Binding TemperatureGaugeCracked}"
+                    ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
                                     </StackPanel>
 
                                 </StackPanel>
@@ -99,19 +98,10 @@
 
                         </StackPanel>
 
-                        <StackPanel Orientation="Vertical" Margin="5">
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <manometer:Manometer Value="{Binding Pressure}" />
 
-                            <demo_usercontrols:UCGuage 
-                    CrackIsVisible="{Binding TemperatureGaugeCracked}"
-                    ScaleType="Scale1" DialBackground="Clean"  Type="Square" Title="TEMPERATURE" Units="°C" MaxValue="{Binding MaxTemperature}" MinValue="{Binding MinTemperature}" Value="{Binding Temperature}"/>
-                            <demo_usercontrols:UCGuage Margin="0, 20, 0, 0"
-                    CrackIsVisible="{Binding PressureGaugeCracked}"
-                    Zone5="Red" Zone4="Red" Zone3="Orange" Zone2="Green" Zone1="Green" 
-                    DialBackground="Clean" Type="Square"  
-                    Title="PRESSURE" Units="Pa"
-                    MaxValue="{Binding MaxPressure}"
-                    MinValue="{Binding MinPressure}"
-                    Value="{Binding Pressure}" />
+
 
                         </StackPanel>
 
@@ -273,9 +263,28 @@
                         <Slider SmallChange="0.1" x:Name="pressure" Minimum="0" Maximum="6" VerticalAlignment="Center" Width="400" Margin="50" TickPlacement="Both"/>
                         <manometer:Manometer Value="{Binding Value, ElementName=pressure}" />
                     </StackPanel>
-                   
+
                 </Viewbox>
-                
+
+            </TabItem>
+            <TabItem Header="Air Pressue Control">
+
+                <airpressurecontrolpanel:AirPressureControlPanel/>
+
+
+            </TabItem>
+            <TabItem Header="Timeline">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 0, 400">
+                        <ToggleButton IsChecked="{Binding Property1}" Style="{StaticResource RedLightButton}" Content="Property 1"/>
+                        <ToggleButton IsChecked="{Binding Property2}" Style="{StaticResource OrangeLightButton}" Content="Property 2"/>
+                        <ToggleButton IsChecked="{Binding Property3}" Style="{StaticResource GreenLightButton}" Content="Property 3"/>
+                    </StackPanel>
+                    <Label x:Name="lblSceneUpdate" Content="" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <timeline:TimeLine x:Name="Timelime" Scenes="{Binding Scenes}" Duration="60" VerticalAlignment="Bottom" 
+                                       AddNewScene="TimeLine_AddNewScene" SceneStarted="Timelime_SceneStarted" SceneEnded="Timelime_SceneEnded"/>
+                </Grid>
+               
             </TabItem>
         </TabControl>
     </Grid>
