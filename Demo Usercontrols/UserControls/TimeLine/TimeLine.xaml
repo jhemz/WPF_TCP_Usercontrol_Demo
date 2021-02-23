@@ -4,61 +4,80 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.TimeLine" xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             mc:Ignorable="d" >
+             mc:Ignorable="d">
 
 
-    <Grid x:Name="Main" MouseMove="TimeLineElement_MouseMove" MouseUp="TimeLineElement_MouseUp" >
+    <Grid x:Name="Main" MouseMove="TimeLineElement_MouseMove" MouseUp="TimeLineElement_MouseUp" MouseLeave="Main_MouseLeave" >
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Border Height="25" Grid.ColumnSpan="2">
+        <Border Height="25" Grid.ColumnSpan="2" >
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF636363" Offset="0"/>
                     <GradientStop Color="#FF41414E" Offset="0.979"/>
                 </LinearGradientBrush>
             </Border.Background>
-           
+            <Label  HorizontalAlignment="Left"  x:Name="tickWidth" Content="0" Foreground="White" FontSize="12"/>
         </Border>
+        <local:TimelineScaleBar x:Name="timelineScaleBar" Grid.Column="1"/>
+        <Border Height="25" VerticalAlignment="Top" Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF363F68" Offset="0"/>
+                    <GradientStop Color="#FF0D101F" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Height="25"  HorizontalAlignment="Center" VerticalAlignment="Top">
 
-        <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Hidden" Visibility="Visible" Grid.Row="1" Grid.ColumnSpan="2"  >
-            <Grid Background="DarkGray">
+            <Button Background="Transparent" BorderThickness="0" Foreground="White" Content=" + New Scene"  VerticalAlignment="Top" Height="25" Width="90" x:Name="btnAddScene" Click="btnAddScene_Click"/>
+            <Label Width="90" HorizontalContentAlignment="Center" x:Name="Time" Content="00:00:00" Foreground="White" FontSize="12"/>
+            <Button x:Name="btnSkipBack" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnSkipBack_Click">
+                <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/skipback.svg" Margin="10" />
+            </Button>
+            <Button x:Name="btnPlayPause" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnPlayPause_Click">
+                <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/playpause.svg" Margin="10" />
+            </Button>
+            <Button x:Name="btnSkipNext" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnSkipNext_Click">
+                <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/skipnext.svg" Margin="10" />
+            </Button>
+        </StackPanel>
+        <ScrollViewer x:Name="scrollViewHeader" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="timerTicksHeader" HorizontalAlignment="Left" Orientation="Horizontal"   Background="LightGray">
+                <local:TimelineTick TimeLabel="1"/>
+                <local:TimelineTick TimeLabel="2"/>
+                <local:TimelineTick TimeLabel="3"/>
+                <local:TimelineTick TimeLabel="4"/>
+                <local:TimelineTick TimeLabel="5"/>
+                <local:TimelineTick TimeLabel="6"/>
+                <local:TimelineTick TimeLabel="7"/>
+                <local:TimelineTick TimeLabel="8"/>
+                <local:TimelineTick TimeLabel="9"/>
+                <local:TimelineTick TimeLabel="10"/>
+            </StackPanel>
+        </ScrollViewer>
+       
+
+        <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Visible" Visibility="Visible" Grid.Row="2" Grid.ColumnSpan="2"  >
+            <Grid Background="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                
 
 
-                <Border Height="25" VerticalAlignment="Top">
-                    <Border.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF363F68" Offset="0"/>
-                            <GradientStop Color="#FF0D101F" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-                </Border>
-                <StackPanel Orientation="Horizontal" Grid.Row="0" Height="25"  HorizontalAlignment="Center" VerticalAlignment="Top">
-                    
-                    <Button Background="Transparent" BorderThickness="0" Foreground="White" Content=" + New Scene"  VerticalAlignment="Top" Height="25" Width="90" x:Name="btnAddScene" Click="btnAddScene_Click"/>
-                    <Label Width="90" HorizontalContentAlignment="Center" x:Name="Time" Content="00:00:00" Foreground="White" FontSize="12"/>
-                    <Button x:Name="btnSkipBack" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnSkipBack_Click">
-                        <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/skipback.svg" Margin="10" />
-                    </Button>
-                    <Button x:Name="btnPlayPause" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnPlayPause_Click">
-                        <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/playpause.svg" Margin="10" />
-                    </Button>
-                    <Button x:Name="btnSkipNext" Style="{StaticResource CleanUIPushButton}"  Height="25" Width="25" Click="btnSkipNext_Click">
-                        <svgc:SvgViewbox Source="/Demo_Usercontrols;component/Styles/skipnext.svg" Margin="10" />
-                    </Button>
-                </StackPanel>
+              
 
-                <TreeView x:Name="SceneView" Margin="0, 25, 0, 0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <TreeView x:Name="SceneView"  ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <TreeView.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF413A49" Offset="0.04"/>
@@ -72,26 +91,17 @@
                     </TreeView.ItemContainerStyle>
                 </TreeView>
 
-                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
-                    <Grid>
-                        <Border x:Name="timeline"  Background="LightGray">
+                <ScrollViewer x:Name="scrollView" Grid.Column="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                    <Grid >
+                        <Border x:Name="timeline"  Background="Transparent">
                             <Grid>
                                 <StackPanel x:Name="timerTicks" HorizontalAlignment="Left" Orientation="Horizontal">
-                                    <local:TimelineTick TimeLabel="1"/>
-                                    <local:TimelineTick TimeLabel="2"/>
-                                    <local:TimelineTick TimeLabel="3"/>
-                                    <local:TimelineTick TimeLabel="4"/>
-                                    <local:TimelineTick TimeLabel="5"/>
-                                    <local:TimelineTick TimeLabel="6"/>
-                                    <local:TimelineTick TimeLabel="7"/>
-                                    <local:TimelineTick TimeLabel="8"/>
-                                    <local:TimelineTick TimeLabel="9"/>
-                                    <local:TimelineTick TimeLabel="10"/>
+                                    
                                 </StackPanel>
-                                <StackPanel x:Name="timelineItems" Orientation="Vertical" Margin="0, 30, 0, 0"/>
+                                <StackPanel x:Name="timelineItems" Orientation="Vertical" Margin="0, 5, 0, 0"/>
                             </Grid>
-                           
-                       
+
+
                         </Border>
                         <Border IsHitTestVisible="False" Grid.Column="1" Panel.ZIndex="2"   Background="Transparent" Grid.Row="1" Grid.RowSpan="2">
                             <Border x:Name="timeBar" Margin="0, 0, 0, 0"  Width="2"  Background="#FFEDFF1E" HorizontalAlignment="Left" />
@@ -99,17 +109,17 @@
                         </Border>
                     </Grid>
                 </ScrollViewer>
-               
-              
+
+
             </Grid>
-           
+
         </ScrollViewer>
 
 
-      
 
-        
-       
+
+
+
     </Grid>
 
 </UserControl>

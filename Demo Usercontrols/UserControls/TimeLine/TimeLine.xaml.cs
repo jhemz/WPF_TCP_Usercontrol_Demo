@@ -4,12 +4,11 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -70,7 +69,17 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(TimerTick);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
+
+            Binding offsetBinding = new Binding("Timeline_ShuttleOffset");
+            offsetBinding.Source = this;
+            timelineScaleBar.SetBinding(TimelineScaleBar.TimelineBar_ShuttleOffsetProperty, offsetBinding);
+
+
+            Binding startBinding = new Binding("Timeline_ShuttleStart");
+            startBinding.Source = this;
+            timelineScaleBar.SetBinding(TimelineScaleBar.TimelineBar_ShuttleStartProperty, startBinding);
         }
+
 
         private double currentTime = 0;
         public double CurrentTime
@@ -87,6 +96,159 @@ namespace Demo_Usercontrols.UserControls.TimeLine
 
         }
 
+        public static readonly DependencyProperty ScaleProperty =
+      DependencyProperty.Register("Scale", typeof(double), typeof(TimeLine), new
+      PropertyMetadata(0.0, new PropertyChangedCallback(OnScaleChanged)));
+
+        public double Scale
+        {
+            get { return (double)GetValue(ScaleProperty); }
+            set { SetValue(ScaleProperty, value); }
+        }
+        private static void OnScaleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLine tl = d as TimeLine;
+            double scale = (double)e.NewValue;
+
+            double width = tl.ActualWidth - 300;
+            if (width <= 0)
+            {
+                UIElement parent = (UIElement)tl.Parent;
+                parent.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size s = parent.DesiredSize;
+                width = s.Width - 300;// s.Width;
+            }
+
+            tl.Timeline_TickWidth = (width) / scale / tl.Duration;
+        }
+
+        public static readonly DependencyProperty Timeline_ShuttleOffsetProperty =
+DependencyProperty.Register("Timeline_ShuttleOffset", typeof(double), typeof(TimeLine), new
+  PropertyMetadata(0.0, new PropertyChangedCallback(OnTimeline_ShuttleOffsetChanged)));
+        public double Timeline_ShuttleOffset
+        {
+            get { return (double)GetValue(Timeline_ShuttleOffsetProperty); }
+            set { SetValue(Timeline_ShuttleOffsetProperty, value); }
+        }
+        private static void OnTimeline_ShuttleOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLine tl = d as TimeLine;
+            double offset = (double)e.NewValue;
+            double start = tl.Timeline_ShuttleStart;
+            double halfShuttleWidth = offset - start;
+            double end = start + (2 * halfShuttleWidth);
+            double barWidth = tl.ActualWidth - 300;
+            double maxEnd = barWidth - halfShuttleWidth;
+            double minStart = halfShuttleWidth;
+            double availableBarlength = maxEnd - minStart;
+
+            if (availableBarlength > 0)
+            {
+                double scrollOffset = (offset - halfShuttleWidth) / availableBarlength;// offset / availableBarlength;
+
+                
+                tl.scrollViewHeader.ScrollToHorizontalOffset(scrollOffset * tl.scrollViewHeader.ScrollableWidth);
+                tl.scrollView.ScrollToHorizontalOffset(scrollOffset * tl.scrollViewHeader.ScrollableWidth);
+            }
+
+        }
+
+        public static readonly DependencyProperty Timeline_ShuttleStartProperty =
+DependencyProperty.Register("Timeline_ShuttleStart", typeof(double), typeof(TimeLine), new
+ PropertyMetadata(0.0, new PropertyChangedCallback(OnTimeline_ShuttleStartChanged)));
+        public double Timeline_ShuttleStart
+        {
+            get { return (double)GetValue(Timeline_ShuttleStartProperty); }
+            set { SetValue(Timeline_ShuttleStartProperty, value); }
+        }
+        private static void OnTimeline_ShuttleStartChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLine tl = d as TimeLine;
+        }
+
+        public static readonly DependencyProperty Timeline_IncrementProperty =
+DependencyProperty.Register("Timeline_Increment", typeof(double), typeof(TimeLine), new
+ PropertyMetadata(1.0, new PropertyChangedCallback(OnTimeline_IncrementChanged)));
+
+        public double Timeline_Increment
+        {
+            get { return (double)GetValue(Timeline_IncrementProperty); }
+            set { SetValue(Timeline_IncrementProperty, value); }
+        }
+        private static void OnTimeline_IncrementChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLine tl = d as TimeLine;
+            double newIncrement = (double)e.NewValue;
+            tl.timerTicksHeader.Children.Clear();
+            tl.timerTicks.Children.Clear();
+            for (int i = 0; i < tl.Duration; i++)
+            {
+                if ((i + 1) % newIncrement == 0)//if the label is not divisible by 5, the hide the label to stop crowding
+                {
+                    TimelineTick tickHeader = new TimelineTick() { Increment = newIncrement, TimeLabel = (i + 1).ToString(), TickWidth = tl.Timeline_TickWidth };
+                    Binding tickHeaderBinding = new Binding("Timeline_TickWidth");
+                    tickHeaderBinding.Source = tl;
+                    tickHeader.SetBinding(TimelineTick.TickWidthProperty, tickHeaderBinding);
+                    tl.timerTicksHeader.Children.Add(tickHeader);
+
+                    //TimelineTick tick = new TimelineTick() { IsHeader = false, Increment = newIncrement, TimeLabel = (i + 1).ToString(), TickWidth = tl.Timeline_TickWidth };
+                    //Binding tickBinding = new Binding("Timeline_TickWidth");
+                    //tickBinding.Source = tl;
+                    //tick.SetBinding(TimelineTick.TickWidthProperty, tickBinding);
+                    //tl.timerTicks.Children.Add(tick);
+                }
+
+            }
+            tl.timerTicks.Children.Add(new Grid() { Width = tl.timerTicksHeader.Children.Count * newIncrement * tl.Timeline_TickWidth });
+        }
+
+        public static readonly DependencyProperty Timeline_TickWidthProperty =
+ DependencyProperty.Register("Timeline_Timeline_TickWidth", typeof(double), typeof(TimeLine), new
+  PropertyMetadata(50.0, new PropertyChangedCallback(OnTimeline_TickWidthChanged)));
+
+        public double Timeline_TickWidth
+        {
+            get { return (double)GetValue(Timeline_TickWidthProperty); }
+            set { SetValue(Timeline_TickWidthProperty, value); }
+        }
+        private static void OnTimeline_TickWidthChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLine tle = d as TimeLine;
+            double newWidth = (double)e.NewValue;
+
+            tle.tickWidth.Content = newWidth.ToString() + ", count: " + tle.timerTicksHeader.Children.Count.ToString();
+            if (newWidth < 4)//if we go to this scale, clear the stack and add larger ticks
+            {
+                tle.Timeline_Increment = 30;
+            }
+            else if (newWidth < 10)//if we go to this scale, clear the stack and add larger ticks
+            {
+                tle.Timeline_Increment = 10;
+            }
+            else if (newWidth < 35)//if we go to this scale, clear the stack and add larger ticks
+            {
+                tle.Timeline_Increment = 5;
+            }
+            else if(newWidth >= 35)
+            {
+                tle.Timeline_Increment = 1;
+            }
+
+            //foreach (TimelineTick tick in tle.timerTicks.Children)
+            //{
+            //    tick.TickWidth = (double)e.NewValue;
+            //}
+            foreach (TimelineTick tick in tle.timerTicksHeader.Children)
+            {
+                tick.TickWidth = newWidth;
+            }
+            foreach (TimeLineElement element in tle.timelineItems.Children)
+            {
+                element.Element_TickWidth = (double)e.NewValue;
+            }
+            tle.timeBar.Margin = new Thickness(tle.CurrentTime * (double)e.NewValue, 0, 0, 0);
+        }
+
         public static readonly DependencyProperty DurationProperty =
         DependencyProperty.Register("Duration", typeof(int), typeof(TimeLine), new
         PropertyMetadata(5, new PropertyChangedCallback(OnDurationChanged)));
@@ -99,10 +261,28 @@ namespace Demo_Usercontrols.UserControls.TimeLine
         private static void OnDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TimeLine tl = d as TimeLine;
-            tl.timerTicks.Children.Clear();
+            //tl.timerTicks.Children.Clear();
+            tl.timerTicksHeader.Children.Clear();
+
+            Binding scaleBinding = new Binding("Scale");
+            scaleBinding.Source = tl;
+            scaleBinding.Mode = BindingMode.TwoWay;
+            tl.timelineScaleBar.SetBinding(TimelineScaleBar.BarScaleProperty, scaleBinding);
+
             for (int i = 0; i < (int)e.NewValue; i++)
             {
-                tl.timerTicks.Children.Add(new TimelineTick() { TimeLabel = (i + 1).ToString() });
+                //TimelineTick tick = new TimelineTick() { TimeLabel = (i + 1).ToString(), IsHeader = false };
+                //Binding tickBinding = new Binding("Timeline_TickWidth");
+                //tickBinding.Source = tl;
+                //tick.SetBinding(TimelineTick.TickWidthProperty, tickBinding);
+                //tl.timerTicks.Children.Add(tick);
+
+
+                TimelineTick tickHeader = new TimelineTick() { TimeLabel = (i + 1).ToString() };
+                Binding tickHeaderBinding = new Binding("Timeline_TickWidth");
+                tickHeaderBinding.Source = tl;
+                tickHeader.SetBinding(TimelineTick.TickWidthProperty, tickHeaderBinding);
+                tl.timerTicksHeader.Children.Add(tickHeader);
             }
 
         }
@@ -165,7 +345,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                             var propValue = prop.GetValue(panel, null);
 
                             PropertyAttribute MyAttribute = (PropertyAttribute)Attribute.GetCustomAttribute(prop, typeof(PropertyAttribute));
-                           
+
                             string propType = prop.PropertyType.Name;
                             if (MyAttribute.PropertyType == PropertyType.Display)
                             {
@@ -200,6 +380,10 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                     tle.RightExpanderClicked += tl.TimeLineElement_RightExpanderClicked;
                     tle.MoverClicked += tl.TimeLineElement_MouseDown;
                     tle.ItemColour = vm.Color;
+
+                    Binding scaleBinding = new Binding("Timeline_TickWidth");
+                    scaleBinding.Source = tl;
+                    tle.SetBinding(TimeLineElement.Element_TickWidthProperty, scaleBinding);
 
                     Binding myBinding = new Binding("ActualHeight");
                     myBinding.Source = treeViewItem;
@@ -259,12 +443,6 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                             }
                         }
                     }
-
-
-                   
-
-
-
                     tl.timelineItems.Children.Add(tle);
                 }
             }
@@ -333,10 +511,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             {
                 startDateTime = DateTime.Now;
             }
-            //width of a tick is hardcoded as 50 right now
 
-            //max margin is 250 or endtime * 50
-            //min margin is 0
             if (CurrentTime <= Duration)
             {
                 currentDateTime = DateTime.Now;
@@ -351,10 +526,10 @@ namespace Demo_Usercontrols.UserControls.TimeLine
 
                 difference -= pausedInterval;
                 difference += offset * 1000;
-                double newLeft = (difference / 1000) * 50;
-                if (newLeft > Duration * 50)
+                double newLeft = (difference / 1000) * Timeline_TickWidth;
+                if (newLeft > Duration * Timeline_TickWidth)
                 {
-                    newLeft = Duration * 50;
+                    newLeft = Duration * Timeline_TickWidth;
                 }
                 timeBar.Margin = new System.Windows.Thickness(newLeft, 0, 0, 0);
 
@@ -388,6 +563,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                         handler?.Invoke(this, new SceneUpdateEvent(SceneEvent.Ended, scene));
                     }
                 }
+
             }
             else
             {
@@ -464,7 +640,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
 
         private void SkipToTime(double time)
         {
-            double newLeft = time * 50;
+            double newLeft = time * Timeline_TickWidth;
             timeBar.Margin = new System.Windows.Thickness(newLeft, 0, 0, 0);
             startDateTime = DateTime.Now;
             offset = time;
@@ -475,34 +651,33 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             Time.Content = new DateTime(t.Ticks).ToString("mm:ss:ffff");
         }
 
-        private void TimeLineElement_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void TimeLineElement_MouseMove(object sender, MouseEventArgs e)
         {
+            timelineScaleBar.TimeLineScaleShuttle_MouseMove(sender, e);
+
+            
+
             if (movingItem)
             {
-
                 Point p = e.GetPosition(Main);
                 double changeX = p.X - x;
-                double newStart = (changeX / 50) + startLeft;
-                double newEnd = (changeX / 50) + startRight;
-                if (newStart >= startTime * 50 && newEnd <= Duration * 50)
+                double newStart = (changeX / Timeline_TickWidth) + startLeft;
+                double newEnd = (changeX / Timeline_TickWidth) + startRight;
+                if (newStart >= startTime * Timeline_TickWidth && newEnd <= Duration * Timeline_TickWidth)
                 {
                     double roundedNewEnd = Math.Round(newEnd * 4, MidpointRounding.ToEven) / 4;
                     double roundedNewStart = Math.Round(newStart * 4, MidpointRounding.ToEven) / 4;
                     itemToMove.Start = roundedNewStart;
                     itemToMove.End = roundedNewEnd;
                 }
-
-
-
             }
             if (RightExpandingItem)
             {
-
                 Point p = e.GetPosition(Main);
                 double changeX = p.X - x;
-                double newEnd = (changeX / 50) + startRight;
+                double newEnd = (changeX / Timeline_TickWidth) + startRight;
                 double roundedNewEnd = Math.Round(newEnd * 4, MidpointRounding.ToEven) / 4;
-                if (roundedNewEnd <= Duration * 50 && roundedNewEnd > startLeft)
+                if (roundedNewEnd <= Duration * Timeline_TickWidth && roundedNewEnd > startLeft)
                 {
                     itemToExpand.End = roundedNewEnd;
                 }
@@ -511,10 +686,10 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             {
                 Point p = e.GetPosition(Main);
                 double changeX = p.X - x;
-                double newStart = (changeX / 50) + startLeft;
+                double newStart = (changeX / Timeline_TickWidth) + startLeft;
                 double roundedNewStart = Math.Round(newStart * 4, MidpointRounding.ToEven) / 4;
 
-                if (roundedNewStart >= startTime * 50 && roundedNewStart < startRight)
+                if (roundedNewStart >= startTime * Timeline_TickWidth && roundedNewStart < startRight)
                 {
                     itemToExpand.Start = roundedNewStart;
                 }
@@ -522,8 +697,29 @@ namespace Demo_Usercontrols.UserControls.TimeLine
 
         }
 
-        private void TimeLineElement_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void InitializeCursorMonitoring()
         {
+            var point = Mouse.GetPosition(Application.Current.MainWindow);
+            var timer = new System.Windows.Threading.DispatcherTimer();
+
+            timer.Tick += delegate
+            {
+                Application.Current.MainWindow.CaptureMouse();
+                if (point != Mouse.GetPosition(Application.Current.MainWindow))
+                {
+                    point = Mouse.GetPosition(Application.Current.MainWindow);
+                    Console.WriteLine(String.Format("X:{0}  Y:{1}", point.X, point.Y));
+                }
+                Application.Current.MainWindow.ReleaseMouseCapture();
+            };
+
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timer.Start();
+        }
+
+        private void TimeLineElement_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            timelineScaleBar.TimeLineScaleShuttle_MouseUp(sender, e);
             itemToMove = null;
             itemToExpand = null;
             movingItem = false;
@@ -531,7 +727,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             LeftExpandingItem = false;
         }
 
-        private void TimeLineElement_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void TimeLineElement_MouseDown(object sender, MouseButtonEventArgs e)
         {
             TimeLineElement tle = (TimeLineElement)sender;
             itemToMove = tle;
@@ -542,7 +738,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             movingItem = true;
         }
 
-        private void TimeLineElement_LeftExpanderClicked(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void TimeLineElement_LeftExpanderClicked(object sender, MouseButtonEventArgs e)
         {
             TimeLineElement tle = (TimeLineElement)sender;
             itemToExpand = tle;
@@ -553,7 +749,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             LeftExpandingItem = true;
         }
 
-        private void TimeLineElement_RightExpanderClicked(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void TimeLineElement_RightExpanderClicked(object sender, MouseButtonEventArgs e)
         {
             TimeLineElement tle = (TimeLineElement)sender;
             itemToExpand = tle;
@@ -568,6 +764,16 @@ namespace Demo_Usercontrols.UserControls.TimeLine
         {
             EventHandler handler = AddNewScene;
             handler?.Invoke(this, e);
+        }
+
+        private void Main_MouseLeave(object sender, MouseEventArgs e)
+        {
+            //timelineScaleBar.TimeLineScaleShuttle_MouseLeave(sender, e);
+            //itemToMove = null;
+            //itemToExpand = null;
+            //movingItem = false;
+            //RightExpandingItem = false;
+            //LeftExpandingItem = false;
         }
 
 

@@ -117,8 +117,17 @@
     <Compile Include="UserControls\TimeLine\TimeLineElement.xaml.cs">
       <DependentUpon>TimeLineElement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineScaleBar.xaml.cs">
+      <DependentUpon>TimelineScaleBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineScaleShuttle.xaml.cs">
+      <DependentUpon>TimelineScaleShuttle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TimeLine\TimelineSceneTimeline.xaml.cs">
       <DependentUpon>TimelineSceneTimeline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimeLine\TimelineSceneTimelineBar.xaml.cs">
+      <DependentUpon>TimelineSceneTimelineBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TimeLine\TimelineTreeviewScene.xaml.cs">
       <DependentUpon>TimelineTreeviewScene.xaml</DependentUpon>
@@ -278,7 +287,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\TimeLine\TimelineScaleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineScaleShuttle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\TimeLine\TimelineSceneTimeline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TimeLine\TimelineSceneTimelineBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

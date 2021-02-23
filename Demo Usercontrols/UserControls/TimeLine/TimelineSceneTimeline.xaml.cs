@@ -29,24 +29,21 @@ namespace Demo_Usercontrols.UserControls.TimeLine
         private static void OnCurrentTimeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TimelineSceneTimeline tle = d as TimelineSceneTimeline;
-            double time = (double)e.NewValue;
+            tle.RefreshTimelineBars(tle, (double)e.NewValue);
+        }
+
+        private void RefreshTimelineBars(TimelineSceneTimeline tle, double time)
+        {
             double sceneTime = time - tle.StartTime;
             if (time >= tle.StartTime && sceneTime < tle.EndTime)
             {
-                
+
                 if (tle.stackSceneTimeline.Children.Count == 0)
                 {
                     switch (tle.CurrentStateType)
                     {
                         case "Boolean":
-                            if (Convert.ToBoolean(tle.CurrentState) == true)
-                            {
-                                tle.stackSceneTimeline.Children.Add(tle.TrueBlock());
-                            }
-                            else
-                            {
-                                tle.stackSceneTimeline.Children.Add(tle.FalseBlock());
-                            }
+                            tle.AddBlock(tle, (Convert.ToBoolean(tle.CurrentState)));
                             break;
                         case "Double":
                             break;
@@ -66,18 +63,24 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                         double totalLengthSoFar = 0;
                         foreach (var item in tle.stackSceneTimeline.Children)
                         {
-                            Border block = (Border)item;
+
+                            TimelineSceneTimelineBar block = (TimelineSceneTimelineBar)item;
                             if (index != lastIndex)//only add up the previous ones
                             {
-                                totalLengthSoFar += block.Width;
+                                double startTime = block.BarStartTime;
+                                double oldWidth = block.BarWidth;
+                                double timeLength = block.BarEndTime - block.BarStartTime;
+                                double newWidth = timeLength * tle.ElementTimeline_TickWidth;
+                                block.BarWidth = newWidth;
+
+                                totalLengthSoFar += block.BarWidth;
                             }
 
                             if (index == lastIndex)
                             {
-                                //length = time * 50
-                                double endTimeOfLastBlock = totalLengthSoFar / 50;
-                                double newRight = (sceneTime * 50) - (endTimeOfLastBlock * 50);
-                                block.Width = newRight;
+                                double endTimeOfLastBlock = totalLengthSoFar / tle.ElementTimeline_TickWidth;
+                                double newWidth = (sceneTime - block.BarStartTime) * tle.ElementTimeline_TickWidth;
+                                block.BarWidth = newWidth;
                             }
                             index++;
                         }
@@ -85,7 +88,21 @@ namespace Demo_Usercontrols.UserControls.TimeLine
                     }
                 }
             }
+        }
 
+        public static readonly DependencyProperty ElementTimeline_TickWidthProperty =
+   DependencyProperty.Register("ElementTimeline_TickWidth", typeof(double), typeof(TimelineSceneTimeline), new
+   PropertyMetadata(1.0, new PropertyChangedCallback(OnElementTimeline_TickWidthChanged)));
+
+        public double ElementTimeline_TickWidth
+        {
+            get { return (double)GetValue(ElementTimeline_TickWidthProperty); }
+            set { SetValue(ElementTimeline_TickWidthProperty, value); }
+        }
+        private static void OnElementTimeline_TickWidthChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimelineSceneTimeline tle = d as TimelineSceneTimeline;
+            tle.RefreshTimelineBars(tle, tle.CurrentTime);
         }
 
         public static readonly DependencyProperty StartTimeProperty =
@@ -103,7 +120,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
         }
 
         public static readonly DependencyProperty EndTimeProperty =
-        DependencyProperty.Register("EndTime", typeof(double), typeof(TimeLineElement), new
+        DependencyProperty.Register("EndTime", typeof(double), typeof(TimelineSceneTimeline), new
          PropertyMetadata(100.0, new PropertyChangedCallback(OnEndTimeChanged)));
 
         public double EndTime
@@ -146,29 +163,46 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             switch (tl.CurrentStateType)
             {
                 case "Boolean":
-                    if (Convert.ToBoolean((double)e.NewValue) == true)
-                    {
-                        tl.stackSceneTimeline.Children.Add(tl.TrueBlock());
-                    }
-                    else
-                    {
-                        tl.stackSceneTimeline.Children.Add(tl.FalseBlock());
-                    }
+                    tl.AddBlock(tl, (Convert.ToBoolean((double)e.NewValue)));
                     break;
                 case "Double":
                     break;
             }
-           
+
         }
 
-        private Border TrueBlock()
+        private void AddBlock(TimelineSceneTimeline tlst, bool state)
         {
-            return new Border() { Width = 0, Height = 10, Background = new SolidColorBrush(Colors.LightGreen) };
+            int lastIndex = tlst.stackSceneTimeline.Children.Count - 1;
+            int index = 0;
+            foreach (var item in tlst.stackSceneTimeline.Children)
+            {
+                TimelineSceneTimelineBar block = (TimelineSceneTimelineBar)item;
+                if (index == lastIndex)//we are setting the endtime for the last one
+                {
+                    block.BarEndTime = tlst.CurrentTime;
+                }
+                index++;
+            }
+            if (state == true)
+            {
+                tlst.stackSceneTimeline.Children.Add(tlst.TrueBlock(tlst.CurrentTime));
+            }
+            else
+            {
+                tlst.stackSceneTimeline.Children.Add(tlst.FalseBlock(tlst.CurrentTime));
+            }
         }
 
-        private Border FalseBlock()
+        private TimelineSceneTimelineBar TrueBlock(double time)
         {
-            return new Border() { Width = 0, Height = 2, Background = new SolidColorBrush(Colors.Red) };
+
+            return new TimelineSceneTimelineBar() { Color = Colors.Green, BarStartTime = time };
+        }
+
+        private TimelineSceneTimelineBar FalseBlock(double time)
+        {
+            return new TimelineSceneTimelineBar() { Color = Colors.Red, BarStartTime = time };
         }
     }
 }

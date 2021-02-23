@@ -5,11 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.TimeLine"
              mc:Ignorable="d">
-    <Grid Width="50">
-        <TextBlock x:Name="Text" Text="0" HorizontalAlignment="Right" Margin="0, 0, -2.5, 0"/>
-        <Border Margin="0, 20, 37.5, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Border Margin="0, 20, 25, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
-        <Border Margin="0, 20, 12.5, 0"  Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
-        <Border Margin="0, 20, 0, 0"  Width="1"   Background="Gray" HorizontalAlignment="Right" />
+    <Grid x:Name="Tick">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="5"  x:Name="Text" Text="0" HorizontalAlignment="Right" Margin="0, 0, -2.5, 0"/>
+        <Border x:Name="tick1" Margin="0, 20, 0, 0" Grid.Column="0" Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Border x:Name="tick2" Margin="0, 20, 0, 0" Grid.Column="1" Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Border x:Name="tick3" Margin="0, 20, 0, 0" Grid.Column="2" Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Border x:Name="tick4" Margin="0, 20, 0, 0" Grid.Column="3" Width="1"  Height="5" Background="Gray" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Border x:Name="tick5" Margin="0, 20, 0, 0" Grid.Column="4" Width="1"   Background="Gray" HorizontalAlignment="Right" />
     </Grid>
 </UserControl>

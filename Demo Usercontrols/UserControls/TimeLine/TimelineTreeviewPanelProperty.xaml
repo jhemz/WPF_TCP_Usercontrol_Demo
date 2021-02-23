@@ -5,16 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.TimeLine"
              mc:Ignorable="d" >
-    <TreeViewItem>
+    <TreeViewItem Height="26.5">
         <TreeViewItem.Header>
-            <Border>
-                <StackPanel Orientation="Horizontal" Height="20">
-                    <TextBlock x:Name="lblHeader" Text="Property 1" FontSize="15" VerticalAlignment="Center" Foreground="White"/>
+            <Border CornerRadius="10" BorderThickness="0" BorderBrush="White" Margin="3">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00C31E" Offset="0.991"/>
+                        <GradientStop Color="#FF5DB66B"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" Height="20" Margin="5, 0, 10, 0">
+                    <Ellipse Height="10" Width="10" VerticalAlignment="Center">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="Red" Offset="0"/>
+                                <GradientStop Color="#FFFD0C0C" Offset="0.988"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock x:Name="lblHeader" Text="Property 1" FontSize="15" VerticalAlignment="Center" Height="23" Foreground="White" Margin="5, 0, 10, 0"/>
                     <CheckBox x:Name="chkBx" IsChecked="False" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtBox"/>
                 </StackPanel>
             </Border>
         </TreeViewItem.Header>
     </TreeViewItem>
-   
+
 </UserControl>

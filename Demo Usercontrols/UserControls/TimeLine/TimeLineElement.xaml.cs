@@ -21,6 +21,25 @@ namespace Demo_Usercontrols.UserControls.TimeLine
             (this.Content as FrameworkElement).DataContext = this;
         }
 
+        public static readonly DependencyProperty Element_TickWidthProperty =
+     DependencyProperty.Register("Element_TickWidth", typeof(double), typeof(TimeLineElement), new
+     PropertyMetadata(1.0, new PropertyChangedCallback(OnElement_TickWidthChanged)));
+
+        public double Element_TickWidth
+        {
+            get { return (double)GetValue(Element_TickWidthProperty); }
+            set { SetValue(Element_TickWidthProperty, value); }
+        }
+        private static void OnElement_TickWidthChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TimeLineElement tle = d as TimeLineElement;
+            tle.RefreshScene(tle, tle.Start, tle.End, (double)e.NewValue);
+            foreach(TimelineSceneTimeline tlst in tle.stackEvents.Children)
+            {
+                tlst.ElementTimeline_TickWidth = (double)e.NewValue;
+            }
+        }
+
         public static readonly DependencyProperty ItemHeightProperty =
     DependencyProperty.Register("ItemHeight", typeof(double), typeof(TimeLineElement), new
      PropertyMetadata(30.0, new PropertyChangedCallback(OnItemHeightChanged)));
@@ -49,11 +68,7 @@ namespace Demo_Usercontrols.UserControls.TimeLine
         private static void OnStartChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TimeLineElement tle = d as TimeLineElement;
-            double newLeft = ((double)e.NewValue * 50);
-            tle.Item.Margin = new Thickness(newLeft, 0, 0, 0);
-
-            double width = (tle.End * 50) - (tle.Start * 50);
-            tle.Item.Width = width;
+            tle.RefreshScene(tle, (double)e.NewValue, tle.End, tle.Element_TickWidth);
 
         }
 
@@ -69,11 +84,17 @@ DependencyProperty.Register("End", typeof(double), typeof(TimeLineElement), new
         private static void OnEndChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TimeLineElement tle = d as TimeLineElement;
-            double width = ((double)e.NewValue*50) - (tle.Start*50);
-            tle.Item.Width = width;
+            tle.RefreshScene(tle, tle.Start, (double)e.NewValue, tle.Element_TickWidth);
         }
 
+        private void RefreshScene(TimeLineElement tle, double start, double end, double tickWidth)
+        {
+            double left = start * tle.Element_TickWidth;
+            tle.Item.Margin = new Thickness(left, 0, 0, 0);
 
+            double width = (tle.End * tle.Element_TickWidth) - (tle.Start * tle.Element_TickWidth);
+            tle.Item.Width = width;
+        }
 
         public static readonly DependencyProperty ItemColourProperty =
    DependencyProperty.Register("ItemColour", typeof(Color), typeof(TimeLineElement), new

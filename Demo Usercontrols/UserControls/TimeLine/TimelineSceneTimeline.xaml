@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Demo_Usercontrols.UserControls.TimeLine"
              mc:Ignorable="d" >
-    <Grid Height="20">
+    <Grid Height="28">
         <Border Background="Gray"  Height="2"/>
         <StackPanel x:Name="stackSceneTimeline" Orientation="Horizontal" Height="10">
         </StackPanel>
